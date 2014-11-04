@@ -9,10 +9,6 @@
 		$('#regModal').modal('show');			
 	});	
 
-	var	form = $('#registrationForm');
-
-	form.ajaxForm();
-
 	$('#registrationSubmit').on('click', function(e){
 		var	flag = false,
 			username = $('#id_username'),
@@ -59,13 +55,24 @@
 		};		
 
 		console.log(flag);
+		console.log($('#registrationForm input[name=csrfmiddlewaretoken]').val());
 
 		if(!flag){
-			form.ajaxSubmit({
-			    url: form.action,
-			    type : form.method,
-			    data: $(form).serialize(),
-				success: function (data) {
+			$.ajax({
+				url: "/accounts/registration/",
+				type: 'POST',
+				dataType:"json",
+				data: {
+					"username": usernameVal,
+					"email": emailVal,
+					"password1": password1Val,
+					"password2": password2Val,
+					"csrfmiddlewaretoken": $('#registrationForm input[name=csrfmiddlewaretoken]').val()
+				},
+				error: function() {
+					//alert('Ошибка получения запроса');
+				},
+				success: function(data) {
 					console.log('success');
 
 					username.val('');
@@ -80,12 +87,11 @@
 
 					setTimeout(function(){
 						$('#commonModal').modal('hide');
-					}, 2000);					
+					}, 2000);	
 				}
-			});
+			});		
 		};
-	});
-	
+	});		
 
 
 })();
