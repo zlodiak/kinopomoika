@@ -1,0 +1,275 @@
+/*
+INFO: 
+	project: test
+	browsers: opera/chrome/FF/ie9/safari
+	width: 1100 + scroll. 
+	columns: ?
+	markup: Sergey Kalinin 10/2014 (prozaik81-2@yandex.ru)
+	use: jq
+	desc: 	test. test markup for holy from forum saransk
+	version 1
+	
+COLORS:
+	menu gray: 898989
+	menu white: fff
+	menu yellow: f0d458
+	gray basic: 3c3b3b
+	yellow basic: d3ab1c
+
+TABLE OF CONTENTS:
+	FONTS
+	COMMON_STYLES
+	GLOBAL_layout
+	GLOBAL_blocks
+	COMMON_blocks
+	CONTENT_FORMAT
+	PAGE_INDEX_layout			
+	PLUGINS	& WIDJETS
+*/
+
+/*************************************************************************************************************** FONTS */
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('../fonts/glyphicons-halflings-regular.eot');
+  src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), 
+  url('../fonts/glyphicons-halflings-regular.woff') format('woff'), 
+  url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), 
+  url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+
+
+/*************************************************************************************************************** COMMON_STYLES */
+html, body, div, h1, h2, h3, h4, h5, h6, a, a img, p, ul, ol, li, span, fieldset , form, dl, dd, dt, table, tr, td, img{ 
+	border: none;
+	margin: 0; 
+	outline: none;	
+	padding: 0;
+}
+
+
+
+ul{
+	list-style-type: none;
+}
+
+input[type="text"]:focus, input[type="password"]:focus, textarea:focus { outline: none; }
+
+textarea{
+	resize: none;
+}
+
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+	zoom:1;
+}
+
+.clear{
+	clear: both;
+}	
+	
+.hide{
+	display: none !important;
+}
+
+.wrapped{
+	width: 940px;
+	margin: 0 auto;
+}
+
+input::-webkit-input-placeholder {
+	color: #0096ef;
+}
+
+input:-moz-placeholder {
+	color: #0096ef;
+}
+
+.width1000{
+	width: 1000px;
+	margin: 0 auto;
+}
+
+.width_auto{
+	width: auto !important;
+}
+
+
+
+
+
+/*************************************************************************************************************** GLOBAL_layout */
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+}
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+body > .container {
+  padding: 60px 15px 0;
+}
+.container .text-muted {
+  margin: 20px 0;
+}
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+code {
+  font-size: 80%;
+}
+
+
+/*************************************************************************************************************** GLOBAL_blocks : auth_block */
+.auth_block{
+
+}
+
+	.auth_block .btn{
+		margin-left: 5px;
+	}
+
+/*************************************************************************************************************** GLOBAL_blocks : common_form */
+.common_form{
+
+}
+
+	.common_form .cell{
+		padding-bottom: 12px;
+		overflow: hidden;
+	}
+	
+		.common_form .cell a{
+			margin-right: 130px;
+		}
+	
+		.common_form .cell .label:after{
+			content: ':';
+		}
+		
+		.common_form .textarea_outer .label:after{
+			content: ':';
+			
+			vertical-align: top;
+		}		
+		
+		.common_form .cell .label{
+			font: 12px arial, sans-serif;
+			color: #444;
+			text-align: left;
+			
+			min-height: 23px;
+			width: 40%;
+			display: block;
+			float: left;
+			padding-right: 17px;	
+			padding-top: 10px;	
+		}
+
+		
+		.common_form .input_outer select,
+		.common_form .textarea_outer textarea,
+		.common_form .input_outer input{
+			background: #fff;
+			border: 1px solid #e0e0e0;
+			height: 33px;
+			width: 60%;
+			padding: 0 5px;
+			overflow: hidden;
+			float: left;
+			
+			font: 12px arial, sans-serif;
+			color: #444;
+		}
+		
+		.common_form .textarea_outer textarea{
+			width: 416px;
+		}
+		
+		.common_form .input_outer select{
+			width: 220px;
+		}
+
+		.common_form .captcha_outer input{
+			width: 109px;
+		}
+		
+			.common_form .captcha_outer img{
+				display: block;
+				float: left;
+				margin-right: 20px;
+				width: 77px;
+				height: 33px;
+				border: 1px solid #e0e0e0;
+			}
+		
+		.common_form .submit_outer input{
+
+		}		
+		
+		.common_form .textarea_outer label{
+			vertical-align: top;
+		}
+		
+		.common_form .textarea_outer textarea{
+			height: 170px;	
+			padding: 5px;	
+		}			
+		
+		.common_form .input_outer select{
+		
+		}		
+		
+		.common_form .submit_outer input{
+			margin-left: 176px;
+		}	
+
+		.common_form .cell .errorlist{
+			color: red;
+			font: 12px arial, sans-serif;
+			
+			padding-top: 10px;
+			padding-left: 12px;
+			float: left;
+			width: 300px;
+		}
+		
+		.common_form  .textarea_message .errorlist{
+			padding-left: 177px;
+		}
+		
+		.common_form .cell .image_outer{
+		
+		}
+
+			.common_form .input_outer .shine{
+				border: 1px solid red;
+			}			
+
+/*************************************************************************************************************** GLOBAL_blocks :  .pager */
+
+/*************************************************************************************************************** PLUGINS :  */	

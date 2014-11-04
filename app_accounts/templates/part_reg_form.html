@@ -1,0 +1,60 @@
+<!-- registration modal -->
+<div class="modal fade" id="regModal" tabindex="-1" role="dialog" aria-labelledby="regModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <section class="modal-content">
+        	<form class="common_form" action="{% url 'registration' %}" id="registrationForm" method="POST" novalidate>
+	            <div class="modal-header">
+	                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+	                
+	                <h4 class="modal-title" id="regModalLabel">Регистрация</h4>
+	            </div>
+
+	            <div class="modal-body">
+					{% csrf_token %}	
+					
+					<div class="cell input_outer">
+						<label class="label">{{ registration_form.username.label }}</label>
+						
+						{{ registration_form.username }}
+						
+						{{ registration_form.username.errors }}
+					</div>					
+
+					<div class="cell input_outer">
+						<label class="label">{{ registration_form.email.label }}</label>
+						
+						{{ registration_form.email }}
+						
+						{{ registration_form.email.errors }}
+					</div>						
+
+					<div class="cell input_outer">
+						<label class="label">{{ registration_form.password1.label }}</label>
+						
+						{{ registration_form.password1 }}
+						
+						{{ registration_form.password1.errors }}
+					</div>	
+
+					<div class="cell input_outer">
+						<label class="label">{{ registration_form.password2.label }}</label>
+						
+						{{ registration_form.password2 }}
+						
+						{{ registration_form.password2.errors }}
+					</div>										
+	            </div>
+
+	            <div class="modal-footer">
+	                <button type="button" class="btn btn-default btn-sm but_cancel" data-dismiss="modal">Отменить</button>
+
+					<input class="btn btn-primary btn-sm but_reg" id="registrationSubmit" type="submit" value="Зарегистрироваться">
+	            </div>
+            </form>
+        </section>
+    </div>
+</div>  
+
+
+
+
