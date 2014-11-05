@@ -1,4 +1,36 @@
 (function (){
+	// -------------------------------------------------------------------------------------- logout
+	$('#logoutButton').on('click', function(event){	
+        $.ajax({
+            url: "/accounts/logout/",
+            type: 'POST',
+            dataType:"json",
+            data: {
+            	"csrfmiddlewaretoken": $('#registrationForm input[name=csrfmiddlewaretoken]').val()
+            },
+            success: function(data) {
+                if(data.result){
+                	$('#regModal').modal('hide');
+                	
+                	$('#guestPanel').addClass('show');
+                	$('#guestPanel').removeClass('hide');
+                	$('#userPanel').addClass('hide');
+                	$('#userPanel').removeClass('show');
+
+	                $('#commonModalLabel').text('Вы вышли');
+	                $('#modalDialog').addClass('modal-sm');
+	                $('#butCancel').addClass('hide');
+	                $('#commonModal').modal('show');
+
+	                setTimeout(function(){
+	                    $('#commonModal').modal('hide');
+	                }, 2000); 
+                }  
+            }
+        }); 		
+	});
+
+
 	// -------------------------------------------------------------------------------------- hover user menu
 /*	$('#userNameMark')
 	.on('mouseover', function(){

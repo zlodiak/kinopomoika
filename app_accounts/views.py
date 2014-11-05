@@ -60,4 +60,21 @@ def ajax_reg_form_check(request):
 	return HttpResponse(json.dumps(result), content_type='application/json')	
 
 
+def logout(request):
+	"""
+	logout
+	"""		
+	result = False		
 
+	try:
+		auth.logout(request)
+	except:
+		pass
+	else:
+		result = True
+
+	data = {
+		'result': result,		
+	}
+			
+	return HttpResponse(json.dumps(data), content_type='application/json')	
