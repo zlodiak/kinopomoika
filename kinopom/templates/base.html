@@ -1,4 +1,8 @@
-{% load cms_tags menu_tags sekizai_tags staticfiles tags_accounts %}
+{% load staticfiles %}
+{% load cms_tags %}
+{% load menu_tags %}
+{% load sekizai_tags %}
+{% load tags_accounts %}
 <!DOCTYPE html>
 <html lang="ru">
     <head>
@@ -73,27 +77,28 @@
 
         <!-- common modal -->
         <div class="modal fade" id="commonModal" tabindex="-1" role="dialog" aria-labelledby="commonModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
+            <div class="modal-dialog" id="modalDialog">
+                <div class="modal-content" id="modalContent">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                         
                         <h4 class="modal-title" id="commonModalLabel">Modal title</h4>
                     </div>
 
-                    <div class="modal-body">
-                        ...
-                    </div>
+                    <div class="modal-body"></div>
 
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default but_cancel" data-dismiss="modal">Отменить</button>
-                        <button type="button" class="btn btn-primary but_ok" data-dismiss="modal">Ok</button>
+                        <button type="button" class="btn btn-default but_cancel" id="butCancel" data-dismiss="modal">Отменить</button>
+                        <button type="button" class="btn btn-primary but_ok" id="butOk" data-dismiss="modal">Ok</button>
                     </div>
                 </div>
             </div>
         </div>        
 
+        <!-- registration window -->
         {% part_reg_form %}
+
+        <!-- auth window -->
         {% part_auth_form %}
 
         <!-- jquery -->

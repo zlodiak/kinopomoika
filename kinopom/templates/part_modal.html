@@ -1,0 +1,12 @@
+{{window_type}}
+{{window_type_label}}
+{{timeout}}
+{{message}}
+<script>
+	$('#{{ window_type_label }}').text('{{ message }}');
+	$('#{{ window_type }}').modal('show');
+
+	setTimeout(function(){
+		$('#{{ window_type }}').modal('hide');
+	}, {{ timeout }});	
+</script>

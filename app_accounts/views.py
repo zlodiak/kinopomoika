@@ -2,6 +2,8 @@ from django.http import HttpResponse, HttpResponseRedirect, Http404, HttpRespons
 from django.template import loader, RequestContext
 from django.shortcuts import render, render_to_response
 from django.contrib import auth
+from django.contrib.auth.models import User
+import json
 
 from app_accounts.forms import RegistrationForm, AuthenticationCustomForm
 
@@ -9,7 +11,7 @@ from app_accounts.forms import RegistrationForm, AuthenticationCustomForm
 def custom_proc(request):
 	"""
 	request object for every pages
-	"""		
+	"""	
 	return{
 		'request': request,
 	}
@@ -17,24 +19,41 @@ def custom_proc(request):
 
 def registration(request):
 	"""
-	data for render registration page
-	"""			
+	ajax refistration procedure
+	"""	
+	result = False		
+
 	form = RegistrationForm()
-	print(1111)
-	print(request.method)
 
 	if request.method == 'POST' and request.is_ajax():
-		print(22222)
 		form = RegistrationForm(request.POST)	
 		if form.is_valid():
-			print(33333)
-			new_user = form.save()
+			try:
+				new_user = form.save()
+			except:
+				pass
+			else:
+				result = True
+
+	data = {
+		'result': result,		
+	}
 			
-			return HttpResponseRedirect("/")
-		
-		
-	t = loader.get_template('page_registration.html')
-	c = RequestContext(request, {
-		'form': form, 
-	}, [custom_proc])	
-	return HttpResponse(t.render(c)) 
+	return HttpResponse(json.dumps(data), content_type='application/json')	
+			
+
+def ajax_username_check(request):
+	"""
+	ajax check username for registration form
+	return true - matched
+	return false - no matched
+	"""	
+
+	if request.method == 'POST' and request.is_ajax():
+		username = request.POST.get('username', '')
+		result = {'result': User.objects.filter(username=username).exists()}
+			
+	return HttpResponse(json.dumps(result), content_type='application/json')	
+
+
+

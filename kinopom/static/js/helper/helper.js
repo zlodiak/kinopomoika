@@ -54,43 +54,81 @@
 			password2.removeClass('shine');
 		};		
 
-		console.log(flag);
-		console.log($('#registrationForm input[name=csrfmiddlewaretoken]').val());
+		$.ajax({
+			url: "/accounts/ajax_username_check/",
+			type: 'POST',
+			dataType:"json",
+			data: {
+				"username": usernameVal,
+				"csrfmiddlewaretoken": $('#registrationForm input[name=csrfmiddlewaretoken]').val()
+			},
+			error: function(xhr, ajaxOptions, thrownError) {
+				//console.log(xhr.status);
+				//console.log(xhr.responseText);
+				//console.log(thrownError);					
+			},
+			success: function(data) {
+				//console.log(data.result);
 
-		if(!flag){
-			$.ajax({
-				url: "/accounts/registration/",
-				type: 'POST',
-				dataType:"json",
-				data: {
-					"username": usernameVal,
-					"email": emailVal,
-					"password1": password1Val,
-					"password2": password2Val,
-					"csrfmiddlewaretoken": $('#registrationForm input[name=csrfmiddlewaretoken]').val()
-				},
-				error: function() {
-					//alert('Ошибка получения запроса');
-				},
-				success: function(data) {
-					console.log('success');
-
-					username.val('');
-					email.val('');
-					password1.val('');
-					password2.val('');
-
-					$('#regModal').modal('hide');
-
-					$('#commonModal').text('Сообщение отправлено');
-					$('#commonModal').modal('show');
-
-					setTimeout(function(){
-						$('#commonModal').modal('hide');
-					}, 2000);	
+				if(data.result){
+					// ret true - matched, no reg
+					username.addClass('shine');
+					flag = true;
 				}
-			});		
-		};
+				else{
+					// ret true - no matched, ok reg
+					username.removeClass('shine');
+				}
+			},
+			complete: function(){
+				console.log(flag);
+
+				if(!flag){
+					console.log('create');
+					$.ajax({
+						url: "/accounts/registration/",
+						type: 'POST',
+						dataType:"json",
+						data: {
+							"username": usernameVal,
+							"email": emailVal,
+							"password1": password1Val,
+							"password2": password2Val,
+							"csrfmiddlewaretoken": $('#registrationForm input[name=csrfmiddlewaretoken]').val()
+						},
+						error: function(xhr, ajaxOptions, thrownError) {
+							//console.log(xhr.status);
+							//console.log(xhr.responseText);
+							//console.log(thrownError);					
+						},
+						success: function(data) {
+							//console.log('success');
+
+							username.val('');
+							email.val('');
+							password1.val('');
+							password2.val('');
+
+							$('#regModal').modal('hide');
+
+							$('#commonModalLabel').text('Регистрация завершена успешно');
+							$('#modalDialog').addClass('modal-sm');
+							$('#butCancel').addClass('hide');
+							$('#commonModal').modal('show');
+
+							setTimeout(function(){
+								$('#commonModal').modal('hide');
+							}, 2000);	
+						}
+					});		
+				}
+				else{
+					//console.log('no create');
+				};				
+			}
+		});	
+
+
 	});		
 
 
