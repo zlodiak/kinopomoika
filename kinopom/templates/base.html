@@ -3,6 +3,7 @@
 {% load menu_tags %}
 {% load sekizai_tags %}
 {% load tags_accounts %}
+{% load tags_kinopom %}
 <!DOCTYPE html>
 <html lang="ru">
     <head>
@@ -38,7 +39,7 @@
             </div>
 
             <div class="col-xs-5 auth_block clearfix">
-                {% part_auth_area request.user %}               
+                {% part_auth_area request.user request.user.is_authenticated %}               
             </div>            
         </div>
 
@@ -53,26 +54,8 @@
             </div>
         </div>
 
-        <!-- common modal -->
-        <div class="modal fade" id="commonModal" tabindex="-1" role="dialog" aria-labelledby="commonModalLabel" aria-hidden="true">
-            <div class="modal-dialog" id="modalDialog">
-                <div class="modal-content" id="modalContent">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                        
-                        <h4 class="modal-title" id="commonModalLabel">Modal title</h4>
-                    </div>
-
-                    <div class="modal-body"></div>
-
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default but_cancel" id="butCancel" data-dismiss="modal">Отменить</button>
-
-                        <button type="button" class="btn btn-primary but_ok" id="butOk" data-dismiss="modal">Ok</button>
-                    </div>
-                </div>
-            </div>
-        </div>        
+        <!-- common_modal window -->
+        {% part_common_modal %}   
 
         <!-- registration window -->
         {% part_reg_form %}

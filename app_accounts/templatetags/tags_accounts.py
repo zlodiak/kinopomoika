@@ -20,8 +20,8 @@ def part_auth_form():
 	}	
 
 @register.inclusion_tag("part_auth_area.html")
-def part_auth_area(user):
-	if user.is_authenticated:
+def part_auth_area(user, is_authenticated):
+	if is_authenticated:
 		guest_panel_class = 'hide'
 		user_panel_class = 'show'
 	else:
