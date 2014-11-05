@@ -32,35 +32,13 @@
     <body>
         {% cms_toolbar %}
 
-        <nav class="navbar navbar-default navbar-fixed-top hide" role="navigation">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#">Project name</a>
-                </div>
-
-                <div id="navbar" class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        {% show_menu 0 100 100 100 %}
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
         <div class="container search_area width1000">
-            <div class="col-xs-8">
+            <div class="col-xs-7">
                 dgdgdfgdfgfdgfd
             </div>
 
-            <div class="col-xs-4 auth_block">
-                <button class="btn btn-primary btn-sm pull-right" id="regButton">Зарегистрироваться</button>
-
-                <button class="btn btn-primary btn-sm pull-right" id="authButton">Войти</button>
+            <div class="col-xs-5 auth_block clearfix">
+                {% part_auth_area request.user %}               
             </div>            
         </div>
 
@@ -71,7 +49,7 @@
 
         <div class="footer footer_area width1000">
             <div class="container">
-                <p class="text-muted">Place sticky footer content here.</p>
+                <p class="text-muted">Place sticky footer content here.{{ request.user.is_authenticated }}</p>
             </div>
         </div>
 
@@ -89,6 +67,7 @@
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default but_cancel" id="butCancel" data-dismiss="modal">Отменить</button>
+
                         <button type="button" class="btn btn-primary but_ok" id="butOk" data-dismiss="modal">Ok</button>
                     </div>
                 </div>

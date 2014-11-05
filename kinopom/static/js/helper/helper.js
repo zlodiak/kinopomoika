@@ -1,8 +1,54 @@
 (function (){
+	// -------------------------------------------------------------------------------------- hover user menu
+/*	$('#userNameMark')
+	.on('mouseover', function(){
+		console.log('meny');
+		$('#userMenu').show(5000);
+	})
+	.on('mouseleave', function(){
+		console.log('lea');
+		$('#userMenu').hide(5000);
+	});*/
+
 	// -------------------------------------------------------------------------------------- auth button click
 	$('#authButton').on('click', function(event){	
 		$('#authModal').modal('show');			
 	});
+
+    $.validator.setDefaults({
+        submitHandler: function() {
+        	console.log('com');
+        }
+    });
+
+    $().ready(function() {
+        $("#authForm").validate({
+            rules: {
+                username: {
+                    required: true,
+                    maxlength: 30,
+                    minlength: 3
+                },
+                password: {
+                    required: true,
+                    maxlength: 30,
+                    minlength: 6
+                }
+            },
+            messages: {
+                username: {
+                    required: "Введите имя",
+                    minlength: "Введите не менее 3 символов",
+                    maxlength: "Введите не более 30 символов"
+                },
+                password: {
+                    required: "Введите пароль",
+                    minlength: "Введите не менее 6 символов",
+                    maxlength: "Введите не более 30 символов"
+                }
+            }
+        });
+    });		
 
 	// -------------------------------------------------------------------------------------- reg button click
 	$('#regButton').on('click', function(event){	
@@ -11,6 +57,7 @@
 
     $.validator.setDefaults({
         submitHandler: function() {
+        	console.log('com2');
             var flag = false,
                 username = $('#id_username'),
                 email = $('#id_email'),
@@ -117,18 +164,18 @@
                 password1: {
                     required: true,
                     maxlength: 30,
-                    minlength: 3
+                    minlength: 6
                 },
                 password2: {
                     required: true,
                     maxlength: 30,
-                    minlength: 3,
+                    minlength: 6,
                     equalTo: "#id_password1"
                 },
                 email: {
                     required: true,
                     maxlength: 30,
-                    minlength: 3,                            
+                    minlength: 6,                            
                     email: true
                 }
             },

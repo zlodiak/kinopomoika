@@ -76,6 +76,10 @@ textarea{
 	display: none !important;
 }
 
+.show{
+	display: inline-block !important;
+}
+
 .wrapped{
 	width: 940px;
 	margin: 0 auto;
@@ -103,6 +107,10 @@ input:-moz-placeholder {
 
 
 /*************************************************************************************************************** GLOBAL_layout */
+body > .container.search_area{
+	padding-top: 20px;
+}
+
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
@@ -146,12 +154,68 @@ code {
 
 /*************************************************************************************************************** GLOBAL_blocks : auth_block */
 .auth_block{
+	text-align: right;
 
+	height: 60px;
+	
 }
 
-	.auth_block .btn{
-		margin-left: 5px;
+	.auth_block .panelka{
+		display: inline-block;
+		float: right;
+		height: 60px;
+		
 	}
+
+	.auth_block .guest_panel{
+
+	}
+
+	.auth_block .user_panel{
+		
+	}		
+
+		.auth_block .username_mark{
+			max-width: 300px;
+			display: inline-block;
+			float: left;
+			padding-top: 5px;
+			position: relative;
+			cursor: default;
+
+			vertical-align: middle;
+		}
+
+			.auth_block .username_mark .username_mark_inner{
+				min-width: 145px;
+				display: inline-block;
+				margin-bottom: 5px;
+			}
+
+			.auth_block .username_mark:hover .user_menu{
+				opacity: 1;
+				transition: 2s;
+
+			}
+
+			.auth_block .username_mark .user_menu{
+				opacity: 0;
+				transition: 2s;
+				position: absolute;
+				top: 100%;
+				left: 0px;
+				min-width: 145px;
+
+				text-align: left;
+			}		
+
+				.auth_block .username_mark .user_menu .link{
+					display: block;
+				}
+
+		.auth_block .btn{
+			margin-left: 5px;
+		}
 
 /*************************************************************************************************************** GLOBAL_blocks : common_form */
 .common_form{
