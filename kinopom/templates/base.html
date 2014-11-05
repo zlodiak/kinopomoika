@@ -120,6 +120,8 @@
                         password2 = $('#id_password2'),                        
                         usernameVal = $.trim(username.val()),
                         emailVal = $.trim(email.val()),
+                        password1Val = $.trim(password1.val()),
+                        password2Val = $.trim(password2.val()),                        
                         csrfmiddlewaretokenVal = $('#registrationForm input[name=csrfmiddlewaretoken]').val();
 
                     $.ajax({
@@ -128,6 +130,7 @@
                         dataType:"json",
                         data: {
                             "username": usernameVal,
+                            "email": emailVal,
                             "csrfmiddlewaretoken": csrfmiddlewaretokenVal
                         },
                         error: function(xhr, ajaxOptions, thrownError) {
@@ -138,7 +141,7 @@
                         success: function(data) {
                             //console.log(data.result);
 
-                            if(data.result){
+                            if(data.username){
                                 // ret true - matched, no reg
                                 username.addClass('shine');
                                 flag = true;
@@ -147,10 +150,56 @@
                                 // ret true - no matched, ok reg
                                 username.removeClass('shine');
                             }
+
+
+                            if(data.email){
+                                // ret true - matched, no reg
+                                email.addClass('shine');
+                                flag = true;
+                            }
+                            else{
+                                // ret true - no matched, ok reg
+                                email.removeClass('shine');
+                            }                            
                         },
                         complete: function(){
                             if(!flag){
-                                alert('compl');
+                                $.ajax({
+                                    url: "/accounts/registration/",
+                                    type: 'POST',
+                                    dataType:"json",
+                                    data: {
+                                        "username": usernameVal,
+                                        "email": emailVal,
+                                        "password1": password1Val,
+                                        "password2": password2Val,
+                                        "csrfmiddlewaretoken": $('#registrationForm input[name=csrfmiddlewaretoken]').val()
+                                    },
+                                    error: function(xhr, ajaxOptions, thrownError) {
+                                        //console.log(xhr.status);
+                                        //console.log(xhr.responseText);
+                                        //console.log(thrownError);                 
+                                    },
+                                    success: function(data) {
+                                        //console.log('success');
+
+                                        username.val('');
+                                        email.val('');
+                                        password1.val('');
+                                        password2.val('');
+
+                                        $('#regModal').modal('hide');
+
+                                        $('#commonModalLabel').text('Регистрация завершена успешно');
+                                        $('#modalDialog').addClass('modal-sm');
+                                        $('#butCancel').addClass('hide');
+                                        $('#commonModal').modal('show');
+
+                                        setTimeout(function(){
+                                            $('#commonModal').modal('hide');
+                                        }, 2000);   
+                                    }
+                                }); 
                             }
                         }
                     });

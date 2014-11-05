@@ -51,7 +51,11 @@ def ajax_reg_form_check(request):
 
 	if request.method == 'POST' and request.is_ajax():
 		username = request.POST.get('username', '')
-		result = {'result': User.objects.filter(username=username).exists()}
+		email = request.POST.get('email', '')
+		result = {
+			'username': User.objects.filter(username=username).exists(),
+			'email': User.objects.filter(email=email).exists()
+		}
 			
 	return HttpResponse(json.dumps(result), content_type='application/json')	
 
