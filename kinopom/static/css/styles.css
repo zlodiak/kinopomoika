@@ -161,6 +161,7 @@ code {
 	.common_form .cell{
 		padding-bottom: 12px;
 		overflow: hidden;
+		position: relative;
 	}
 	
 		.common_form .cell a{
@@ -248,18 +249,20 @@ code {
 			margin-left: 176px;
 		}	
 
-		.common_form .cell .errorlist{
+		.common_form .cell label.error{
 			color: red;
 			font: 12px arial, sans-serif;
 			
-			padding-top: 10px;
-			padding-left: 12px;
-			float: left;
-			width: 300px;
+			position: absolute;
+			top: 25px;
+			left: 0px;
+			padding-left: 7px;
+			width: 215px;
+			z-index: 300;
 		}
 		
-		.common_form  .textarea_message .errorlist{
-			padding-left: 177px;
+		.common_form  .textarea_message .error{
+
 		}
 		
 		.common_form .cell .image_outer{

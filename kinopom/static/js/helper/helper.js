@@ -9,6 +9,156 @@
 		$('#regModal').modal('show');			
 	});	
 
+    $.validator.setDefaults({
+        submitHandler: function() {
+            var flag = false,
+                username = $('#id_username'),
+                email = $('#id_email'),
+                password1 = $('#id_password1'),
+                password2 = $('#id_password2'),                        
+                usernameVal = $.trim(username.val()),
+                emailVal = $.trim(email.val()),
+                password1Val = $.trim(password1.val()),
+                password2Val = $.trim(password2.val()),                        
+                csrfmiddlewaretokenVal = $('#registrationForm input[name=csrfmiddlewaretoken]').val();
+
+            $.ajax({
+                url: "/accounts/ajax_reg_form_check/",
+                type: 'POST',
+                dataType:"json",
+                data: {
+                    "username": usernameVal,
+                    "email": emailVal,
+                    "csrfmiddlewaretoken": csrfmiddlewaretokenVal
+                },
+                error: function(xhr, ajaxOptions, thrownError) {
+                    //console.log(xhr.status);
+                    //console.log(xhr.responseText);
+                    //console.log(thrownError);                 
+                },
+                success: function(data) {
+                    //console.log(data.result);
+
+                    if(data.username){
+                        // ret true - matched, no reg
+                        //username.addClass('shine');
+                        $('#id_username').after('<label class="error">Имя занято</label>');
+                        flag = true;
+                    }
+                    else{
+                        // ret true - no matched, ok reg
+                        //username.removeClass('shine');
+                        $('#id_username .error').remove();
+                    }
+
+
+                    if(data.email){
+                        // ret true - matched, no reg
+                        $('#id_email').after('<label class="error">Имя занято</label>');
+                        flag = true;
+                    }
+                    else{
+                        // ret true - no matched, ok reg
+                        $('#id_email .error').remove();
+                    }                            
+                },
+                complete: function(){
+                    if(!flag){
+                        $.ajax({
+                            url: "/accounts/registration/",
+                            type: 'POST',
+                            dataType:"json",
+                            data: {
+                                "username": usernameVal,
+                                "email": emailVal,
+                                "password1": password1Val,
+                                "password2": password2Val,
+                                "csrfmiddlewaretoken": $('#registrationForm input[name=csrfmiddlewaretoken]').val()
+                            },
+                            error: function(xhr, ajaxOptions, thrownError) {
+                                //console.log(xhr.status);
+                                //console.log(xhr.responseText);
+                                //console.log(thrownError);                 
+                            },
+                            success: function(data) {
+                                //console.log('success');
+
+                                username.val('');
+                                email.val('');
+                                password1.val('');
+                                password2.val('');
+
+                                $('#regModal').modal('hide');
+
+                                $('#commonModalLabel').text('Регистрация завершена успешно');
+                                $('#modalDialog').addClass('modal-sm');
+                                $('#butCancel').addClass('hide');
+                                $('#commonModal').modal('show');
+
+                                setTimeout(function(){
+                                    $('#commonModal').modal('hide');
+                                }, 2000);   
+                            }
+                        }); 
+                    }
+                }
+            });
+        }
+    });
+
+    $().ready(function() {
+        $("#registrationForm").validate({
+            rules: {
+                username: {
+                    required: true,
+                    maxlength: 30,
+                    minlength: 3
+                },
+                password1: {
+                    required: true,
+                    maxlength: 30,
+                    minlength: 3
+                },
+                password2: {
+                    required: true,
+                    maxlength: 30,
+                    minlength: 3,
+                    equalTo: "#id_password1"
+                },
+                email: {
+                    required: true,
+                    maxlength: 30,
+                    minlength: 3,                            
+                    email: true
+                }
+            },
+            messages: {
+                username: {
+                    required: "Введите имя",
+                    minlength: "Введите не менее 3 символов",
+                    maxlength: "Введите не более 30 символов"
+                },
+                password1: {
+                    required: "Введите пароль",
+                    minlength: "Введите не менее 6 символов",
+                    maxlength: "Введите не более 30 символов"
+                },
+                password2: {
+                    required: "Введите пароль",
+                    minlength: "Введите не менее 6 символов",
+                    maxlength: "Введите не более 30 символов",
+                    equalTo: "Пароли должны совпадать"
+                },
+                email: {
+                    required: "Введите email",
+                    minlength: "Введите не менее 6 символов",
+                    maxlength: "Введите не более 30 символов",                 
+                    email: "Введите корректный email"                    
+                }
+            }
+        });
+    });	
+
 /*	$('#registrationSubmit').on('click', function(e){
 		var	flag = false,
 			username = $('#id_username'),
