@@ -107,6 +107,112 @@
         <!-- Bootstrap -->
         <script src="{% static 'js/bootstrap/bootstrap.min.js' %}"></script>         
 
+        <!-- validate -->
+        <script src="{% static 'js/jquery_validate/jquery.validate.min.js' %}"></script>                
+
+        <script>
+            $.validator.setDefaults({
+                submitHandler: function() {
+                    var flag = false,
+                        username = $('#id_username'),
+                        email = $('#id_email'),
+                        password1 = $('#id_password1'),
+                        password2 = $('#id_password2'),                        
+                        usernameVal = $.trim(username.val()),
+                        emailVal = $.trim(email.val()),
+                        csrfmiddlewaretokenVal = $('#registrationForm input[name=csrfmiddlewaretoken]').val();
+
+                    $.ajax({
+                        url: "/accounts/ajax_reg_form_check/",
+                        type: 'POST',
+                        dataType:"json",
+                        data: {
+                            "username": usernameVal,
+                            "csrfmiddlewaretoken": csrfmiddlewaretokenVal
+                        },
+                        error: function(xhr, ajaxOptions, thrownError) {
+                            //console.log(xhr.status);
+                            //console.log(xhr.responseText);
+                            //console.log(thrownError);                 
+                        },
+                        success: function(data) {
+                            //console.log(data.result);
+
+                            if(data.result){
+                                // ret true - matched, no reg
+                                username.addClass('shine');
+                                flag = true;
+                            }
+                            else{
+                                // ret true - no matched, ok reg
+                                username.removeClass('shine');
+                            }
+                        },
+                        complete: function(){
+                            if(!flag){
+                                alert('compl');
+                            }
+                        }
+                    });
+
+                    
+                }
+            });
+
+            $().ready(function() {
+                // validate signup form on keyup and submit
+                $("#registrationForm").validate({
+                    rules: {
+                        username: {
+                            required: true,
+                            maxlength: 30,
+                            minlength: 3
+                        },
+                        password1: {
+                            required: true,
+                            maxlength: 30,
+                            minlength: 3
+                        },
+                        password2: {
+                            required: true,
+                            maxlength: 30,
+                            minlength: 3,
+                            equalTo: "#id_password1"
+                        },
+                        email: {
+                            required: true,
+                            maxlength: 30,
+                            minlength: 3,                            
+                            email: true
+                        }
+                    },
+                    messages: {
+                        username: {
+                            required: "Please enter a username",
+                            minlength: "Your username must consist of at least 3 characters",
+                            maxlength: "Your username must consist of at least 30 characters"
+                        },
+                        password: {
+                            required: "Please provide a password",
+                            minlength: "Your username must consist of at least 6 characters",
+                            maxlength: "Your username must consist of at least 30 characters"
+                        },
+                        confirm_password: {
+                            required: "Please provide a password",
+                            minlength: "Your username must consist of at least 6 characters",
+                            maxlength: "Your username must consist of at least 30 characters",
+                            equalTo: "Please enter the same password as above"
+                        },
+                        email: {
+                            required: "Please enter a valid email address",
+                            minlength: "Your username must consist of at least 6 characters",
+                            maxlength: "Your username must consist of at least 30 characters"                        
+                        }
+                    }
+                });
+            });
+        </script>
+
         <!-- helper -->  
         <script src="{% static "js/helper/helper.js" %}"></script>       
 

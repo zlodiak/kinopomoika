@@ -9,7 +9,7 @@
 		$('#regModal').modal('show');			
 	});	
 
-	$('#registrationSubmit').on('click', function(e){
+/*	$('#registrationSubmit').on('click', function(e){
 		var	flag = false,
 			username = $('#id_username'),
 			email = $('#id_email'),
@@ -129,7 +129,7 @@
 		});	
 
 
-	});		
+	});		*/
 
 
 })();

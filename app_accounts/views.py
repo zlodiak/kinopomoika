@@ -42,7 +42,7 @@ def registration(request):
 	return HttpResponse(json.dumps(data), content_type='application/json')	
 			
 
-def ajax_username_check(request):
+def ajax_reg_form_check(request):
 	"""
 	ajax check username for registration form
 	return true - matched
