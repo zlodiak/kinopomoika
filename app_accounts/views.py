@@ -45,9 +45,8 @@ def registration(request):
 def ajax_reg_form_check(request):
 	"""
 	ajax check username for registration form
-	return true - matched
-	return false - no matched
 	"""	
+	result = {}
 
 	if request.method == 'POST' and request.is_ajax():
 		username = request.POST.get('username', '')
@@ -72,6 +71,40 @@ def logout(request):
 		pass
 	else:
 		result = True
+
+	data = {
+		'result': result,		
+	}
+			
+	return HttpResponse(json.dumps(data), content_type='application/json')	
+
+
+def authentication(request):
+	"""
+	authentication procedure
+	return true - auth ok
+	return false - auth failed
+	"""		
+	result = False	
+
+	if request.method == 'POST' and request.is_ajax():
+		form = AuthenticationCustomForm(data=request.POST)		
+		username = request.POST.get('username', '')
+		password = request.POST.get('password', '')
+
+		if form.is_valid():		
+			try:
+				user = auth.authenticate(username=username, password=password)
+			except:
+				pass
+			else:
+				if user is not None and user.is_active:
+					try:
+						auth.login(request, user)	
+					except:
+						pass
+					else:													
+						result = True
 
 	data = {
 		'result': result,		

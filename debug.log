@@ -1355,3 +1355,185 @@ Forbidden (CSRF token missing or incorrect.): /accounts/logout/
 Forbidden (CSRF token missing or incorrect.): /accounts/logout/
 Forbidden (CSRF token missing or incorrect.): /accounts/logout/
 Forbidden (CSRF token missing or incorrect.): /accounts/logout/
+Internal Server Error: /accounts/authentication/
+Traceback (most recent call last):
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom/app_accounts/views.py", line 106, in authentication
+    return HttpResponse(json.dumps(data), content_type='application/json')
+UnboundLocalError: local variable 'data' referenced before assignment
+Internal Server Error: /accounts/authentication/
+Traceback (most recent call last):
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom/app_accounts/views.py", line 106, in authentication
+    return HttpResponse(json.dumps(data), content_type='application/json')
+UnboundLocalError: local variable 'data' referenced before assignment
+Internal Server Error: /accounts/authentication/
+Traceback (most recent call last):
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom/app_accounts/views.py", line 106, in authentication
+    return HttpResponse(json.dumps(data), content_type='application/json')
+UnboundLocalError: local variable 'data' referenced before assignment
+Internal Server Error: /accounts/authentication/
+Traceback (most recent call last):
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom/app_accounts/views.py", line 106, in authentication
+    return HttpResponse(json.dumps(data), content_type='application/json')
+UnboundLocalError: local variable 'data' referenced before assignment
+Internal Server Error: /accounts/authentication/
+Traceback (most recent call last):
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom/app_accounts/views.py", line 106, in authentication
+    return HttpResponse(json.dumps(data), content_type='application/json')
+UnboundLocalError: local variable 'data' referenced before assignment
+Internal Server Error: /accounts/authentication/
+Traceback (most recent call last):
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom/app_accounts/views.py", line 106, in authentication
+    return HttpResponse(json.dumps(data), content_type='application/json')
+UnboundLocalError: local variable 'data' referenced before assignment
+Internal Server Error: /accounts/authentication/
+Traceback (most recent call last):
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom/app_accounts/views.py", line 106, in authentication
+    return HttpResponse(json.dumps(data), content_type='application/json')
+UnboundLocalError: local variable 'data' referenced before assignment
+Internal Server Error: /accounts/authentication/
+Traceback (most recent call last):
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom/app_accounts/views.py", line 106, in authentication
+    return HttpResponse(json.dumps(data), content_type='application/json')
+UnboundLocalError: local variable 'data' referenced before assignment
+Internal Server Error: /accounts/authentication/
+Traceback (most recent call last):
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom/app_accounts/views.py", line 106, in authentication
+    return HttpResponse(json.dumps(data), content_type='application/json')
+UnboundLocalError: local variable 'data' referenced before assignment
+Internal Server Error: /accounts/authentication/
+Traceback (most recent call last):
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom/app_accounts/views.py", line 106, in authentication
+    return HttpResponse(json.dumps(data), content_type='application/json')
+UnboundLocalError: local variable 'data' referenced before assignment
+Internal Server Error: /accounts/authentication/
+Traceback (most recent call last):
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom/app_accounts/views.py", line 106, in authentication
+    return HttpResponse(json.dumps(data), content_type='application/json')
+UnboundLocalError: local variable 'data' referenced before assignment
+Internal Server Error: /accounts/authentication/
+Traceback (most recent call last):
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom/app_accounts/views.py", line 106, in authentication
+    return HttpResponse(json.dumps(data), content_type='application/json')
+UnboundLocalError: local variable 'data' referenced before assignment
+Internal Server Error: /accounts/authentication/
+Traceback (most recent call last):
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom/app_accounts/views.py", line 106, in authentication
+    return HttpResponse(json.dumps(data), content_type='application/json')
+UnboundLocalError: local variable 'data' referenced before assignment
+Internal Server Error: /accounts/authentication/
+Traceback (most recent call last):
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom/app_accounts/views.py", line 106, in authentication
+    return HttpResponse(json.dumps(data), content_type='application/json')
+UnboundLocalError: local variable 'data' referenced before assignment
+Internal Server Error: /accounts/authentication/
+Traceback (most recent call last):
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom/app_accounts/views.py", line 106, in authentication
+    return HttpResponse(json.dumps(data), content_type='application/json')
+UnboundLocalError: local variable 'data' referenced before assignment
+Internal Server Error: /accounts/authentication/
+Traceback (most recent call last):
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom/app_accounts/views.py", line 106, in authentication
+    return HttpResponse(json.dumps(data), content_type='application/json')
+UnboundLocalError: local variable 'data' referenced before assignment
+Internal Server Error: /accounts/authentication/
+Traceback (most recent call last):
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom/app_accounts/views.py", line 106, in authentication
+    return HttpResponse(json.dumps(data), content_type='application/json')
+UnboundLocalError: local variable 'data' referenced before assignment
+Internal Server Error: /accounts/authentication/
+Traceback (most recent call last):
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom/app_accounts/views.py", line 106, in authentication
+    return HttpResponse(json.dumps(data), content_type='application/json')
+UnboundLocalError: local variable 'data' referenced before assignment
+Internal Server Error: /accounts/authentication/
+Traceback (most recent call last):
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom/app_accounts/views.py", line 106, in authentication
+    return HttpResponse(json.dumps(data), content_type='application/json')
+UnboundLocalError: local variable 'data' referenced before assignment
+Not Found: /favicon.ico/
+Not Found: /favicon.ico/
+Internal Server Error: /accounts/authentication/
+Traceback (most recent call last):
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom/app_accounts/views.py", line 106, in authentication
+    return HttpResponse(json.dumps(data), content_type='application/json')
+UnboundLocalError: local variable 'data' referenced before assignment
+Internal Server Error: /accounts/authentication/
+Traceback (most recent call last):
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom/app_accounts/views.py", line 106, in authentication
+    return HttpResponse(json.dumps(data), content_type='application/json')
+UnboundLocalError: local variable 'data' referenced before assignment
+Internal Server Error: /accounts/authentication/
+Traceback (most recent call last):
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom/app_accounts/views.py", line 106, in authentication
+    return HttpResponse(json.dumps(data), content_type='application/json')
+UnboundLocalError: local variable 'data' referenced before assignment
+Not Found: /favicon.ico/
+Not Found: /favicon.ico/
+Internal Server Error: /accounts/authentication/
+Traceback (most recent call last):
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom/app_accounts/views.py", line 104, in authentication
+    return HttpResponse(json.dumps(data), content_type='application/json')
+UnboundLocalError: local variable 'data' referenced before assignment
+Forbidden (CSRF token missing or incorrect.): /accounts/logout/
+Forbidden (CSRF token missing or incorrect.): /accounts/logout/
+Forbidden (CSRF token missing or incorrect.): /accounts/logout/
+Forbidden (CSRF token missing or incorrect.): /accounts/logout/
+Forbidden (CSRF token missing or incorrect.): /accounts/logout/
+Forbidden (CSRF token missing or incorrect.): /accounts/logout/
+Forbidden (CSRF token missing or incorrect.): /accounts/logout/
+Forbidden (CSRF token missing or incorrect.): /accounts/logout/
+Forbidden (CSRF token missing or incorrect.): /accounts/logout/
+Forbidden (CSRF token missing or incorrect.): /accounts/logout/
+Forbidden (CSRF token missing or incorrect.): /accounts/logout/
+Forbidden (CSRF token missing or incorrect.): /accounts/logout/
+Forbidden (CSRF token missing or incorrect.): /accounts/logout/
+Forbidden (CSRF token missing or incorrect.): /accounts/logout/
+Forbidden (CSRF token missing or incorrect.): /accounts/logout/
+Forbidden (CSRF token missing or incorrect.): /accounts/logout/
+Forbidden (CSRF token missing or incorrect.): /accounts/logout/

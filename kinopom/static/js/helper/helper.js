@@ -11,11 +11,9 @@
             success: function(data) {
                 if(data.result){
                 	$('#regModal').modal('hide');
-                	
-                	$('#guestPanel').addClass('show');
-                	$('#guestPanel').removeClass('hide');
-                	$('#userPanel').addClass('hide');
-                	$('#userPanel').removeClass('show');
+
+                	$('#guestPanel').addClass('show').removeClass('hide');
+                	$('#userPanel').addClass('hide').removeClass('show');
 
 	                $('#commonModalLabel').text('Вы вышли');
 	                $('#modalDialog').addClass('modal-sm');
@@ -25,36 +23,73 @@
 	                setTimeout(function(){
 	                    $('#commonModal').modal('hide');
 	                }, 2000); 
-                }  
+                }
             }
         }); 		
 	});
-
-
-	// -------------------------------------------------------------------------------------- hover user menu
-/*	$('#userNameMark')
-	.on('mouseover', function(){
-		console.log('meny');
-		$('#userMenu').show(5000);
-	})
-	.on('mouseleave', function(){
-		console.log('lea');
-		$('#userMenu').hide(5000);
-	});*/
 
 	// -------------------------------------------------------------------------------------- auth button click
 	$('#authButton').on('click', function(event){	
 		$('#authModal').modal('show');			
 	});
 
-    $.validator.setDefaults({
-        submitHandler: function() {
-        	console.log('com');
-        }
-    });
-
-    $().ready(function() {
+    //$().ready(function() {
         $("#authForm").validate({
+	        submitHandler: function(){
+ 	            var flag = false,
+	                username = $('#authForm .auth_username input'),
+	                password = $('#authForm .auth_password input'),                       
+	                usernameVal = $.trim(username.val()),
+	                passwordVal = $.trim(password.val()),                     
+	                csrfmiddlewaretokenVal = $('#authForm input[name=csrfmiddlewaretoken]').val();
+
+	            $.ajax({
+	                url: "/accounts/authentication/",
+	                type: 'POST',
+	                dataType:"json",
+	                data: {
+	                    "username": usernameVal,
+	                    "password": passwordVal,
+	                    "csrfmiddlewaretoken": csrfmiddlewaretokenVal
+	                },
+	                error: function(xhr, ajaxOptions, thrownError) {
+	                    //console.log(xhr.status);
+	                    //console.log(xhr.responseText);
+	                    //console.log(thrownError);                 
+	                },
+	                success: function(data) {
+	                    username.val('');
+	                    password.val('');
+
+	                	if(data.result){
+		                    $('#authModal').modal('hide');
+
+		                    $('#commonModalLabel').text('Вы авторизовались');
+		                    $('#modalDialog').addClass('modal-sm');
+		                    $('#butCancel').addClass('hide');
+		                    $('#commonModal').modal('show');
+
+		                	$('#guestPanel').addClass('hide').removeClass('show');
+		                	$('#userPanel').addClass('show').removeClass('hide');
+
+		                    setTimeout(function(){
+		                        $('#commonModal').modal('hide');
+		                    }, 2000); 
+	                    }else{
+		                    $('#authModal').modal('hide');
+
+		                    $('#commonModalLabel').text('Не верные реквизиты для авторизации');
+		                    $('#modalDialog').addClass('modal-sm');
+		                    $('#butCancel').addClass('hide');
+		                    $('#commonModal').modal('show');
+
+		                    setTimeout(function(){
+		                        $('#commonModal').modal('hide');
+		                    }, 2000); 
+	                    };  
+	                }
+	            });
+	        },
             rules: {
                 username: {
                     required: true,
@@ -80,16 +115,15 @@
                 }
             }
         });
-    });		
+    //});		
 
 	// -------------------------------------------------------------------------------------- reg button click
 	$('#regButton').on('click', function(event){	
 		$('#regModal').modal('show');			
 	});	
 
-    $.validator.setDefaults({
+    $("#registrationForm").validate({
         submitHandler: function() {
-        	console.log('com2');
             var flag = false,
                 username = $('#id_username'),
                 email = $('#id_email'),
@@ -169,10 +203,10 @@
 
                                 $('#regModal').modal('hide');
 
-                                $('#commonModalLabel').text('Регистрация завершена успешно');
+                                $('#commonModalLabel').text('Регистрация завершена');
                                 $('#modalDialog').addClass('modal-sm');
                                 $('#butCancel').addClass('hide');
-                                $('#commonModal').modal('show');
+                                $('#commonModal').modal('show');		                                
 
                                 setTimeout(function(){
                                     $('#commonModal').modal('hide');
@@ -182,61 +216,56 @@
                     }
                 }
             });
+        },        	
+        rules: {
+            username: {
+                required: true,
+                maxlength: 30,
+                minlength: 3
+            },
+            password1: {
+                required: true,
+                maxlength: 30,
+                minlength: 6
+            },
+            password2: {
+                required: true,
+                maxlength: 30,
+                minlength: 6,
+                equalTo: "#id_password1"
+            },
+            email: {
+                required: true,
+                maxlength: 30,
+                minlength: 6,                            
+                email: true
+            }
+        },
+        messages: {
+            username: {
+                required: "Введите имя",
+                minlength: "Введите не менее 3 символов",
+                maxlength: "Введите не более 30 символов"
+            },
+            password1: {
+                required: "Введите пароль",
+                minlength: "Введите не менее 6 символов",
+                maxlength: "Введите не более 30 символов"
+            },
+            password2: {
+                required: "Введите пароль",
+                minlength: "Введите не менее 6 символов",
+                maxlength: "Введите не более 30 символов",
+                equalTo: "Пароли должны совпадать"
+            },
+            email: {
+                required: "Введите email",
+                minlength: "Введите не менее 6 символов",
+                maxlength: "Введите не более 30 символов",                 
+                email: "Введите корректный email"                    
+            }
         }
     });
-
-    $().ready(function() {
-        $("#registrationForm").validate({
-            rules: {
-                username: {
-                    required: true,
-                    maxlength: 30,
-                    minlength: 3
-                },
-                password1: {
-                    required: true,
-                    maxlength: 30,
-                    minlength: 6
-                },
-                password2: {
-                    required: true,
-                    maxlength: 30,
-                    minlength: 6,
-                    equalTo: "#id_password1"
-                },
-                email: {
-                    required: true,
-                    maxlength: 30,
-                    minlength: 6,                            
-                    email: true
-                }
-            },
-            messages: {
-                username: {
-                    required: "Введите имя",
-                    minlength: "Введите не менее 3 символов",
-                    maxlength: "Введите не более 30 символов"
-                },
-                password1: {
-                    required: "Введите пароль",
-                    minlength: "Введите не менее 6 символов",
-                    maxlength: "Введите не более 30 символов"
-                },
-                password2: {
-                    required: "Введите пароль",
-                    minlength: "Введите не менее 6 символов",
-                    maxlength: "Введите не более 30 символов",
-                    equalTo: "Пароли должны совпадать"
-                },
-                email: {
-                    required: "Введите email",
-                    minlength: "Введите не менее 6 символов",
-                    maxlength: "Введите не более 30 символов",                 
-                    email: "Введите корректный email"                    
-                }
-            }
-        });
-    });	
 
 /*	$('#registrationSubmit').on('click', function(e){
 		var	flag = false,
