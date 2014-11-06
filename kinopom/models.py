@@ -4,9 +4,16 @@ from django.contrib.auth.models import User
 from datetime import datetime  
 
 class Entry(models.Model):
-	user = models.ForeignKey(User, verbose_name=u"пользователь", blank=True, null=True)
-	title = models.CharField(u"заголовок", max_length=100)
-
+	user = models.ForeignKey(
+		User, 
+		verbose_name=u"пользователь", 
+		blank=True, 
+		null=True,
+	)
+	title = models.CharField(
+		u"заголовок", 
+		max_length=100,
+	)
 	description = models.TextField(
 		'Описание',
 		max_length=50000, 

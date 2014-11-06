@@ -5,6 +5,11 @@ from django.forms import ModelForm
 
 
 class RegistrationForm(UserCreationForm):	
+	is_staff = forms.BooleanField(
+		initial=True,
+		widget=forms.HiddenInput(),
+	)	
+
 	class Meta:
 		model = User
 		fields = (  
@@ -12,6 +17,7 @@ class RegistrationForm(UserCreationForm):
 			'email',    
 			'password1', 
 			'password2',
+			'is_staff',
 		)
 
 	def clean_password1(self):

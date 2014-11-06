@@ -78,7 +78,8 @@
 		                        $('#commonModal').modal('hide');
                                 location.reload();
 		                    }, 1000); 
-	                    }else{
+	                    }
+                        else{
 		                    $('#authModal').modal('hide');
 
 		                    $('#commonModalLabel').text('Не верные реквизиты для авторизации');
@@ -132,10 +133,12 @@
                 email = $('#id_email'),
                 password1 = $('#id_password1'),
                 password2 = $('#id_password2'),                        
+                is_staff = $('#id_is_staff'),                        
                 usernameVal = $.trim(username.val()),
                 emailVal = $.trim(email.val()),
                 password1Val = $.trim(password1.val()),
                 password2Val = $.trim(password2.val()),                        
+                is_staffVal = $.trim(is_staff.val()),                        
                 csrfmiddlewaretokenVal = $('#registrationForm input[name=csrfmiddlewaretoken]').val();
 
             $.ajax({
@@ -189,6 +192,7 @@
                                 "email": emailVal,
                                 "password1": password1Val,
                                 "password2": password2Val,
+                                "is_staff": is_staffVal,
                                 "csrfmiddlewaretoken": $('#registrationForm input[name=csrfmiddlewaretoken]').val()
                             },
                             error: function(xhr, ajaxOptions, thrownError) {
@@ -197,8 +201,6 @@
                                 //console.log(thrownError);                 
                             },
                             success: function(data) {
-                                //console.log('success');
-
                                 username.val('');
                                 email.val('');
                                 password1.val('');
@@ -206,14 +208,20 @@
 
                                 $('#regModal').modal('hide');
 
-                                $('#commonModalLabel').text('Регистрация завершена');
+                                if(data.result){
+                                    $('#commonModalLabel').text('Регистрация завершена');
+                                }
+                                else{
+                                    $('#commonModalLabel').text('Ошибка регистрации');
+                                };
+
                                 $('#modalDialog').addClass('modal-sm');
                                 $('#butCancel').addClass('hide');
-                                $('#commonModal').modal('show');		                                
+                                $('#commonModal').modal('show');                                
 
                                 setTimeout(function(){
                                     $('#commonModal').modal('hide');
-                                }, 1000);   
+                                }, 1000); 
                             }
                         }); 
                     }
