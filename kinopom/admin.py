@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.contrib import admin
 from kinopom.models import Entry
+from django.contrib.auth.models import User
 
 class EntryAdmin(admin.ModelAdmin):
    user_fieldsets = (
@@ -10,11 +11,11 @@ class EntryAdmin(admin.ModelAdmin):
       }),
    )
 
-   list_display = ['title', 'description', 'user', 'is_active', ]    #list for admin 
+   list_display = ['title', 'is_active', ]    #list for admin 
    raw_id_list_displayfields = ('user', 'description',)              
    search_fields = ['title', 'user__username',]
    #fields = ['title', 'description', 'views', ]       #edit item . default - all
-   user_fieldsets = ((u'Видео', {'fields': ('title', 'description', 'is_active', )}), )   #list for  auth_user
+   user_fieldsets = ((u'Видео', {'fields': ('title', 'video_url', 'description', 'is_active', )}), )   #list for  auth_user
 
    def save_model(self, request, obj, form, change):
       if form.is_valid():
@@ -57,3 +58,5 @@ class EntryAdmin(admin.ModelAdmin):
       return self.user_fieldsets
 
 admin.site.register(Entry, EntryAdmin)
+
+

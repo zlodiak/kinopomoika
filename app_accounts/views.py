@@ -30,6 +30,7 @@ def registration(request):
 		if form.is_valid():
 			try:
 				new_user = form.save()
+				new_user.groups.add(1)
 			except:
 				pass
 			else:
