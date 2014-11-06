@@ -24,25 +24,20 @@ def registration(request):
 	result = False		
 
 	form = RegistrationForm()
-	print(111)
 
 	if request.method == 'POST' and request.is_ajax():
 		form = RegistrationForm(request.POST)	
-		print(222)
 		if form.is_valid():
 			try:
 				new_user = form.save()
-				print(3333)
 			except:
-				print(4444)
+				pass
 			else:
 				result = True
-				print(5555)
 
 	data = {
 		'result': result,		
 	}
-	print(data)
 			
 	return HttpResponse(json.dumps(data), content_type='application/json')	
 			
