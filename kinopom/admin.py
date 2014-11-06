@@ -10,9 +10,10 @@ class EntryAdmin(admin.ModelAdmin):
       }),
    )
 
-   list_display = ['title', 'user']
-   raw_id_list_displayfields = ('user',)
-   search_fields = ['title', 'user__username']
+   list_display = ['title', 'description', 'user']    #list for admin and auth_user
+   raw_id_list_displayfields = ('user', )              
+   search_fields = ['title', 'user__username',]
+   #fields = ['title', 'description', 'views', ]       #edit item . default - all
 
    def save_model(self, request, obj, form, change):
       if form.is_valid():
