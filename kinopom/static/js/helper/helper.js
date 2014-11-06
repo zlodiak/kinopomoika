@@ -22,7 +22,8 @@
 
 	                setTimeout(function(){
 	                    $('#commonModal').modal('hide');
-	                }, 2000); 
+                        location.reload();
+	                }, 1000); 
                 }
             }
         }); 		
@@ -69,13 +70,14 @@
 		                    $('#butCancel').addClass('hide');
 		                    $('#commonModal').modal('show');
 
-		                   	$('.username_mark_inner').text(usernameVal);
-		                	$('#guestPanel').addClass('hide').removeClass('show');
-		                	$('#userPanel').addClass('show').removeClass('hide');
+		                   	//$('.username_mark_inner').text(usernameVal);
+		                	//$('#guestPanel').addClass('hide').removeClass('show');
+		                	//$('#userPanel').addClass('show').removeClass('hide');                      
 
 		                    setTimeout(function(){
 		                        $('#commonModal').modal('hide');
-		                    }, 2000); 
+                                location.reload();
+		                    }, 1000); 
 	                    }else{
 		                    $('#authModal').modal('hide');
 
@@ -86,7 +88,7 @@
 
 		                    setTimeout(function(){
 		                        $('#commonModal').modal('hide');
-		                    }, 2000); 
+		                    }, 1000); 
 	                    };  
 	                }
 	            });
@@ -211,7 +213,7 @@
 
                                 setTimeout(function(){
                                     $('#commonModal').modal('hide');
-                                }, 2000);   
+                                }, 1000);   
                             }
                         }); 
                     }
@@ -377,7 +379,7 @@
 
 							setTimeout(function(){
 								$('#commonModal').modal('hide');
-							}, 2000);	
+							}, 1000);	
 						}
 					});		
 				}

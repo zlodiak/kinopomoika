@@ -1537,3 +1537,10 @@ Forbidden (CSRF token missing or incorrect.): /accounts/logout/
 Forbidden (CSRF token missing or incorrect.): /accounts/logout/
 Forbidden (CSRF token missing or incorrect.): /accounts/logout/
 Forbidden (CSRF token missing or incorrect.): /accounts/logout/
+Forbidden (Permission denied): /admin/kinopom/entry/
+Forbidden (Permission denied): /admin/kinopom/entry/
+Forbidden (CSRF token missing or incorrect.): /accounts/authentication/
+Forbidden (CSRF token missing or incorrect.): /accounts/authentication/
+Forbidden (CSRF token missing or incorrect.): /accounts/authentication/
+Forbidden (CSRF token missing or incorrect.): /accounts/authentication/
+Forbidden (CSRF token missing or incorrect.): /accounts/authentication/
