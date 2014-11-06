@@ -69,6 +69,7 @@
 		                    $('#butCancel').addClass('hide');
 		                    $('#commonModal').modal('show');
 
+		                   	$('.username_mark_inner').text(usernameVal);
 		                	$('#guestPanel').addClass('hide').removeClass('show');
 		                	$('#userPanel').addClass('show').removeClass('hide');
 
