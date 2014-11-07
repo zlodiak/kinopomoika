@@ -10,13 +10,9 @@
 		{% for entry in get_all_entries_video %}
 			<a class="link_to_details" href="{% url 'video_detail' entry.id %}">
 				<article class="article col-xs-4">
-					<iframe allowfullscreen="" src="//www.youtube.com/embed/{{ entry }}" frameborder="0"></iframe>
+					<iframe allowfullscreen="" src="//www.youtube.com/embed/{{ entry }}/?controls=0&showinfo=0&rel=0&modestbranding=0" frameborder="0" ></iframe>
 
-					<h4 class="h4">{{ entry.title }}</h4>
-
-					<div class="views">Количество просмотров: {{ entry.views }}</div>
-
-					<div class="views">Количество лайков: {{ entry.likes }}</div>
+					<h4 class="h4">{{ entry.title|truncatechars:97 }}</h4>
 				</article >
 			</a>
 		{% endfor %}

@@ -106,6 +106,10 @@ input:-moz-placeholder {
 	display: none;
 }
 
+a{
+	color: #333;
+
+}
 
 
 /*************************************************************************************************************** GLOBAL_layout */
@@ -261,6 +265,19 @@ code {
 			margin-left: 5px;
 		}
 
+/*************************************************************************************************************** GLOBAL_blocks : comments_block */
+.comments_block{
+
+}
+
+	.comments_block .h4{
+		font-weight: bold;
+	}
+
+	.comments_block .article{
+
+	}
+
 /*************************************************************************************************************** GLOBAL_blocks : video_detail */
 .video_detail{
 
@@ -364,8 +381,14 @@ code {
 	}
 
 		.all_videos .article{
-			padding-bottom: 20px;
+			margin-bottom: 20px;
+			height: 208px;
+			overflow: hidden;
 		}
+
+			.all_videos .article .h4{
+				font-size: 16px;
+			}
 
 			.all_videos .article iframe{
 				position: relative;
