@@ -62,18 +62,10 @@ class Entry(models.Model):
 		result = False
 
 		if 'watch' in str(self.video_url):
-			search = re.search(u'(watch\?v=).(.*)$', str(self.video_url))
-			result = str(search.group(2))	
-		elif 'embed' in str(self.video_url):
-			search = re.search(u'(embed).(.*)$', str(self.video_url))
-			result = str(search.group(2))
-		elif 'youtu.be' in str(self.video_url):
-			search = re.search(u'(youtu.be).(.*)$', str(self.video_url))
+			search = re.search(u'.*?(watch.v=)(.*)$', str(self.video_url))
 			result = str(search.group(2))	
 		else:
-			result = 'Error link'
-
-			print(result)				
+			result = 'Error link'	
 
 		return result
 

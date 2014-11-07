@@ -109,8 +109,20 @@ input:-moz-placeholder {
 
 
 /*************************************************************************************************************** GLOBAL_layout */
-body > .container.search_area{
-	padding-top: 20px;
+body  .container.search_area{
+	padding-top: 35px;
+	position: relative;
+	z-index: 900;
+}
+
+body .container.content_area{
+	padding-top: 110px;
+
+}
+
+.navbar{
+	min-height: 100px;
+
 }
 
 /* Sticky footer styles
@@ -122,6 +134,7 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
+  background: #efefef;
 }
 .footer {
   position: absolute;
@@ -218,18 +231,60 @@ code {
 			margin-left: 5px;
 		}
 
+/*************************************************************************************************************** GLOBAL_blocks : video_detail */
+.video_detail{
+
+}
+
+	.video_detail .fullwidth{
+		padding-bottom: 30px;
+
+	}
+
+		.video_detail .fullwidth .article{
+			overflow: hidden;
+		}
+
+			.video_detail .fullwidth .article .h4{
+
+			}
+
+			.video_detail .fullwidth .article .likes{
+				float: right;
+				max-width: 40%;
+			}
+
+			.video_detail .fullwidth .article .views{
+				float: left;
+				max-width: 40%;
+			}
+
+			.video_detail .fullwidth .article .description{
+				padding-bottom: 30px;
+			}									
+
 /*************************************************************************************************************** GLOBAL_blocks : all_videos */
 .all_videos{
 
 }
 
-	.all_videos .article{
-		padding-bottom: 20px;
+	.all_videos .link_to_details{
+		overflow: hidden;
+		cursor: pointer;
 	}
 
-		.all_videos .article .h4{
-			margin: 0;
+		.all_videos .article{
+			padding-bottom: 20px;
 		}
+
+			.all_videos .article iframe{
+				position: relative;
+				z-index: -10;
+			}
+
+			.all_videos .article .h4{
+				margin: 0;
+			}
 
 /*************************************************************************************************************** GLOBAL_blocks : common_form */
 .common_form{
