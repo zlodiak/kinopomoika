@@ -33,13 +33,22 @@
     <body>
         {% cms_toolbar %}
 
-
-
-     
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
             <div class="container search_area width1000 navbar-fixed-top">
                 <div class="col-xs-7">
-                    dgdgdfgdfgfdgfd
+                    <form class="search_form common_form" action="" method="POST">
+                        {% csrf_token %}
+                        
+                        <div class="cell input_outer">
+                            {{ search_form.phrase }}
+                            
+                            {{ search_form.phrase.errors }}
+                        </div>
+
+                        <div class="cell submit_outer">
+                            <input class="btn btn-default" type="submit" value="Найти" />
+                        </div>
+                    </form>
                 </div>
 
                 <div class="col-xs-5 auth_block clearfix">

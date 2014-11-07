@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 import json
 
 from app_accounts.forms import RegistrationForm, AuthenticationCustomForm
+from kinopom.forms import SearchForm
 
 
 def custom_proc(request):
@@ -14,6 +15,7 @@ def custom_proc(request):
 	"""	
 	return{
 		'request': request,
+		'search_form': SearchForm,
 	}
 
 

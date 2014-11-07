@@ -167,6 +167,36 @@ code {
 }
 
 
+/*************************************************************************************************************** GLOBAL_blocks : search_form */
+.search_form.common_form {
+	overflow: hidden;
+	position: relative;
+	top: -3px;
+}
+
+	.search_form .input_outer{
+		float: left;
+		width: 70%;
+		overflow: hidden;
+	}
+
+		.search_form.common_form .input_outer input{
+			width: 100%;
+		}	
+
+	.search_form .submit_outer{
+		float: right;
+		width: 25%;
+		overflow: hidden;
+	}	
+
+		.search_form.common_form .submit_outer input{
+			margin-left: 0;
+			padding-left: 30px;
+			padding-right: 30px;
+		}
+
+
 /*************************************************************************************************************** GLOBAL_blocks : auth_block */
 .auth_block{
 	text-align: right;
