@@ -9113,3 +9113,10 @@ Not Found: /favicon.ico/
 Not Found: /favicon.ico/
 Forbidden (CSRF token missing or incorrect.): /accounts/authentication/
 Forbidden (CSRF token missing or incorrect.): /accounts/authentication/
+Internal Server Error: /6/
+Traceback (most recent call last):
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom/app_video/views.py", line 39, in video_detail
+    increment_views(id)
+NameError: global name 'increment_views' is not defined

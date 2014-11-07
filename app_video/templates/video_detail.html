@@ -7,22 +7,50 @@
 	<section class="section video_detail">
 		<h3 class="h3 hide">{{ video_obj.title }}</h3>
 
-		<div class="row fullwidth">
+		<div class="fullwidth">
 			<article class="article col-xs-12">
-		
 				<iframe allowfullscreen="" src="//www.youtube.com/embed/{{ video_obj }}" frameborder="0" width="100%" height="460"></iframe>
 				
-				<h4 class="h4">{{ video_obj.title }}</h4>
+				<div class="video_info_top row">
+					<h4 class="h4 col-xs-10">{{ video_obj.title }}</h4>
+
+					<div class="signs col-xs-2">
+						<div class="info views"><span class="views_sign glyphicon glyphicon-eye-open"></span> {{ video_obj.views }}</div>
+
+						<div class="info likes"><span class="likes_sign glyphicon glyphicon-thumbs-up"></span> {{ video_obj.likes }}</div>
+					</div>
+				</div>
+
+				<div class="video_info_mid row">
+					<div class="dates col-xs-6">
+						<div class="date date_create">Дата размещения: {{ video_obj.date }}</div>
+
+						<div class="date date_edit">Дата редактирования: {{ video_obj.last_edit_date }}</div>
+					</div>
+
+					<div class="share col-xs-6">
+						<span class="btn btn-success btn-sm share_button" id="shareButton">Поделиться</span>
+					</div>					
+				</div>
+
+				<div class="video_info_hide" id="panel">
+					<ul class="nav nav-tabs" role="tablist">
+						<li role="presentation" class="active"><a href="#link" role="tab" data-toggle="tab">Ссылка</a></li>
+						<li role="presentation"><a href="#code" role="tab" data-toggle="tab">HTML-код</a></li>
+					</ul>
+
+					<!-- Tab panes -->
+					<div class="tab-content">
+						<div role="tabpanel" class="tab-pane active" id="link">..rtertet.</div>
+						<div role="tabpanel" class="tab-pane" id="code">..42423424.</div>
+					</div>
+				</div>
 
 				<div class="description">{{ video_obj.description }}</div>
-
-				<div class="views">Количество просмотров: {{ video_obj.views }}</div>
-
-				<div class="likes">Количество лайков: {{ video_obj.likes }}</div>
 			</article >
 		</div>
 
-		<div class="row">
+		<div class="">
 			<div class="col-xs-9 comments_block">
 				<article class="article">
 					comment 1

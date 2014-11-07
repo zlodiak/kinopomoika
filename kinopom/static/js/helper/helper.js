@@ -1,4 +1,15 @@
 (function (){
+    // -------------------------------------------------------------------------------------- share_button
+    $("#shareButton").click(function(){
+        $("#panel").slideToggle("slow");
+        $(this).toggleClass("active"); 
+        return false;
+    });
+    
+    $('#myTab a').click(function (e) {
+        e.preventDefault()
+        $(this).tab('show')
+    })
 	// -------------------------------------------------------------------------------------- logout
 	$('#logoutButton').on('click', function(event){	
         $.ajax({

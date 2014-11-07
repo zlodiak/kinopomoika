@@ -32,6 +32,12 @@ def video(request):
 
 
 def video_detail(request, id):	
+	'''
+	page detail for video
+	and increment views
+	'''
+	Entry.increment_views(id)
+
 	video_obj = Entry.get_video(id=id)
         		
 	t = loader.get_template('video_detail.html')

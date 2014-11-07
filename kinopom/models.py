@@ -3,6 +3,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from datetime import datetime  
 import re
+from django.db.models import F
 
 class Entry(models.Model):
 	user = models.ForeignKey(
@@ -81,5 +82,13 @@ class Entry(models.Model):
 	def get_video(self, id):
 		return self.objects.get(is_active=True, is_delete=False, id=id)					
 		
+	@classmethod
+	def increment_views(self, video_id):
+		view = self.objects.get(id=video_id)
+		view.views = F('views') + 1
+		view.save()
+		
+		return				
+
 		
 	
