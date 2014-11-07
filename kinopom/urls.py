@@ -11,6 +11,7 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),  # NOQA
     url(r'^sitemap\.xml$', 'django.contrib.sitemaps.views.sitemap',
         {'sitemaps': {'cmspages': CMSSitemap}}),
+    url(r'^video/', include('app_video.urls')),
     url(r'^accounts/', include('app_accounts.urls')),
     url(r'^', include('cms.urls')),
 )

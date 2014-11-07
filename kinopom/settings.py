@@ -110,6 +110,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'kinopom', 'templates'),
     os.path.join(BASE_DIR, 'app_accounts', 'templates'),
+    os.path.join(BASE_DIR, 'app_video', 'templates'),
 )
 
 INSTALLED_APPS = (
@@ -123,6 +124,7 @@ INSTALLED_APPS = (
     'django.contrib.sitemaps',
     'django.contrib.staticfiles',
     'django.contrib.messages',
+
     'cms',
     'mptt',
     'menus',
@@ -139,8 +141,10 @@ INSTALLED_APPS = (
     'djangocms_teaser',
     'djangocms_video',
     'reversion',
+
     'kinopom',
     'app_accounts',
+    'app_video',
 )
 
 LANGUAGES = (

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %}Видео{% endblock title %}
+
+{% block content %}
+	<section class="section all_videos">
+		<h3 class="h3 hide">Все видео</h3>
+		{% for entry in get_all_entries_video %}
+			<article class="article col-xs-4">
+				<iframe allowfullscreen="" src="//www.youtube.com/embed/{{ entry }}" frameborder="0"></iframe>
+				
+				<h4 class="h4">{{ entry.title }}</h4>
+
+				<div class="views">Количество просмотров: {{ entry.views }}</div>
+
+				<div class="views">Количество лайков: {{ entry.likes }}</div>
+			</article >
+		{% endfor %}
+	</section>
+{% endblock content %}

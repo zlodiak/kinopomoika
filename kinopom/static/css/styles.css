@@ -102,7 +102,9 @@ input:-moz-placeholder {
 	width: auto !important;
 }
 
-
+.cms_toolbar-item-logo{
+	display: none;
+}
 
 
 
