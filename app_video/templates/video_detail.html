@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %}Видео de{% endblock title %}
+
+{% block content %}
+	<section class="section video_detail">
+		<h3 class="h3 hide">Видео</h3>
+
+		<div class="col-xs-9">
+			<article class="article">{{ video_obj }}
+<iframe id="ytplayer" type="text/html" width="100%" height="380" src="https://www.youtube.com/embed/{{ video_obj }}" frameborder="0" allowfullscreen>				
+				<iframe allowfullscreen="" src="http://youtu.be/QTlCBZB4Ifg" frameborder="0" width="100%" height="380" ></iframe>
+				
+				<h4 class="h4">{{ video_obj.title }}</h4>
+
+				<div class="views">Количество просмотров: {{ video_obj.views }}</div>
+
+				<div class="views">Количество лайков: {{ video_obj.likes }}</div>
+			</article >
+
+
+
+
+
+
+		<div class="col-xs-3">
+			<article class="article">
+				dfgdgddfgdfg
+			</article >
+		</div>
+	</section>
+{% endblock content %}

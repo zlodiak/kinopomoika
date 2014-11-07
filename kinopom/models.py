@@ -62,14 +62,18 @@ class Entry(models.Model):
 		result = False
 
 		if 'watch' in str(self.video_url):
-			search = re.search(u'(watch\?v=).(.*)$'.decode('utf-8'), str(self.video_url).decode('utf-8'))
+			search = re.search(u'(watch\?v=).(.*)$', str(self.video_url))
 			result = str(search.group(2))	
 		elif 'embed' in str(self.video_url):
-			search = re.search(u'(embed).(.*)$'.decode('utf-8'), str(self.video_url).decode('utf-8'))
+			search = re.search(u'(embed).(.*)$', str(self.video_url))
 			result = str(search.group(2))
 		elif 'youtu.be' in str(self.video_url):
-			search = re.search(u'(youtu.be).(.*)$'.decode('utf-8'), str(self.video_url).decode('utf-8'))
-			result = str(search.group(2))					
+			search = re.search(u'(youtu.be).(.*)$', str(self.video_url))
+			result = str(search.group(2))	
+		else:
+			result = 'Error link'
+
+			print(result)				
 
 		return result
 
@@ -79,7 +83,11 @@ class Entry(models.Model):
 
 	@classmethod
 	def get_all_entries_video(self):
-		return self.objects.filter(is_active=True, is_delete=False).order_by('-date')				
+		return self.objects.filter(is_active=True, is_delete=False).order_by('-date')		
+
+	@classmethod
+	def get_video(self, id):
+		return self.objects.get(is_active=True, is_delete=False, id=id)					
 		
 		
 	

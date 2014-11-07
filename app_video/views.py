@@ -6,6 +6,14 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from kinopom.models import Entry
 
 
+def custom_proc(request):
+	"""
+	request object for every pages
+	"""	
+	return{
+		'request': request,
+	}
+
 def video(request):
 	"""
 	handler for main video page
@@ -15,6 +23,17 @@ def video(request):
 	t = loader.get_template('video.html')
 	c = RequestContext(request, {
 		'get_all_entries_video': get_all_entries_video,		
-	})	
+	}, [custom_proc])	
 	
 	return HttpResponse(t.render(c)) 		
+
+
+def video_detail(request, id):	
+	video_obj = Entry.get_video(id=id)
+        		
+	t = loader.get_template('video_detail.html')
+	c = RequestContext(request, {
+		'video_obj': video_obj,
+	}, [custom_proc])	
+	
+	return HttpResponse(t.render(c)) 	

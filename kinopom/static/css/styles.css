@@ -218,6 +218,19 @@ code {
 			margin-left: 5px;
 		}
 
+/*************************************************************************************************************** GLOBAL_blocks : all_videos */
+.all_videos{
+
+}
+
+	.all_videos .article{
+		padding-bottom: 20px;
+	}
+
+		.all_videos .article .h4{
+			margin: 0;
+		}
+
 /*************************************************************************************************************** GLOBAL_blocks : common_form */
 .common_form{
 
