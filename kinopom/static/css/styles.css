@@ -258,13 +258,13 @@ code {
 
 			.auth_block .username_mark:hover .user_menu{
 				opacity: 1;
-				transition: 2s;
+				transition: 1s;
 
 			}
 
 			.auth_block .username_mark .user_menu{
 				opacity: 0;
-				transition: 2s;
+				transition: 1s;
 				position: absolute;
 				top: 100%;
 				left: 0px;
@@ -395,7 +395,7 @@ code {
 				}				
 
 					.video_detail .fullwidth .article .video_info_hide .tab-content .link_share{
-						padding: 0 20px;
+						padding: 0 10px;
 						overflow: hidden;
 					}	
 

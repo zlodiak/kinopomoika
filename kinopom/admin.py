@@ -63,7 +63,7 @@ admin.site.register(Entry, EntryAdmin)
 
 
 class TagAdmin(admin.ModelAdmin):
-   fields = ['title', 'description', 'date', 'is_active', ] 
+   fields = ['title', 'description', 'date', 'is_active', 'tags', ] 
    list_display = ['title', 'is_active']
    search_fields = ['title', ]
    
