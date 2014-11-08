@@ -391,7 +391,13 @@ code {
 					background: #fff;
 					position: relative;
 					left: 1px;
-				}					
+					padding: 20px;
+				}				
+
+					.video_detail .fullwidth .article .video_info_hide .tab-content .link_share{
+						padding: 0 20px;
+						overflow: hidden;
+					}	
 
 			.video_detail .fullwidth .article .description{
 				padding-bottom: 30px;

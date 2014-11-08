@@ -7,6 +7,40 @@ from django.db.models import F
 
 from djangocms_text_ckeditor.fields import HTMLField
 
+
+class Tag(models.Model):
+	title = models.CharField(
+		verbose_name=u"Название", 
+		max_length=100,
+	)
+	description = HTMLField(
+		verbose_name=u'Описание',
+		max_length=50000, 
+		default=None,
+		blank=True,
+	)			
+	date = models.DateTimeField(
+		verbose_name=u'Дата создания',
+		default=datetime.now(),
+	)
+	last_edit_date = models.DateTimeField(
+		verbose_name=u'Дата последнего редактирования',
+		default=datetime.now(),
+		auto_now=True,
+	)		
+	is_active = models.BooleanField(
+		verbose_name=u'Активно',
+		default=True,
+	)					
+
+	class Meta:
+		verbose_name = u"""тег"""
+		verbose_name_plural = u"""теги"""
+
+	def __unicode__(self):
+		return u"{0}".format(self.title)		
+
+
 class Entry(models.Model):
 	user = models.ForeignKey(
 		User, 
@@ -41,7 +75,7 @@ class Entry(models.Model):
 		default=0,
 		null=False,
 		blank=True,
-	)				
+	)			
 	date = models.DateTimeField(
 		verbose_name=u'Дата создания',
 		default=datetime.now(),
@@ -60,6 +94,7 @@ class Entry(models.Model):
 		verbose_name=u'Удалено админом',
 		default=False,
 	)	
+	tags = models.ManyToManyField(Tag)		
 
 	def __unicode__(self):
 		result = False
@@ -131,31 +166,3 @@ class Like(models.Model):
 		auto_now=True,
 	)	
 
-class Tag(models.Model):
-	title = models.CharField(
-		verbose_name=u"Название", 
-		max_length=100,
-	)
-	description = HTMLField(
-		verbose_name=u'Описание',
-		max_length=50000, 
-		default=None,
-		blank=True,
-	)			
-	date = models.DateTimeField(
-		verbose_name=u'Дата создания',
-		default=datetime.now(),
-	)
-	last_edit_date = models.DateTimeField(
-		verbose_name=u'Дата последнего редактирования',
-		default=datetime.now(),
-		auto_now=True,
-	)		
-	is_active = models.BooleanField(
-		verbose_name=u'Активно',
-		default=True,
-	)					
-
-	class Meta:
-		verbose_name = u"""тег"""
-		verbose_name_plural = u"""теги"""
