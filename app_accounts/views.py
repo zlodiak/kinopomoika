@@ -120,13 +120,12 @@ def authentication(request):
 def ajax_like(request):
 	"""
 	ajax check auth for like process and change procedure like data
-	action - value for ajax refresh likes_block
+	action - value for ajax refresh counter on page
+	is_authenticated - flag authentication, transmitted to js-script for output modal
 	"""	
 	is_authenticated = False
 	action = 0
 	video_id = request.POST.get('video_id', '')
-
-	print(request.user.pk)
 
 	if request.method == 'POST' and request.is_ajax():
 		if request.user.is_authenticated():
@@ -135,15 +134,14 @@ def ajax_like(request):
 			like_exists = Like.objects.filter(video_id=video_id, user=request.user.pk).exists()
 			if like_exists:
 				# minus. delete record. decrement for like table
-				Like.objects.filter(video_id=video_id, user=request.user.pk).delete()	
-				Entry.decrement_like(video_id=video_id)
-				action = -1		
+				Like.objects.filter(video_id=video_id, user=request.user.pk).delete()	# decrement for like table
+				Entry.decrement_like(video_id=video_id)									# increment for entry table
+				action = -1																# unit for ajax-refresh counter on page
 			else:
 				# plus. create record. increment for like table
  				Like.objects.create(video_id=video_id, user=request.user.pk)	
  				Entry.increment_like(video_id=video_id)
  				action = 1			
-		
 
 	data = {
 		'is_authenticated': is_authenticated,
@@ -151,4 +149,7 @@ def ajax_like(request):
 	}
 
 	return HttpResponse(json.dumps(data), content_type='application/json')	
+
+
+	
 
