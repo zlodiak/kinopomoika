@@ -5,6 +5,8 @@ from datetime import datetime
 import re
 from django.db.models import F
 
+from djangocms_text_ckeditor.fields import HTMLField
+
 class Entry(models.Model):
 	user = models.ForeignKey(
 		User, 
@@ -22,7 +24,7 @@ class Entry(models.Model):
 		null=True,
 		blank=False,
 	)	
-	description = models.TextField(
+	description = HTMLField(
 		verbose_name=u'Описание',
 		max_length=50000, 
 		default=None,

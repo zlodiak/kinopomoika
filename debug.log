@@ -9547,3 +9547,39 @@ Traceback (most recent call last):
   File "/home/kalinins/.virtualenvs/kinopom_project/kinopom/app_accounts/views.py", line 145, in ajax_like
     Entry.increment_views()
 TypeError: increment_views() takes exactly 2 arguments (1 given)
+Internal Server Error: /admin/
+Traceback (most recent call last):
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/contrib/admin/sites.py", line 215, in wrapper
+    return self.admin_view(view, cacheable)(*args, **kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/utils/decorators.py", line 99, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/views/decorators/cache.py", line 52, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/contrib/admin/sites.py", line 198, in inner
+    return view(request, *args, **kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/views/decorators/cache.py", line 52, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/contrib/admin/sites.py", line 358, in index
+    model_dict['admin_url'] = reverse('admin:%s_%s_changelist' % info, current_app=self.name)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 507, in reverse
+    app_list = resolver.app_dict[ns]
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 329, in app_dict
+    self._populate()
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 290, in _populate
+    for name in pattern.reverse_dict:
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 315, in reverse_dict
+    self._populate()
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 303, in _populate
+    lookups.appendlist(pattern.callback, (bits, p_pattern, pattern.default_args))
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 230, in callback
+    self._callback = get_callable(self._callback_str)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/utils/functional.py", line 32, in wrapper
+    result = func(*args)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 97, in get_callable
+    mod = import_module(mod_name)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/utils/importlib.py", line 40, in import_module
+    __import__(name)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom/app_accounts/views.py", line 120
+SyntaxError: Non-ASCII character '\xd0' in file /home/kalinins/.virtualenvs/kinopom_project/kinopom/app_accounts/views.py on line 120, but no encoding declared; see http://www.python.org/peps/pep-0263.html for details

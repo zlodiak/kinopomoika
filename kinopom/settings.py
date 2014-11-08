@@ -225,3 +225,14 @@ LOGGING = {
         },
     },
 }
+
+
+# CKEDITOR_SETTINGS = {
+#     'language': '{{ language }}',
+#     'toolbar_HTMLField': [
+#         ['Undo', 'Redo'],
+#         ['ShowBlocks'],
+#         ['Format', 'Styles'],
+#     ],
+#     'skin': 'moono',
+# }
