@@ -131,3 +131,31 @@ class Like(models.Model):
 		auto_now=True,
 	)	
 
+class Tag(models.Model):
+	title = models.CharField(
+		verbose_name=u"Название", 
+		max_length=100,
+	)
+	description = HTMLField(
+		verbose_name=u'Описание',
+		max_length=50000, 
+		default=None,
+		blank=True,
+	)			
+	date = models.DateTimeField(
+		verbose_name=u'Дата создания',
+		default=datetime.now(),
+	)
+	last_edit_date = models.DateTimeField(
+		verbose_name=u'Дата последнего редактирования',
+		default=datetime.now(),
+		auto_now=True,
+	)		
+	is_active = models.BooleanField(
+		verbose_name=u'Активно',
+		default=True,
+	)					
+
+	class Meta:
+		verbose_name = u"""тег"""
+		verbose_name_plural = u"""теги"""

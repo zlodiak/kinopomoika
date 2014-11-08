@@ -3,6 +3,8 @@ from django.contrib import admin
 from kinopom.models import Entry
 from django.contrib.auth.models import User
 
+from kinopom.models import Tag
+
 class EntryAdmin(admin.ModelAdmin):
    user_fieldsets = (
       (None, {
@@ -58,5 +60,18 @@ class EntryAdmin(admin.ModelAdmin):
       return self.user_fieldsets
 
 admin.site.register(Entry, EntryAdmin)
+
+
+class TagAdmin(admin.ModelAdmin):
+   fields = ['title', 'description', 'date', 'is_active', ] 
+   list_display = ['title', 'is_active']
+   search_fields = ['title', ]
+   
+   class Meta:
+      verbose_name = 'Тег'
+      verbose_name_plural = 'Теги'    
+
+   
+admin.site.register(Tag, TagAdmin)
 
 
