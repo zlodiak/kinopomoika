@@ -22,15 +22,26 @@
                 else{
                     $('#commonModalLabel').text('Вы не авторизованы');
                     $('#modalDialog').addClass('modal-md');
-                    $('.modal-body').html('Для того чтобы была возможность ставить лайки необходимо войти в систему. \
-                        Если у вас нет аккаунта, то необходимо зарегистрироваться.');
+                    $('#commonModal .modal-body').html('Для того чтобы была возможность ставить лайки необходимо <a id="authLike" href="#">войти</a> в систему. \
+                        Если у вас нет аккаунта, то необходимо <a id="regLike" href="#">зарегистрироваться.</a>');
                     $('#butOk').addClass('hide');
                     $('#commonModal').modal('show');
 
                     setTimeout(function(){
                         $('#commonModal').modal('hide');
-                        location.reload();
-                    }, 10000);                     
+                    }, 10000); 
+
+                    $('#authLike').on('click', function(e){
+                        e.preventDefault()
+                        $('#commonModal').modal('hide');
+                        $('#authButton').trigger('click');
+                    });                    
+
+                    $('#regLike').on('click', function(e){
+                        e.preventDefault()
+                        $('#commonModal').modal('hide');
+                        $('#regButton').trigger('click');
+                    });
                 }                          
             }
         });  
@@ -118,6 +129,7 @@
 		                    $('#commonModalLabel').text('Вы авторизовались');
 		                    $('#modalDialog').addClass('modal-sm');
 		                    $('#butCancel').addClass('hide');
+                            $('#commonModal .modal-body').empty();
 		                    $('#commonModal').modal('show');
 
 		                   	//$('.username_mark_inner').text(usernameVal);

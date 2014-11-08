@@ -171,6 +171,16 @@ code {
 }
 
 
+/*************************************************************************************************************** GLOBAL_blocks : commonModal */
+#commonModal{
+
+}
+
+	#commonModal a{
+		color: #428bca;
+		text-decoration: underline;
+	}
+
 /*************************************************************************************************************** GLOBAL_blocks : search_form */
 .search_form.common_form {
 	overflow: hidden;
