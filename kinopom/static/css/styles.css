@@ -361,13 +361,22 @@ code {
 					display: none;
 				}			
 
+				.video_detail .fullwidth .article .video_info_hide li.active>a {
+					border-bottom: none;
+				}
+
 				.video_detail .fullwidth .article .video_info_hide .tab-content{
 					outline: 1px solid #ddd;
 					min-height: 60px;
+					background: #fff;
+					position: relative;
+					left: 1px;
 				}					
 
 			.video_detail .fullwidth .article .description{
 				padding-bottom: 30px;
+				padding-top: none;
+
 			}									
 
 /*************************************************************************************************************** GLOBAL_blocks : all_videos */

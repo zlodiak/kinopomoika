@@ -9120,3 +9120,4 @@ Traceback (most recent call last):
   File "/home/kalinins/.virtualenvs/kinopom_project/kinopom/app_video/views.py", line 39, in video_detail
     increment_views(id)
 NameError: global name 'increment_views' is not defined
+Not Found: /favicon.ico/
