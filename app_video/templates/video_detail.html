@@ -17,19 +17,27 @@
 					<div class="signs col-xs-2">
 						<div class="info views"><span class="views_sign glyphicon glyphicon-eye-open"></span> {{ video_obj.views }}</div>
 
-						<div class="info likes"><span class="likes_sign glyphicon glyphicon-thumbs-up"></span> {{ video_obj.likes }}</div>
+						<div class="info likes" id="likeButton" data-video-id="{{ video_obj.id }}">
+							<form action="" method="POST" id="likeForm">
+								{% csrf_token %}
+
+								<span class="likes_sign glyphicon glyphicon-thumbs-up"></span> {{ video_obj.likes }}
+							</form>
+						</div>
 					</div>
 				</div>
 
 				<div class="video_info_mid row">
 					<div class="dates col-xs-6">
+						<div class="date author">Автор: {{ video_obj.user.username }}</div>
+
 						<div class="date date_create">Дата размещения: {{ video_obj.date }}</div>
 
 						<div class="date date_edit">Дата редактирования: {{ video_obj.last_edit_date }}</div>
 					</div>
 
 					<div class="share col-xs-6">
-						<span class="btn btn-success btn-sm share_button" id="shareButton">Поделиться</span>
+						<span class="btn btn-success btn-sm share_button " id="shareButton"><span class="glyphicon glyphicon-link"></span>Поделиться</span>
 					</div>					
 				</div>
 

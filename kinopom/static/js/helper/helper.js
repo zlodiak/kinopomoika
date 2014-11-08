@@ -1,4 +1,43 @@
 (function (){
+    // -------------------------------------------------------------------------------------- likeButton
+    $('#likeButton').on('click', function(event){   
+        var video_id = parseInt($(this).attr('data-video-id'), 10);
+            csrfmiddlewaretokenVal = $('#likeForm input[name=csrfmiddlewaretoken]').val();
+
+        $.ajax({
+            url: "/accounts/ajax_like/",
+            type: 'POST',
+            dataType:"json",
+            data: {
+                "video_id": video_id,
+                "csrfmiddlewaretoken": csrfmiddlewaretokenVal
+            },
+            success: function(data) {
+                console.log(data.is_authenticated);
+
+                if(data.is_authenticated){
+                    console.log(data.result);
+                    console.log(data.action);
+                }
+                else{
+                    $('#commonModalLabel').text('Вы не авторизованы');
+                    $('#modalDialog').addClass('modal-md');
+                    $('.modal-body').html('Для того чтобы была возможность ставить лайки необходимо войти в систему. \
+                        Если у вас нет аккаунта, то необходимо зарегистрироваться.');
+                    $('#butOk').addClass('hide');
+                    $('#commonModal').modal('show');
+
+                    setTimeout(function(){
+                        $('#commonModal').modal('hide');
+                        location.reload();
+                    }, 10000);                     
+                }                          
+            }
+        });  
+
+
+    });
+
     // -------------------------------------------------------------------------------------- share_button
     $("#shareButton").click(function(){
         $("#panel").slideToggle("slow");

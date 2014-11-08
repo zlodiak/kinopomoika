@@ -350,6 +350,10 @@ code {
 						display: inline-block;
 					}	
 
+						.video_detail .fullwidth .article .video_info_mid .share .share_button span{
+							margin-right: 8px;
+						}
+
 			.video_detail .fullwidth .article .video_info_hide{
 				height: 0px;
 				display: none;

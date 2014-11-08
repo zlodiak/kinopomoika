@@ -43,7 +43,7 @@ class Entry(models.Model):
 	date = models.DateTimeField(
 		verbose_name=u'Дата создания',
 		default=datetime.now(),
-		auto_now=True,
+		#auto_now=True,
 	)
 	last_edit_date = models.DateTimeField(
 		verbose_name=u'Дата последнего редактирования',
@@ -91,4 +91,25 @@ class Entry(models.Model):
 		return				
 
 		
-	
+class Like(models.Model):
+	user = models.ForeignKey(
+		User, 
+		verbose_name=u"Пользователь", 
+		blank=True, 
+		null=True,
+	)	
+	video_id = models.IntegerField(
+		verbose_name=u'Номер видео',
+		default=None,
+		null=True,
+		blank=True,
+	)					
+	date_first_click = models.DateTimeField(
+		verbose_name=u'Дата Начала',
+		default=datetime.now(),
+	)
+	last_edit_date = models.DateTimeField(
+		verbose_name=u'Дата последнего редактирования',
+		default=datetime.now(),
+		auto_now=True,
+	)	

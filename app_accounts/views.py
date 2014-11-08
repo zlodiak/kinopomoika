@@ -7,6 +7,7 @@ import json
 
 from app_accounts.forms import RegistrationForm, AuthenticationCustomForm
 from kinopom.forms import SearchForm
+from kinopom.models import Like
 
 
 def custom_proc(request):
@@ -114,3 +115,38 @@ def authentication(request):
 	}
 			
 	return HttpResponse(json.dumps(data), content_type='application/json')	
+
+
+def ajax_like(request):
+	"""
+	ajax check auth for like process and change procedure like data
+	"""	
+	result = False
+	action = 0
+	video_id = request.POST.get('video_id', '')
+
+	print(request.user.pk)
+
+	if request.method == 'POST' and request.is_ajax():
+		if request.user.is_authenticated():
+			result = True
+
+			like_exists = Like.objects.filter(video_id=video_id).exists()
+			if like_exists:
+				# minus. delete record. decrement for like table
+				Like.objects.get(video_id=video_id, user_id=request.user.pk).delete()	
+				action = -1		
+			else:
+				# plus. create record. increment for like table
+				print(request.user.pk)
+ 				Like(video_id=video_id, user_id=request.user.pk).save()	
+ 				action = 1			
+		
+
+	data = {
+		'is_authenticated': result,
+		'action': action
+	}
+
+	return HttpResponse(json.dumps(data), content_type='application/json')	
+
