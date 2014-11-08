@@ -133,13 +133,14 @@ def ajax_like(request):
 
 			like_exists = Like.objects.filter(video_id=video_id).exists()
 			if like_exists:
+				print(111111111)
 				# minus. delete record. decrement for like table
-				Like.objects.get(video_id=video_id, user_id=request.user.pk).delete()	
+				Like.objects.get(video_id=video_id, user=request.user.pk).delete()	
 				action = -1		
 			else:
+				print(22222222)
 				# plus. create record. increment for like table
-				print(request.user.pk)
- 				Like(video_id=video_id, user_id=request.user.pk).save()	
+ 				Like.objects.create(video_id=video_id, user=request.user.pk)	
  				action = 1			
 		
 

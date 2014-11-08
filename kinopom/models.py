@@ -92,8 +92,7 @@ class Entry(models.Model):
 
 		
 class Like(models.Model):
-	user = models.ForeignKey(
-		User, 
+	user = models.IntegerField(
 		verbose_name=u"Пользователь", 
 		blank=True, 
 		null=True,
@@ -113,3 +112,4 @@ class Like(models.Model):
 		default=datetime.now(),
 		auto_now=True,
 	)	
+
