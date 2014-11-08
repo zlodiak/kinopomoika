@@ -9583,3 +9583,209 @@ Traceback (most recent call last):
     __import__(name)
   File "/home/kalinins/.virtualenvs/kinopom_project/kinopom/app_accounts/views.py", line 120
 SyntaxError: Non-ASCII character '\xd0' in file /home/kalinins/.virtualenvs/kinopom_project/kinopom/app_accounts/views.py on line 120, but no encoding declared; see http://www.python.org/peps/pep-0263.html for details
+Internal Server Error: /6/
+Traceback (most recent call last):
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom/app_video/views.py", line 48, in video_detail
+    return HttpResponse(t.render(c))
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 140, in render
+    return self._render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 134, in _render
+    return self.nodelist.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/debug.py", line 78, in render_node
+    return node.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/loader_tags.py", line 123, in render
+    return compiled_parent._render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 134, in _render
+    return self.nodelist.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/debug.py", line 78, in render_node
+    return node.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/classytags/core.py", line 106, in render
+    return self.render_tag(context, **kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/sekizai/templatetags/sekizai_tags.py", line 76, in render_tag
+    rendered_contents = nodelist.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/debug.py", line 78, in render_node
+    return node.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/classytags/core.py", line 106, in render
+    return self.render_tag(context, **kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/cms/templatetags/cms_tags.py", line 682, in render_tag
+    rendered_contents = nodelist.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/debug.py", line 78, in render_node
+    return node.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/debug.py", line 78, in render_node
+    return node.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/contrib/comments/templatetags/comments.py", line 174, in render
+    ctype, object_pk = self.get_target_ctype_pk(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/contrib/comments/templatetags/comments.py", line 109, in get_target_ctype_pk
+    return ContentType.objects.get_for_model(obj), obj.pk
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/contrib/contenttypes/models.py", line 37, in get_for_model
+    opts = self._get_opts(model, for_concrete_model)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/contrib/contenttypes/models.py", line 22, in _get_opts
+    model = model._meta.concrete_model
+AttributeError: 'str' object has no attribute '_meta'
+Internal Server Error: /6/
+Traceback (most recent call last):
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom/app_video/views.py", line 48, in video_detail
+    return HttpResponse(t.render(c))
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 140, in render
+    return self._render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 134, in _render
+    return self.nodelist.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/debug.py", line 78, in render_node
+    return node.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/loader_tags.py", line 123, in render
+    return compiled_parent._render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 134, in _render
+    return self.nodelist.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/debug.py", line 78, in render_node
+    return node.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/classytags/core.py", line 106, in render
+    return self.render_tag(context, **kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/sekizai/templatetags/sekizai_tags.py", line 76, in render_tag
+    rendered_contents = nodelist.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/debug.py", line 78, in render_node
+    return node.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/classytags/core.py", line 106, in render
+    return self.render_tag(context, **kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/cms/templatetags/cms_tags.py", line 682, in render_tag
+    rendered_contents = nodelist.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/debug.py", line 78, in render_node
+    return node.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/debug.py", line 78, in render_node
+    return node.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/contrib/comments/templatetags/comments.py", line 174, in render
+    ctype, object_pk = self.get_target_ctype_pk(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/contrib/comments/templatetags/comments.py", line 109, in get_target_ctype_pk
+    return ContentType.objects.get_for_model(obj), obj.pk
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/contrib/contenttypes/models.py", line 37, in get_for_model
+    opts = self._get_opts(model, for_concrete_model)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/contrib/contenttypes/models.py", line 22, in _get_opts
+    model = model._meta.concrete_model
+AttributeError: 'str' object has no attribute '_meta'
+Internal Server Error: /6/
+Traceback (most recent call last):
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom/app_video/views.py", line 43, in video_detail
+    t = loader.get_template('video_detail.html')
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/loader.py", line 138, in get_template
+    template, origin = find_template(template_name)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/loader.py", line 127, in find_template
+    source, display_name = loader(name, dirs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/loader.py", line 43, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/loader.py", line 49, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/loader.py", line 149, in get_template_from_string
+    return Template(source, origin, name)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+    return parser.parse()
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 278, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/loader_tags.py", line 215, in do_extends
+    nodelist = parser.parse()
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 278, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/loader_tags.py", line 190, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 276, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 331, in invalid_block_tag
+    (command, get_text_list(["'%s'" % p for p in parse_until])))
+TemplateSyntaxError: Invalid block tag: 'disqus_dev', expected 'endblock'
+Internal Server Error: /6/
+Traceback (most recent call last):
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom/app_video/views.py", line 43, in video_detail
+    t = loader.get_template('video_detail.html')
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/loader.py", line 138, in get_template
+    template, origin = find_template(template_name)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/loader.py", line 127, in find_template
+    source, display_name = loader(name, dirs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/loader.py", line 43, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/loader.py", line 49, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/loader.py", line 149, in get_template_from_string
+    return Template(source, origin, name)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+    return parser.parse()
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 278, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/loader_tags.py", line 215, in do_extends
+    nodelist = parser.parse()
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 278, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/loader_tags.py", line 190, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 276, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 331, in invalid_block_tag
+    (command, get_text_list(["'%s'" % p for p in parse_until])))
+TemplateSyntaxError: Invalid block tag: 'disqus_show_comments', expected 'endblock'
+Internal Server Error: /6/
+Traceback (most recent call last):
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom/app_video/views.py", line 43, in video_detail
+    t = loader.get_template('video_detail.html')
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/loader.py", line 138, in get_template
+    template, origin = find_template(template_name)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/loader.py", line 127, in find_template
+    source, display_name = loader(name, dirs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/loader.py", line 43, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/loader.py", line 49, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/loader.py", line 149, in get_template_from_string
+    return Template(source, origin, name)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+    return parser.parse()
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 278, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/loader_tags.py", line 215, in do_extends
+    nodelist = parser.parse()
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 278, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/loader_tags.py", line 190, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 276, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 331, in invalid_block_tag
+    (command, get_text_list(["'%s'" % p for p in parse_until])))
+TemplateSyntaxError: Invalid block tag: 'disqus_dev', expected 'endblock'
+Not Found: /favicon.ico/

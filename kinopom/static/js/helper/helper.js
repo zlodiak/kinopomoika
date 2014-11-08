@@ -1,4 +1,7 @@
 (function (){
+    // -------------------------------------------------------------------------------------- comments
+    $('.hc_menu').attr('style="display: none !important"');
+
     // -------------------------------------------------------------------------------------- likeButton
     $('#likeButton').on('click', function(event){   
         var video_id = parseInt($(this).attr('data-video-id'), 10);
