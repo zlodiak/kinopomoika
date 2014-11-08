@@ -183,8 +183,27 @@ CMS_PLACEHOLDER_CONF = {}
 
 DATABASES = {
     'default':
-        {'ENGINE': 'django.db.backends.sqlite3', 'NAME': 'project.db', 'HOST': 'localhost', 'USER': '', 'PASSWORD': '', 'PORT': ''}
+        {
+            'ENGINE': 'django.db.backends.sqlite3', 
+            'NAME': 'project.db', 
+            'HOST': 'localhost', 
+            'USER': '', 
+            'PASSWORD': '', 
+            'PORT': ''
+        }
 }
+
+# DATABASES = {
+#     'default' : {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'kinopom',
+#         'USER': 'kinopom',
+#         'PASSWORD': 'qazwsxasdzxc',
+#         'HOST': '/var/run/mysql',
+#         'PORT': '3306',
+#     }
+# }
+#
 
 
 ALLOWED_HOSTS = ['127.0.0.1:8000']
