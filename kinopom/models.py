@@ -88,7 +88,23 @@ class Entry(models.Model):
 		view.views = F('views') + 1
 		view.save()
 		
-		return				
+		return		
+
+	@classmethod
+	def decrement_like(self, video_id):
+		like = self.objects.get(id=video_id)
+		like.likes = F('likes') - 1
+		like.save()
+		
+		return		
+
+	@classmethod
+	def increment_like(self, video_id):
+		like = self.objects.get(id=video_id)
+		like.likes = F('likes') + 1
+		like.save()
+		
+		return							
 
 		
 class Like(models.Model):

@@ -13,10 +13,12 @@
                 "csrfmiddlewaretoken": csrfmiddlewaretokenVal
             },
             success: function(data) {
-                console.log(data.is_authenticated);
+                var likesVal = parseInt($('#likesVal').text(), 10);
 
                 if(data.is_authenticated){
-                    console.log(data.result);
+                    if(data.is_authenticated){
+                        $('#likesVal').html(likesVal + data.action)
+                    };
                     console.log(data.action);
                 }
                 else{
