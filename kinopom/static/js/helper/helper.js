@@ -1,6 +1,7 @@
 ﻿(function (){
     // -------------------------------------------------------------------------------------- more button for comment 
-    var count_comments_all = parseInt($('#countComments').text(), 10),
+    var nameForOutput,
+        count_comments_all = parseInt($('#countComments').text(), 10),
         video_id = parseInt($('#videoIdComment').attr('data-video-id'), 10),
         count_comments_on_page = $('.comments_block .comment_item').length,
         csrfmiddlewaretokenVal = $('#commentsMoreButton input[name=csrfmiddlewaretoken]').val();
@@ -30,22 +31,32 @@
                 alert('Ошибка получения запроса');
             },          
             success: function(data) {   
-                alert('suc');
-/*                data = JSON.parse(data);
+                data = JSON.parse(data);
+                console.log(data)
 
                 $.each(data, function(){
-                    $('.new_authors .list_table tbody').append('<tr class="article author_line"> \
-                            <td class="cell_title"> \
-                                <a class="article_link" href="/profile/' + this.pk + '/"> <h3 class="h3"> ' + this.fields.nickname + '</h3> \
-                                </a> \
-                            </td> \
-                            <td class="cell_actions"> \
-                                <button type="button" class="btn btn-default btn-xs"><a class="glyphicon glyphicon-list-alt" href="/diary/' + this.pk + '/ ">Дневник</a></button> \
-                                <button type="button" class="btn btn-default btn-xs"><a class="glyphicon glyphicon-user" href="/profile/' + this.pk + '/ ">Профиль</a></button> \
-                            </td> \
-                        </tr>\
-                    ');                 
-                }); */
+                    // define name
+                    if(!this.fields.user){
+                        nameForOutput = this.fields.user_no_auth;
+                    }
+                    else{
+                        nameForOutput = this.fields.user;
+                    };
+
+                    // output block
+                    $('#articlesComments').append( '\
+                        <article class="article comment_item"> \
+                            <h5 class="h5"> \
+                                <span class="name"> \
+                                    ' + nameForOutput + ' \
+                                </span> \
+                                <span class="date">' + this.fields.date + '</span> \
+                            </h5> \
+                            <div class="body"> \
+                                ' + this.fields.comment + ' \
+                            </div> \
+                        </article>');                 
+                }); 
             },
             complete: function(){
                 count_comments_on_page = count_comments_on_page + 5;
@@ -67,11 +78,6 @@
                 username = $.trim($('.username_comment').val()),
                 comment = $.trim($('.comment_comment').val()),
                 csrfmiddlewaretokenVal = $('#commentForm input[name=csrfmiddlewaretoken]').val();
-
-            console.log(video_id + '--vid');
-            console.log(username + '--usr');
-            console.log(comment + '--com');
-            console.log(csrfmiddlewaretokenVal + '--csr');
         }
 
         if(comment.length > 0){
@@ -86,7 +92,31 @@
                     "csrfmiddlewaretoken": csrfmiddlewaretokenVal
                 },
                 success: function(data) {
+                    var nameOutput;
+
                     if(data.result){
+
+
+
+
+
+                        if(data.fields.user){
+                            // ajax
+                        }
+                        else if(data.fields.user_no_auth == "Некто неизвестный"){
+                            nameOutput = "Некто неизвестный"
+                        }
+                        else{
+                            nameOutput = data.fields.user_no_auth;
+                        };
+
+
+
+
+
+
+
+
                         // delete values from fields
                         $('.username_comment, .comment_comment').val('');
 

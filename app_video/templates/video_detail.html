@@ -98,7 +98,7 @@
 									{% if entry.user_id %}
 										{{ entry.user.username }}
 									{% else %}
-										Некто неизвестный
+										{{ entry.user_no_auth }}
 									{% endif %}
 								</span>
 
