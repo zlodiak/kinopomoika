@@ -26,65 +26,52 @@ def ajax_comment_add(request):
 	ajax procedure for add new comment about video
 	"""	
 	result = False
-	is_authenticated = request.user.is_authenticated()
+	output_username = False
+	user_id = False
+	date = False
+	is_authenticated = False
 
 	if request.method == 'POST':
 		comment = request.POST.get('comment', '')
 		video_id = request.POST.get('video_id', '')
 		username = request.POST.get('username', '')
-
-		print(comment)
-		print(video_id)
-		print(username)
+		is_authenticated = request.user.is_authenticated()
+		result = True
 
 		if is_authenticated:
 			# user is auth
 			user_id = request.user.pk
-			user = User.objects.get(id=request.user.pk).username
+			username_auth = User.objects.get(id=request.user.pk).username
 			entry = Comment.objects.create(
 					user_id=user_id, 
 					comment=comment,
 					video_id=video_id,
-			)			
+			)		
+			output_username = username_auth
 		else:
 			if username:
 				# user no auth and with name 
-				user = username
+				username_noauth = username
 			else:
 				# user no auth and without name 
-				user = None
+				username_noauth = 'Некто неизвестный'
 
+			output_username = username_noauth
 			user_id = None
 			entry = Comment.objects.create(
 					user_id=user_id, 
-					user_no_auth=user
+					user_no_auth=username_noauth,
 					comment=comment,
 					video_id=video_id,
 			)				
 
-		print(user)
-
-		try:
-			entry = Comment.objects.create(
-					user_id=user_id, 
-					comment=comment,
-					video_id=video_id,
-				)	
-			date = entry.date.strftime('%Y-%m-%d %H:%M:%S')
-		except:
-			pass
-		else:
-			result = True
-
-	print(is_authenticated)
-	print(result)
-	print(date)
+		date = entry.date.strftime('%Y-%m-%d %H:%M:%S')
 
 	data = {
 		'result': result,
 		'user_id': user_id,
-		'user': user,
 		'date': date,
+		'output_username': output_username,
 		'is_authenticated': is_authenticated
 	}
 			

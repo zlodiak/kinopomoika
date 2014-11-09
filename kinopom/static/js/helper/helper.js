@@ -1,12 +1,8 @@
 ﻿(function (){
     // -------------------------------------------------------------------------------------- comment form ajax
-/*    $('.username_comment').one('click', function(e){
-        $(this).val('');
+    $('#commentForm').on('submit', function(e){
+        e.preventDefault()
     });
-
-    $('.comment_comment').one('click', function(e){
-        $(this).empty();
-    });*/
 
     $('#id_comment').on('keypress', function(e){
         if(e.keyCode == 13){
@@ -33,18 +29,6 @@
                     "csrfmiddlewaretoken": csrfmiddlewaretokenVal
                 },
                 success: function(data) {
-                    console.log(data.result);
-                    console.log(data.is_authenticated);
-                    console.log(data.user + 'du');
-                    if(!data.user_id && !user){
-                        // user no auth and without name 
-                        data.user = 'Некто неизвестный'
-                    }
-                    else if(data.user_id){
-                        // user no auth and with name 
-                        data.user = 'Некто неизвестный'
-                    };
-
                     if(data.result){
                         // delete values from fields
                         $('.username_comment, .comment_comment').val('');
@@ -53,7 +37,7 @@
                         $('#articlesComments').prepend('<article class="article comment_item"> \
                                                         <h5 class="h5"> \
                                                             <span class="name"> \
-                                                                ' + data.user + ' \
+                                                                ' + data.output_username + ' \
                                                             </span> \
                                                             <span class="date">' + data.date + '</span> \
                                                         </h5> \
