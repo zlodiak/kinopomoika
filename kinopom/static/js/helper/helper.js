@@ -4,6 +4,10 @@
         $(".link_share").trigger("select");
     });
 
+    $(".link_share_html").click(function(){
+        $(".link_share_html").trigger("select");
+    });    
+
     // -------------------------------------------------------------------------------------- likeButton
     $('#likeButton').on('click', function(event){   
         var video_id = parseInt($(this).attr('data-video-id'), 10);

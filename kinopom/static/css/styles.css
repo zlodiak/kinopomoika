@@ -387,17 +387,29 @@ code {
 
 				.video_detail .fullwidth .article .video_info_hide .tab-content{
 					outline: 1px solid #ddd;
-					min-height: 60px;
+					min-height: 150px;
 					background: #fff;
 					position: relative;
 					left: 1px;
-					padding: 20px;
+					padding: 15px;
+
 				}				
 
-					.video_detail .fullwidth .article .video_info_hide .tab-content .link_share{
-						padding: 0 10px;
+					.video_detail .fullwidth .article .video_info_hide .tab-content input{
+						text-align: center;
+
 						overflow: hidden;
-					}	
+												
+					}
+
+						.video_detail .fullwidth .article .video_info_hide .tab-content .link_share_html{
+							width: 840px;
+						}
+
+						.video_detail .fullwidth .article .video_info_hide .tab-content .link_share{
+							padding: 0 10px;
+							width: 360px;
+						}	
 
 			.video_detail .fullwidth .article .description{
 				padding-bottom: 30px;
