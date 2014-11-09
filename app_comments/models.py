@@ -28,6 +28,7 @@ class Comment(models.Model):
 	date = models.DateTimeField(
 		verbose_name=u'Дата создания',
 		default=datetime.now(),
+		auto_now=True,
 	)
 	last_edit_date = models.DateTimeField(
 		verbose_name=u'Дата последнего редактирования',

@@ -84,23 +84,31 @@
 						<div class="cell textarea_outer">
 							{{ comment_form.comment }}
 
-							<div class="hide" id="videoIdComment" data-video-id="{{ video_obj.id }}">	
+							<div class="hide" id="videoIdComment" data-video-id="{{ video_obj.id }}"></div>
 						</div>		
 	            </form>				
 
-				{% for entry in comment_obj %}
-					<article class="article comment_item">
-						<h5 class="h5">
-							<span class="name">{{ entry.user_id.username }}</span>
+	            <div id="articlesComments">
+					{% for entry in comment_obj %}
+						<article class="article comment_item">
+							<h5 class="h5">
+								<span class="name">
+									{% if entry.user_id %}
+										{{ entry.user.username }}
+									{% else %}
+										Некто неизвестный
+									{% endif %}
+								</span>
 
-							<span class="date">{{ entry.date }}</span>
-						</h5>
+								<span class="date">{{ entry.date|date:"Y-m-d H:i:s"}}</span>
+							</h5>
 
-						<div class="body">
-							{{ entry.comment }}
-						</div>
-					</article>
-				{% endfor %}
+							<div class="body">
+								{{ entry.comment }}
+							</div>
+						</article>
+					{% endfor %}
+				</div>
 			</section>
 
 

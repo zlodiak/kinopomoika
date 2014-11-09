@@ -139,6 +139,8 @@ body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
   background: #efefef;
+
+  color: #000;
 }
 .footer {
   position: absolute;
@@ -171,11 +173,36 @@ code {
 }
 
 
-/*************************************************************************************************************** GLOBAL_blocks : comments */
-.hc .hc_menu_box,
-#hc_footer{
-	display: none !important;
+/*************************************************************************************************************** GLOBAL_blocks : comment_item */
+.comment_item{
+	padding-bottom: 15px;
+
 }
+
+	.comment_item .h5{
+		margin: 0;
+	}
+
+		.comment_item .h5 .name{
+			color: #428bca;
+		}
+
+		.comment_item .h5 .date:before{
+			content: '(';
+		}
+
+		.comment_item .h5 .date:after{
+			content: ')';
+		}		
+
+		.comment_item .h5 .date{
+			color: #AE9E9E;
+			font-size: 10px;
+		}	
+
+	.comment_item .body{
+		width: 70%;
+	}			
 
 /*************************************************************************************************************** GLOBAL_blocks : commonModal */
 #commonModal{
@@ -291,7 +318,7 @@ code {
 	}
 
 	.comments_block .comment_form{
-
+		overflow: hidden;
 	}
 
 		.comments_block .comment_form .input_outer input{

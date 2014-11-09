@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+﻿# -*- coding: utf-8 -*-
 from django.http import HttpResponse, HttpResponseRedirect, Http404, HttpResponseForbidden
 from django.template import loader, RequestContext
 from django.shortcuts import render, render_to_response
@@ -31,13 +31,28 @@ def ajax_comment_add(request):
 	if request.method == 'POST':
 		comment = request.POST.get('comment', '')
 		video_id = request.POST.get('video_id', '')
+		username = request.POST.get('username', '')
+
+		print(comment)
+		print(video_id)
+		print(username)
+
+		if is_authenticated:
+			user_id = request.user.pk
+			user = User.objects.get(id=request.user.pk).username
+		else:
+			user_id = None
+			user = username
+
+		print(user)
 
 		try:
-			Comment.objects.create(
-					user_id=request.user, 
+			entry = Comment.objects.create(
+					user_id=user_id, 
 					comment=comment,
 					video_id=video_id,
-				)
+				)	
+			date = entry.date.strftime('%Y-%m-%d %H:%M:%S')
 		except:
 			pass
 		else:
@@ -45,9 +60,13 @@ def ajax_comment_add(request):
 
 	print(is_authenticated)
 	print(result)
+	print(date)
 
 	data = {
 		'result': result,
+		'user_id': user_id,
+		'user': user,
+		'date': date,
 		'is_authenticated': is_authenticated
 	}
 			

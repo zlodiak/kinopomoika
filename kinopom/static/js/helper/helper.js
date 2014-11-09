@@ -1,60 +1,87 @@
-(function (){
+﻿(function (){
     // -------------------------------------------------------------------------------------- comment form ajax
-    $('#id_username').one('click', function(e){
+/*    $('.username_comment').one('click', function(e){
         $(this).val('');
     });
 
-    $('#id_comment').one('click', function(e){
+    $('.comment_comment').one('click', function(e){
         $(this).empty();
-    });
+    });*/
 
     $('#id_comment').on('keypress', function(e){
-        var video_id = parseInt($('#videoIdComment').attr('data-video-id'), 10);
-            csrfmiddlewaretokenVal = $('#likeForm input[name=csrfmiddlewaretoken]').val();
-
         if(e.keyCode == 13){
+            var video_id = parseInt($('#videoIdComment').attr('data-video-id'), 10),
+                username = $.trim($('.username_comment').val()),
+                comment = $.trim($('.comment_comment').val()),
+                csrfmiddlewaretokenVal = $('#commentForm input[name=csrfmiddlewaretoken]').val();
+
+            console.log(video_id + '--vid');
+            console.log(username + '--usr');
+            console.log(comment + '--com');
+            console.log(csrfmiddlewaretokenVal + '--csr');
+        }
+
+        if(comment.length > 0){
             $.ajax({
                 url: "/comments/ajax_comment_add/",
                 type: 'POST',
                 dataType:"json",
                 data: {
                     "video_id": video_id,
+                    "username": username,
+                    "comment": comment,
                     "csrfmiddlewaretoken": csrfmiddlewaretokenVal
                 },
                 success: function(data) {
                     console.log(data.result);
                     console.log(data.is_authenticated);
+                    console.log(data.user + 'du');
+                    if(!data.user){
+                        data.user = 'Некто неизвестный'
+                    };
 
-                    if(data.is_authenticated){
+                    if(data.result){
+                        // delete values from fields
+                        $('.username_comment, .comment_comment').val('');
 
-                    }
+                        // add comment to end of list comments
+                        $('#articlesComments').prepend('<article class="article comment_item"> \
+                                                        <h5 class="h5"> \
+                                                            <span class="name"> \
+                                                                ' + data.user + ' \
+                                                            </span> \
+                                                            <span class="date">' + data.date + '</span> \
+                                                        </h5> \
+                                                        <div class="body"> \
+                                                            ' + comment + ' \
+                                                        </div> \
+                                                    </article>');
+                    }                
                     else{
-/*                        $('#commonModalLabel').text('Вы не авторизованы');
-                        $('#modalDialog').addClass('modal-md');
-                        $('#commonModal .modal-body').html('Для того чтобы была возможность ставить лайки необходимо <a id="authLike" href="#">войти</a> в систему. \
-                            Если у вас нет аккаунта, то необходимо <a id="regLike" href="#">зарегистрироваться.</a>');
-                        $('#butOk').addClass('hide');
+                        $('#commonModalLabel').text('Ошибка подключения');
+                        $('#modalDialog').addClass('modal-xs');
+                        $('#commonModal .modal-body').html('Попробуйте позже.');
+                        $('#butCancel').addClass('hide');
                         $('#commonModal').modal('show');
 
                         setTimeout(function(){
                             $('#commonModal').modal('hide');
-                        }, 10000); 
-
-                        $('#authLike').on('click', function(e){
-                            e.preventDefault()
-                            $('#commonModal').modal('hide');
-                            $('#authButton').trigger('click');
-                        });                    
-
-                        $('#regLike').on('click', function(e){
-                            e.preventDefault()
-                            $('#commonModal').modal('hide');
-                            $('#regButton').trigger('click');
-                        });*/
-                    }                          
-                }
-            });    
+                        }, 1000); 
+                    };
+                } 
+             });   
         }
+        else{
+            $('#commonModalLabel').text('Введите комментарий');
+            $('#modalDialog').addClass('modal-xs');
+            $('#commonModal .modal-body').html('');
+            $('#butCancel').addClass('hide');
+            $('#commonModal').modal('show');
+
+            setTimeout(function(){
+                $('#commonModal').modal('hide');
+            }, 1000); 
+        };
     });
 
     // -------------------------------------------------------------------------------------- link_share
@@ -68,7 +95,7 @@
 
     // -------------------------------------------------------------------------------------- likeButton
     $('#likeButton').on('click', function(event){   
-        var video_id = parseInt($(this).attr('data-video-id'), 10);
+        var video_id = parseInt($(this).attr('data-video-id'), 10),
             csrfmiddlewaretokenVal = $('#likeForm input[name=csrfmiddlewaretoken]').val();
 
         $.ajax({
