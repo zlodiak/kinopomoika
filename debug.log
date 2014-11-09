@@ -10262,3 +10262,18 @@ Traceback (most recent call last):
   File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 1079, in get_prep_value
     return int(value)
 ValueError: invalid literal for int() with base 10: ''
+Forbidden (CSRF token missing or incorrect.): /5/
+Internal Server Error: /5/
+Traceback (most recent call last):
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom/app_video/views.py", line 47, in video_detail
+    comments = UserProfile.get_new_authors_entries(video_id=id, cut_begin=count_comments_on_page, cut_end=count_comments_all + 5)
+NameError: global name 'UserProfile' is not defined
+Internal Server Error: /5/
+Traceback (most recent call last):
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom/app_video/views.py", line 49, in video_detail
+    result = serializers.serialize('json', comments)
+NameError: global name 'serializers' is not defined

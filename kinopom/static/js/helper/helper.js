@@ -1,4 +1,61 @@
 ﻿(function (){
+    // -------------------------------------------------------------------------------------- more button for comment 
+    var count_comments_all = parseInt($('#countComments').text(), 10),
+        video_id = parseInt($('#videoIdComment').attr('data-video-id'), 10),
+        count_comments_on_page = $('.comments_block .comment_item').length,
+        csrfmiddlewaretokenVal = $('#commentsMoreButton input[name=csrfmiddlewaretoken]').val();
+
+    $('.comments_block .more_button').hide();
+
+    console.log(count_comments_all);
+    console.log(count_comments_on_page);
+
+    if(count_comments_all > count_comments_on_page){
+        $('.comments_block .more_button').show(1000);
+    };
+
+    $('.comments_block .more_button').on('click', function(event){
+        event.preventDefault();
+
+        $.ajax({
+            url: "/" + video_id + "/",
+            type: 'POST',
+            dataType:"json",
+            data: {
+                "count_comments_on_page": count_comments_on_page,
+                "count_comments_all": count_comments_all,
+                "csrfmiddlewaretoken": csrfmiddlewaretokenVal
+            },
+            error: function() {
+                alert('Ошибка получения запроса');
+            },          
+            success: function(data) {   
+                alert('suc');
+/*                data = JSON.parse(data);
+
+                $.each(data, function(){
+                    $('.new_authors .list_table tbody').append('<tr class="article author_line"> \
+                            <td class="cell_title"> \
+                                <a class="article_link" href="/profile/' + this.pk + '/"> <h3 class="h3"> ' + this.fields.nickname + '</h3> \
+                                </a> \
+                            </td> \
+                            <td class="cell_actions"> \
+                                <button type="button" class="btn btn-default btn-xs"><a class="glyphicon glyphicon-list-alt" href="/diary/' + this.pk + '/ ">Дневник</a></button> \
+                                <button type="button" class="btn btn-default btn-xs"><a class="glyphicon glyphicon-user" href="/profile/' + this.pk + '/ ">Профиль</a></button> \
+                            </td> \
+                        </tr>\
+                    ');                 
+                }); */
+            },
+            complete: function(){
+                count_comments_on_page = count_comments_on_page + 5;
+                if(count_comments_all <= count_comments_on_page){
+                    $('.comments_block .more_button').hide();  
+                };          
+            }
+        });         
+    }); 
+
     // -------------------------------------------------------------------------------------- comment form ajax
     $('#commentForm').on('submit', function(e){
         e.preventDefault()
