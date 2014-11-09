@@ -70,25 +70,37 @@
 
 		<div class="">
 			<section class="col-xs-9 comments_block">
-				<h4 class="h4">Комментарии:</h4>
+				<h4 class="h4">Добавить комментарий:</h4>
 
-				<div id="hypercomments_widget"></div>
+	        	<form class="comment_form common_form" action="{% url 'ajax_comment_add' %}" id="commentForm" method="POST" novalidate>
+						{% csrf_token %}	
 
-				<script type="text/javascript">
-					_hcwp = window._hcwp || [];
-					_hcwp.push({widget:"Stream", widget_id: 23068});
-					(function() {
-						if("HC_LOAD_INIT" in window)return;
-						HC_LOAD_INIT = true;
-						var lang = (navigator.language || navigator.systemLanguage || navigator.userLanguage || "en").substr(0, 2).toLowerCase();
-						var hcc = document.createElement("script"); hcc.type = "text/javascript"; hcc.async = true;
-						hcc.src = ("https:" == document.location.protocol ? "https" : "http")+"://w.hypercomments.com/widget/hc/23068/"+lang+"/widget.js";
-						var s = document.getElementsByTagName("script")[0];
-						s.parentNode.insertBefore(hcc, s.nextSibling);
-					})();
-				</script>
+						{% if not request.user.is_authenticated %}
+							<div class="cell input_outer">
+								{{ comment_form.username }}
+							</div>	
+						{% endif %}						
+						
+						<div class="cell textarea_outer">
+							{{ comment_form.comment }}
 
-				<!-- <a href="http://hypercomments.com" class="hc-link" title="comments widget">comments powered by HyperComments</a>-->
+							<div class="hide" id="videoIdComment" data-video-id="{{ video_obj.id }}">	
+						</div>		
+	            </form>				
+
+				{% for entry in comment_obj %}
+					<article class="article comment_item">
+						<h5 class="h5">
+							<span class="name">{{ entry.user_id.username }}</span>
+
+							<span class="date">{{ entry.date }}</span>
+						</h5>
+
+						<div class="body">
+							{{ entry.comment }}
+						</div>
+					</article>
+				{% endfor %}
 			</section>
 
 

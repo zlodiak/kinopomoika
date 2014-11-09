@@ -12,6 +12,7 @@ urlpatterns = patterns('',
     url(r'^sitemap\.xml$', 'django.contrib.sitemaps.views.sitemap',
         {'sitemaps': {'cmspages': CMSSitemap}}),
     url(r'^', include('app_video.urls')),
+    url(r'^comments/', include('app_comments.urls')),
     url(r'^accounts/', include('app_accounts.urls')),
     url(r'^', include('cms.urls')),
 )

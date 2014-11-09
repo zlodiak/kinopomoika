@@ -290,9 +290,24 @@ code {
 		font-weight: bold;
 	}
 
-	.comments_block .article{
+	.comments_block .comment_form{
 
 	}
+
+		.comments_block .comment_form .input_outer input{
+			color: #428bca;
+
+		}
+
+		.comments_block .comment_form .textarea_outer textarea{
+			width: 100%;
+			height: 160px;
+			overflow: hidden;
+
+			color: #428bca;
+		}
+
+
 
 /*************************************************************************************************************** GLOBAL_blocks : video_detail */
 .video_detail{
@@ -497,7 +512,7 @@ code {
 			float: left;
 			
 			font: 12px arial, sans-serif;
-			color: #444;
+			color: #428bca;
 		}
 		
 		.common_form .textarea_outer textarea{

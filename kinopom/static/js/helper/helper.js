@@ -1,4 +1,62 @@
 (function (){
+    // -------------------------------------------------------------------------------------- comment form ajax
+    $('#id_username').one('click', function(e){
+        $(this).val('');
+    });
+
+    $('#id_comment').one('click', function(e){
+        $(this).empty();
+    });
+
+    $('#id_comment').on('keypress', function(e){
+        var video_id = parseInt($('#videoIdComment').attr('data-video-id'), 10);
+            csrfmiddlewaretokenVal = $('#likeForm input[name=csrfmiddlewaretoken]').val();
+
+        if(e.keyCode == 13){
+            $.ajax({
+                url: "/comments/ajax_comment_add/",
+                type: 'POST',
+                dataType:"json",
+                data: {
+                    "video_id": video_id,
+                    "csrfmiddlewaretoken": csrfmiddlewaretokenVal
+                },
+                success: function(data) {
+                    console.log(data.result);
+                    console.log(data.is_authenticated);
+
+                    if(data.is_authenticated){
+
+                    }
+                    else{
+/*                        $('#commonModalLabel').text('Вы не авторизованы');
+                        $('#modalDialog').addClass('modal-md');
+                        $('#commonModal .modal-body').html('Для того чтобы была возможность ставить лайки необходимо <a id="authLike" href="#">войти</a> в систему. \
+                            Если у вас нет аккаунта, то необходимо <a id="regLike" href="#">зарегистрироваться.</a>');
+                        $('#butOk').addClass('hide');
+                        $('#commonModal').modal('show');
+
+                        setTimeout(function(){
+                            $('#commonModal').modal('hide');
+                        }, 10000); 
+
+                        $('#authLike').on('click', function(e){
+                            e.preventDefault()
+                            $('#commonModal').modal('hide');
+                            $('#authButton').trigger('click');
+                        });                    
+
+                        $('#regLike').on('click', function(e){
+                            e.preventDefault()
+                            $('#commonModal').modal('hide');
+                            $('#regButton').trigger('click');
+                        });*/
+                    }                          
+                }
+            });    
+        }
+    });
+
     // -------------------------------------------------------------------------------------- link_share
     $(".link_share").click(function(){
         $(".link_share").trigger("select");

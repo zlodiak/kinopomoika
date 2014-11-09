@@ -111,6 +111,7 @@ TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'kinopom', 'templates'),
     os.path.join(BASE_DIR, 'app_accounts', 'templates'),
     os.path.join(BASE_DIR, 'app_video', 'templates'),
+    os.path.join(BASE_DIR, 'app_comments', 'templates'),
 )
 
 INSTALLED_APPS = (
@@ -145,6 +146,7 @@ INSTALLED_APPS = (
     'kinopom',
     'app_accounts',
     'app_video',
+    'app_comments',
 )
 
 LANGUAGES = (
