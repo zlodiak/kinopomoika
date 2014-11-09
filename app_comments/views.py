@@ -38,11 +38,29 @@ def ajax_comment_add(request):
 		print(username)
 
 		if is_authenticated:
+			# user is auth
 			user_id = request.user.pk
 			user = User.objects.get(id=request.user.pk).username
+			entry = Comment.objects.create(
+					user_id=user_id, 
+					comment=comment,
+					video_id=video_id,
+			)			
 		else:
+			if username:
+				# user no auth and with name 
+				user = username
+			else:
+				# user no auth and without name 
+				user = None
+
 			user_id = None
-			user = username
+			entry = Comment.objects.create(
+					user_id=user_id, 
+					user_no_auth=user
+					comment=comment,
+					video_id=video_id,
+			)				
 
 		print(user)
 

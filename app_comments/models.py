@@ -13,6 +13,13 @@ class Comment(models.Model):
 		blank=True, 
 		null=True,
 	)	
+	user_no_auth = models.CharField(
+		verbose_name=u'Пользователь не авторизованный',
+		max_length=100,
+		default=None,
+		null=True,
+		blank=True,
+	)		
 	comment = HTMLField(
 		verbose_name=u'Комментарий',
 		max_length=50000, 

@@ -36,7 +36,12 @@
                     console.log(data.result);
                     console.log(data.is_authenticated);
                     console.log(data.user + 'du');
-                    if(!data.user){
+                    if(!data.user_id && !user){
+                        // user no auth and without name 
+                        data.user = 'Некто неизвестный'
+                    }
+                    else if(data.user_id){
+                        // user no auth and with name 
                         data.user = 'Некто неизвестный'
                     };
 
