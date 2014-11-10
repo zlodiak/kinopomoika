@@ -1,11 +1,25 @@
 ﻿(function (){
+    // -------------------------------------------------------------------------------------- tags menu active punkt
+    var tagMenuPunkts = $('#tagsContaiter li a'),
+        pathname = location.pathname,
+        pathnameList = pathname.split('/'),
+        slug3 = pathnameList[3];        
+
+        console.log(pathname);
+        console.log(slug3);
+
+        $.each(tagMenuPunkts, function(index, value){
+            if($(this).attr('href') == slug3){
+                $(this).addClass('active');
+            };
+        });        
+
     // -------------------------------------------------------------------------------------- tags menu more button
     var countAllTags = parseInt($('#countAllTags').text(), 10),
         countPageTags = $('#tagsContaiter li').length,
         csrfmiddlewaretokenVal = $('#tagsMoreForm input[name=csrfmiddlewaretoken]').val();
 
     $('.tags_list .more_button').hide();
-
 
     if(countAllTags > countPageTags){
         $('.tags_list .more_button').show(1000);
@@ -14,9 +28,6 @@
     $('.tags_list .more_button').on('click', function(event){
         event.preventDefault();
 
-        console.log(countAllTags);
-        console.log(countPageTags);
-
         $.ajax({
             url: "/menu/tags/",
             type: 'POST',
@@ -24,14 +35,9 @@
             data: {
                 "countPageTags": countPageTags,
                 "csrfmiddlewaretoken": csrfmiddlewaretokenVal
-            },
-            error: function() {
-                alert('Ошибка получения запроса');
-            },          
+            },        
             success: function(data) {   
                 data = JSON.parse(data);
-
-                console.log(data)
 
                 $.each(data, function(){
                     $('#tagsContaiter').append('<li><a href="/menu/tags/' + this.pk + '">' + this.fields.title + '</li>');                 

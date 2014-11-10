@@ -23,6 +23,10 @@ def tags(request, id_tag):
 	page for tags output with left sidebar
 	'''
 	tag_entries = None
+	tag_entries_paginated = None
+	list_pages = None
+	last_page = None
+	first_page = None
 	
 	if id_tag:
 		tag_entries = Entry.objects.filter(tags=id_tag)
