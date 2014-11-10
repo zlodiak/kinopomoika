@@ -176,6 +176,56 @@ code {
 }
 
 
+/*************************************************************************************************************** GLOBAL_blocks : tags_video_list */
+.tags_video_list{
+	padding-top: 50px;
+}
+	.tags_video_list a{
+		overflow: hidden;
+		cursor: pointer;
+	}
+
+		.tags_video_list .article{
+			overflow: hidden;
+			padding-bottom: 20px;
+		}	
+
+			.tags_video_list .article .left{
+				width: 300px;
+				float: left;
+			}
+
+				.tags_video_list .article .left iframe{
+					z-index: -10;
+					position: relative;
+				}
+
+			.tags_video_list .article .right{
+				width: 410px;
+				float: right;
+			}	
+
+				.tags_video_list .article .right .link{
+					text-decoration: none;
+				}
+
+				.tags_video_list .article .right .h4{
+					margin-top : 0;
+
+					font-weight: bold;
+				}	
+
+/*************************************************************************************************************** GLOBAL_blocks : tags_list */
+.tags_list{
+	padding-bottom: 20px;
+}
+
+	.tags_list .h2{
+		margin-top: 0;
+		
+	}
+
+
 /*************************************************************************************************************** GLOBAL_blocks : nav_bar */
 .navbar-nav>li>a{
 	height: 60px;
@@ -446,6 +496,34 @@ code {
 
 
 
+/*************************************************************************************************************** GLOBAL_blocks : video_meta */
+.video_meta{
+
+}
+
+	.video_meta .meta{
+		color: #AE9E9E;
+		font-size: 12px;
+	}
+
+		.video_meta .meta .link:hover{
+			text-decoration: none;
+		}
+
+		.video_meta .meta .link{
+			text-decoration: underline;
+
+			cursor: pointer;
+		}
+
+	.video_meta .date_create{
+
+	}
+
+	.video_meta .date_edit{
+
+	}	
+
 /*************************************************************************************************************** GLOBAL_blocks : video_detail */
 .video_detail{
 
@@ -492,33 +570,6 @@ code {
 			.video_detail .fullwidth .article .video_info_mid{
 				padding-bottom: 9px;
 			}
-
-				.video_detail .fullwidth .article .video_info_mid .dates{
-
-				}
-
-					.video_detail .fullwidth .article .video_info_mid .dates .date{
-						color: #AE9E9E;
-						font-size: 12px;
-					}
-
-						.video_detail .fullwidth .article .video_info_mid .dates .date .link:hover{
-							text-decoration: none;
-						}
-
-						.video_detail .fullwidth .article .video_info_mid .dates .date .link{
-							text-decoration: underline;
-
-							cursor: pointer;
-						}
-
-					.video_detail .fullwidth .article .video_info_mid .dates .date_create{
-
-					}
-
-					.video_detail .fullwidth .article .video_info_mid .dates .date_edit{
-
-					}	
 
 				.video_detail .fullwidth .article .video_info_mid .share{
 					text-align: right;

@@ -112,6 +112,7 @@ TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'app_accounts', 'templates'),
     os.path.join(BASE_DIR, 'app_video', 'templates'),
     os.path.join(BASE_DIR, 'app_comments', 'templates'),
+    os.path.join(BASE_DIR, 'app_menu', 'templates'),
 )
 
 INSTALLED_APPS = (
@@ -147,6 +148,7 @@ INSTALLED_APPS = (
     'app_accounts',
     'app_video',
     'app_comments',
+    'app_menu',
 )
 
 LANGUAGES = (
@@ -175,7 +177,7 @@ CMS_LANGUAGES = {
 CMS_TEMPLATES = (
     ## Customize this
     ('fullwidth.html', 'Fullwidth'),
-    ('sidebar_left.html', 'Sidebar Left'),
+    ('page_tags.html', 'Tags'),
     ('sidebar_right.html', 'Sidebar Right')
 )
 

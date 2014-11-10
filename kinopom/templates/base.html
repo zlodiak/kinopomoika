@@ -36,19 +36,7 @@
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
             <div class="container search_area width1000 navbar-fixed-top row">
                 <div class="col-xs-7">
-                    <form class="search_form common_form" action="" method="POST">
-                        {% csrf_token %}
-                        
-                        <div class="cell input_outer">
-                            {{ search_form.phrase }}
-                            
-                            {{ search_form.phrase.errors }}
-                        </div>
-
-                        <div class="cell submit_outer">
-                            <input class="btn btn-default" type="submit" value="Найти" />
-                        </div>
-                    </form>
+                    {% part_search_form %}
                 </div>
 
                 <div class="col-xs-5 auth_block clearfix">
@@ -58,15 +46,14 @@
         </nav>   
 
         <div class="container content_area width1000">
-            {% block content %}
-            {% endblock content %}
+            {% block content %}{% endblock content %}
         </div>        
 
         <div class="footer footer_area width1000">
             <div class="container width1000">
                 <div id="navbar" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
-                        {% show_menu_below_id "menu" %}
+                        {% show_menu_below_id "menu" %}{{qqq}}   
                     </ul>
                 </div>
             </div>
@@ -76,7 +63,7 @@
 
         <a class="to_start" id="toStart" href="{% url 'video' %}">
             <div class="arrow glyphicon glyphicon-circle-arrow-left">
-                <span class="sign_to_start">На старт</span>
+                <span class="sign_to_start">В начало</span>
             </div>            
         </a>
 
@@ -88,6 +75,8 @@
 
         <!-- auth window -->
         {% part_auth_form %}
+
+
 
         <!-- jquery -->
         <script src="{% static 'js/jquery/jquery.2.min.js' %}"></script>

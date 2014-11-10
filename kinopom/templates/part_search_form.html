@@ -1,0 +1,13 @@
+<form class="search_form common_form" action="" method="POST">
+    {% csrf_token %}
+    
+    <div class="cell input_outer">
+        {{ search_form.phrase }}
+        
+        {{ search_form.phrase.errors }}
+    </div>
+
+    <div class="cell submit_outer">
+        <input class="btn btn-default" type="submit" value="Найти" />
+    </div>
+</form>

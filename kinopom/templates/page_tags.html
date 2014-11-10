@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load cms_tags %}
+
+{% block title %}{% page_attribute 'title' %}{% endblock title %}
+
+{% block content %}
+	<div class="row">
+		<section class="section tags_list col-xs-3">
+			<h4 class="h4">Список тегов:</h4>
+
+			<ul>
+				{% for entry in all_tags_entries %}
+					<li>
+						<a href="{{ entry.id }}">{{ entry.title }}</a>
+					</li>
+				{% endfor %}
+			</ul>
+		</section>
+
+		<div class="col-xs-9">
+			<section class="section tags_video_list">
+				<h4 class="h4 hide">Видео тега {{ entry.title }}</h4>
+				
+				{% for entry in tag_entries %}
+					{% if entry %}
+						<a class="link_to_details" href="{% url 'video_detail' entry.id %}">
+							<article class="article">
+								<div class="left">
+									<iframe allowfullscreen="" src="//www.youtube.com/embed/{{ entry }}/?controls=0&showinfo=0&rel=0&modestbranding=0" frameborder="0" ></iframe>
+								</div>
+
+								<div class="right">
+									<h4 class="h4">{{ entry.title|truncatechars:97 }}</h4>
+
+									<div class="video_meta">
+										<div class="meta author">Автор: {{ entry.user.username }}</div>
+
+										<div class="meta date_create">Дата размещения: {{ entry.date }}</div>
+
+										<div class="meta date_edit">Дата редактирования: {{ entry.last_edit_date }}</div>
+
+										<div class="meta date_edit">Теги: 
+											{% for tag in entry.tags.all %}
+												<span class="link">{{ tag }}</span>{% if not forloop.last %}, {% endif %}
+											{% endfor %}
+										</div>
+									</div>
+								</div>
+							</article >
+						</a>
+					{% else %}
+						<p>Нет видео</p>
+					{% endif %}
+				{% endfor %}
+			</section>
+		</div>
+	</div>
+{% endblock content %}

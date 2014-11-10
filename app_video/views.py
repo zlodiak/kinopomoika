@@ -18,7 +18,6 @@ def custom_proc(request):
 	"""	
 	return{
 		'request': request,
-		'search_form': SearchForm,
 	}
 
 def video(request):

@@ -30,14 +30,14 @@
 				</div>
 
 				<div class="video_info_mid row">
-					<div class="dates col-xs-6">
-						<div class="date author">Автор: {{ video_obj.user.username }}</div>
+					<div class="dates video_meta col-xs-6">
+						<div class="meta author">Автор: {{ video_obj.user.username }}</div>
 
-						<div class="date date_create">Дата размещения: {{ video_obj.date }}</div>
+						<div class="meta date_create">Дата размещения: {{ video_obj.date }}</div>
 
-						<div class="date date_edit">Дата редактирования: {{ video_obj.last_edit_date }}</div>
+						<div class="meta date_edit">Дата редактирования: {{ video_obj.last_edit_date }}</div>
 
-						<div class="date date_edit">Теги: 
+						<div class="meta date_edit">Теги: 
 							{% for tag in video_obj.tags.all %}
 								<span class="link">{{ tag }}</span>{% if not forloop.last %}, {% endif %}
 							{% endfor %}
