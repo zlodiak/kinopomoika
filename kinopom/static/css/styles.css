@@ -183,7 +183,79 @@ code {
 	line-height: 33px;
 }
 
+/*************************************************************************************************************** GLOBAL_blocks : to_start */
+.to_start:hover{
+	opacity: 1;
+	transition: 1s;
+}
+
+.to_start{
+	position: fixed;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	width:100px;
+    background:#ccc;
+    text-align:center;
+    padding:5px;
+    cursor:pointer;
+	display:none;
+    z-index: 2000;
+    opacity: 0.4;
+    transition: 1s;
+    overflow: hidden;
+
+    color:#333;
+    font-size:52px;
+    text-align: center;
+}
+
+	.to_start:after{
+		content: 'Или назад на одну страничку';
+		width: 84px;
+		display: block;
+		position: absolute;
+		bottom: 0px;
+		left: 0px;
+		right: 0;	
+		padding: 7px;	
+		border: 1px solid #000;
+		margin: 7px;
+		border-radius: 6px;
+		display: none;
+
+		font-size: 12px;
+		text-align: left;
+	}
+
+	
+	.sign_to_start{
+		font-size: 14px;
+		
+		width: 100px;
+		display: block;
+		position: absolute;
+		top: 70px;
+		left: -25px;
+		right: 0;
+		padding-bottom: 7px;
+	}
+
+
+
+	.to_start .arrow{
+		position: fixed;
+		top: 33%;
+		left: 25px;
+		opacity: 0.5;
+	}
+
 /*************************************************************************************************************** GLOBAL_blocks : to_top */
+.to_top:hover{
+	opacity: 1;
+	transition: 1s;
+}
+
 .to_top{
 	position: fixed;
 	right: 0;
@@ -197,6 +269,8 @@ code {
     display:none;
     z-index: 2000;
     opacity: 0.4;
+    transition: 1s;
+    overflow: hidden;
 
     color:#333;
     font-size:52px;
@@ -204,7 +278,7 @@ code {
 
 	.to_top .arrow{
 		position: fixed;
-		top: 47%;
+		top: 33%;
 		right: 22px;
 		opacity: 0.5;
 	}

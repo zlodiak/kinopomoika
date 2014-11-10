@@ -1,4 +1,21 @@
 ﻿(function (){
+    // -------------------------------------------------------------------------------------- to start
+    var pathname = location.pathname,
+        pathnameList = pathname.split('/'),
+        slug1 = pathnameList[1];
+
+    if(slug1){
+        $('#toStart').css('display', 'block');
+    }
+    else{
+        $('#toStart').css('display', 'none');
+    };
+
+    $('.to_start').filter(':after').click(function(e) {
+        e.preventDefault()
+        console.log(44);
+    })    
+
     // -------------------------------------------------------------------------------------- to top
     $(window).scroll(function() {
         if($(this).scrollTop() != 0) {

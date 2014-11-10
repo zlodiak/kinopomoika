@@ -64,17 +64,21 @@
 
         <div class="footer footer_area width1000">
             <div class="container width1000">
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-{% show_menu_below_id "menu" %}
-          </ul>
-        </div><!--/.nav-collapse -->
-
-                
+                <div id="navbar" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        {% show_menu_below_id "menu" %}
+                    </ul>
+                </div>
             </div>
         </div>
 
         <div class="to_top" id="toTop"><div class="arrow glyphicon glyphicon-circle-arrow-up"></div></div>
+
+        <a class="to_start" id="toStart" href="{% url 'video' %}">
+            <div class="arrow glyphicon glyphicon-circle-arrow-left">
+                <span class="sign_to_start">На старт</span>
+            </div>            
+        </a>
 
         <!-- common_modal window -->
         {% part_common_modal %}   
