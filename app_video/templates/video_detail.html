@@ -34,6 +34,12 @@
 						<div class="date date_create">Дата размещения: {{ video_obj.date }}</div>
 
 						<div class="date date_edit">Дата редактирования: {{ video_obj.last_edit_date }}</div>
+
+						<div class="date date_edit">Теги: 
+							{% for tag in video_obj.tags.all %}
+								<span class="link">{{ tag }}</span>{% if not forloop.last %}, {% endif %}
+							{% endfor %}
+						</div>
 					</div>
 
 					<div class="share col-xs-6">

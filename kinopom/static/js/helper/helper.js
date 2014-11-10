@@ -78,10 +78,6 @@
                 username = $.trim($('.username_comment').val()),
                 comment = $.trim($('.comment_comment').val()),
                 csrfmiddlewaretokenVal = $('#commentForm input[name=csrfmiddlewaretoken]').val();
-        
-
-            console.log(comment + 'ccccc');
-            console.log(comment.length + 'llll');
 
             if(comment.length > 0){
                 $.ajax({

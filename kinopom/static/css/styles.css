@@ -392,6 +392,16 @@ code {
 						font-size: 12px;
 					}
 
+						.video_detail .fullwidth .article .video_info_mid .dates .date .link:hover{
+							text-decoration: none;
+						}
+
+						.video_detail .fullwidth .article .video_info_mid .dates .date .link{
+							text-decoration: underline;
+
+							cursor: pointer;
+						}
+
 					.video_detail .fullwidth .article .video_info_mid .dates .date_create{
 
 					}
@@ -454,7 +464,7 @@ code {
 						}	
 
 			.video_detail .fullwidth .article .description{
-				padding-bottom: 30px;
+				padding-bottom: 10px;
 				padding-top: none;
 
 			}									
