@@ -271,6 +271,10 @@ code {
 
 	}
 
+	.tags_list .tags_container{
+		padding-bottom: 10px;
+	}
+
 
 /*************************************************************************************************************** GLOBAL_blocks : nav_bar */
 .navbar-nav>li>a{

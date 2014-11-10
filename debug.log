@@ -11879,3 +11879,4 @@ Traceback (most recent call last):
   File "/home/kalinins/.virtualenvs/kinopom_project/kinopom/app_menu/views.py", line 36, in tags
     'id_tag': int(id_tag),
 TypeError: int() argument must be a string or a number, not 'NoneType'
+Forbidden (CSRF token missing or incorrect.): /menu/tags/

@@ -3,6 +3,8 @@ from django.http import HttpResponse, HttpResponseRedirect, Http404, HttpRespons
 from django.template import loader, RequestContext
 from django.shortcuts import render, render_to_response
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+import json
+from django.core import serializers
 
 from kinopom.models import Tag, Entry
 
@@ -47,8 +49,13 @@ def tags(request, id_tag):
 	# get all tags in DB
 	count_all_tags = Tag.objects.all().count()
 
-	if request.method == 'POST' and request.is_ajax():	
-		pass
+	if request.method == 'POST':	
+		count_page_tags = int(request.POST.get('countPageTags', ''))
+		all_tags_entries = Tag.get_all_tags_entries(cut_begin=count_page_tags, cut_end=count_page_tags + 6)	
+		result = serializers.serialize('json', all_tags_entries)
+
+		return HttpResponse(json.dumps(result), content_type='application/json')		
+
 	else:
 		all_tags_entries = Tag.get_all_tags_entries(cut_begin=0, cut_end=6)	
         		

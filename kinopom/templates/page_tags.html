@@ -18,10 +18,10 @@
 				{% endfor %}
 			</ul>
 
-			<form class="more_button_outer" action="/" method="POST">
+			<form class="more_button_outer" id="tagsMoreForm"  action="" method="POST">
 				{% csrf_token %}
 
-				<input class="btn btn-default more_button" type="submit" value="Показать ещё" />
+				<input class="btn btn-default btn-xs more_button" type="submit" value="Показать ещё" />
 			</form>				
 		</section>
 
