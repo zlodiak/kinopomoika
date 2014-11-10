@@ -167,14 +167,21 @@ body > .container {
 }
 
 .footer > .container {
-  padding-right: 30px;
-  padding-left: 30px;
+  padding-right: 15px;
+  padding-left: 15px;
 }
 
 code {
   font-size: 80%;
 }
 
+
+/*************************************************************************************************************** GLOBAL_blocks : nav_bar */
+.navbar-nav>li>a{
+	height: 60px;
+
+	line-height: 33px;
+}
 
 /*************************************************************************************************************** GLOBAL_blocks : to_top */
 .to_top{
@@ -199,6 +206,7 @@ code {
 		position: fixed;
 		top: 47%;
 		right: 22px;
+		opacity: 0.5;
 	}
 
 /*************************************************************************************************************** GLOBAL_blocks : comment_item */
