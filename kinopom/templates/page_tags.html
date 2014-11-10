@@ -8,14 +8,21 @@
 		<section class="section tags_list col-xs-3">
 			<h4 class="h4">Список тегов:</h4>
 
-			<ul>
+			<div class="hide" id="countAllTags">{{ count_all_tags }}</div>
+
+			<ul class="tags_container" id="tagsContaiter">
 				{% for entry in all_tags_entries %}
 					<li>
 						<a href="{{ entry.id }}" {% if id_tag == entry.id %}class="active"{% endif %}>{{ entry.title }}</a>
-
 					</li>
 				{% endfor %}
 			</ul>
+
+			<form class="more_button_outer" action="/" method="POST">
+				{% csrf_token %}
+
+				<input class="btn btn-default more_button" type="submit" value="Показать ещё" />
+			</form>				
 		</section>
 
 		<div class="col-xs-9">

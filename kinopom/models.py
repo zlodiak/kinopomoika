@@ -38,7 +38,11 @@ class Tag(models.Model):
 		verbose_name_plural = u"""теги"""
 
 	def __unicode__(self):
-		return u"{0}".format(self.title)		
+		return u"{0}".format(self.title)	
+
+	@classmethod
+	def get_all_tags_entries(self, cut_begin, cut_end):
+		return self.objects.filter(is_active=1).order_by('title')[cut_begin:cut_end]		
 
 
 class Entry(models.Model):

@@ -1,6 +1,65 @@
 ﻿(function (){
-    // -------------------------------------------------------------------------------------- tags menu active punkt
+    // -------------------------------------------------------------------------------------- tags menu more button
+    var countAllTags = parseInt($('#countAllTags').text(), 10)
+        countPageTags = $('#tagsContaiter li').length;
 
+        console.log(countPageTags);
+
+    $('.tags_list .more_button').hide();
+
+/*  console.log(count_new_authors);
+    console.log(page_new_authors);*/
+
+/*    if(count_new_authors > page_new_authors){
+        $('.new_authors .more_button').show(1000);
+    };
+
+    $('.new_authors .more_button').on('click', function(event){
+        event.preventDefault();
+
+        page_new_authors = $('.author_line').length;
+
+        //console.log(count_new_authors);
+        //console.log(page_new_authors);
+
+        $.ajax({
+            url: "/new_authors/",
+            type: 'POST',
+            dataType:"json",
+            data: {
+                "page_new_authors": page_new_authors,
+                "count_new_authors": count_new_authors,
+                "csrfmiddlewaretoken": $.csrf_token
+            },
+            error: function() {
+                //alert('Ошибка получения запроса');
+            },          
+            success: function(data) {   
+                data = JSON.parse(data);
+
+                $.each(data, function(){
+                    $('.new_authors .list_table tbody').append('<tr class="article author_line"> \
+                            <td class="cell_title"> \
+                                <a class="article_link" href="/profile/' + this.pk + '/"> <h3 class="h3"> ' + this.fields.nickname + '</h3> \
+                                </a> \
+                            </td> \
+                            <td class="cell_actions"> \
+                                <button type="button" class="btn btn-default btn-xs"><a class="glyphicon glyphicon-list-alt" href="/diary/' + this.pk + '/ ">Дневник</a></button> \
+                                <button type="button" class="btn btn-default btn-xs"><a class="glyphicon glyphicon-user" href="/profile/' + this.pk + '/ ">Профиль</a></button> \
+                            </td> \
+                        </tr>\
+                    ');                 
+                }); 
+            },
+            complete: function(){
+                page_new_authors = page_new_authors + 6;
+                if(count_new_authors <= page_new_authors){
+                    $('.new_authors .more_button').hide();  
+                };          
+            }
+        });         
+    }); */
+        
     
     // -------------------------------------------------------------------------------------- to start
     var pathname = location.pathname,

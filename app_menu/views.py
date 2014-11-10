@@ -25,7 +25,7 @@ def tags(request, id_tag):
 	if id_tag:
 		tag_entries = Entry.objects.filter(tags=id_tag)
 
-		paginator = Paginator(tag_entries, 3)
+		paginator = Paginator(tag_entries, 10)
 		list_pages = paginator.page_range
 		
 		page = request.GET.get('page')
@@ -36,14 +36,21 @@ def tags(request, id_tag):
 		except EmptyPage:
 			tag_entries_paginated = paginator.page(paginator.num_pages)	
 			
-		last_page = list_pages[-1]			
+		last_page = list_pages[-1]		
+		first_page = list_pages[0]		
 
 	if not id_tag:
 		id_tag = 0
 
 	all_tags_entries = Tag.objects.all()
+		
+	# get all tags in DB
+	count_all_tags = Tag.objects.all().count()
 
-	first_page = list_pages[0]			
+	if request.method == 'POST' and request.is_ajax():	
+		pass
+	else:
+		all_tags_entries = Tag.get_all_tags_entries(cut_begin=0, cut_end=6)	
         		
 	t = loader.get_template('page_tags.html')
 	c = RequestContext(request, {
@@ -53,6 +60,7 @@ def tags(request, id_tag):
 		'list_pages': list_pages,
 		'last_page': last_page,
 		'first_page': first_page,			
+		'count_all_tags': count_all_tags,			
 	}, [custom_proc])	
 	
 	return HttpResponse(t.render(c)) 	
