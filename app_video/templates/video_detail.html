@@ -21,7 +21,9 @@
 							<form action="" method="POST" id="likeForm">
 								{% csrf_token %}
 
-								<span class="likes_sign glyphicon glyphicon-thumbs-up"></span><span id="likesVal">{{ video_obj.likes }}</span>
+								<span class="likes_sign glyphicon glyphicon-thumbs-up"></span>
+
+								<span id="likesVal">{{ video_obj.likes }}</span>
 							</form>
 						</div>
 					</div>

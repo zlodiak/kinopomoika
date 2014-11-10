@@ -1,71 +1,16 @@
 ﻿(function (){
-    // -------------------------------------------------------------------------------------- more button for comment 
-/*    var nameForOutput,
-        count_comments_all = parseInt($('#countComments').text(), 10),
-        video_id = parseInt($('#videoIdComment').attr('data-video-id'), 10),
-        count_comments_on_page = $('.comments_block .comment_item').length,
-        csrfmiddlewaretokenVal = $('#commentsMoreButton input[name=csrfmiddlewaretoken]').val();
-
-    $('.comments_block .more_button').hide();
-
-    console.log(count_comments_all);
-    console.log(count_comments_on_page);
-
-    if(count_comments_all > count_comments_on_page){
-        $('.comments_block .more_button').show(1000);
-    };
-
-    $('.comments_block .more_button').on('click', function(event){
-        event.preventDefault();
-
-        $.ajax({
-            url: "/" + video_id + "/",
-            type: 'POST',
-            dataType:"json",
-            data: {
-                "count_comments_on_page": count_comments_on_page,
-                "count_comments_all": count_comments_all,
-                "csrfmiddlewaretoken": csrfmiddlewaretokenVal
-            },
-            error: function() {
-                alert('Ошибка получения запроса');
-            },          
-            success: function(data) {   
-                data = JSON.parse(data);
-                console.log(data)
-
-                $.each(data, function(){
-                    // define name
-                    if(!this.fields.user){
-                        nameForOutput = this.fields.user_no_auth;
-                    }
-                    else{
-                        nameForOutput = this.fields.user;
-                    };
-
-                    // output block
-                    $('#articlesComments').append( '\
-                        <article class="article comment_item"> \
-                            <h5 class="h5"> \
-                                <span class="name"> \
-                                    ' + nameForOutput + ' \
-                                </span> \
-                                <span class="date">' + this.fields.date + '</span> \
-                            </h5> \
-                            <div class="body"> \
-                                ' + this.fields.comment + ' \
-                            </div> \
-                        </article>');                 
-                }); 
-            },
-            complete: function(){
-                count_comments_on_page = count_comments_on_page + 5;
-                if(count_comments_all <= count_comments_on_page){
-                    $('.comments_block .more_button').hide();  
-                };          
-            }
-        });         
-    }); */
+    // -------------------------------------------------------------------------------------- to top
+    $(window).scroll(function() {
+        if($(this).scrollTop() != 0) {
+            $('#toTop').fadeIn();   
+        } else {
+            $('#toTop').fadeOut();
+        }
+    });
+ 
+    $('#toTop').click(function() {
+        $('body,html').animate({scrollTop:0},800);
+    })
 
     // -------------------------------------------------------------------------------------- comment form ajax
     $('#commentForm').on('submit', function(e){

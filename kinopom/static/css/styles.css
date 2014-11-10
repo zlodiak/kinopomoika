@@ -139,12 +139,15 @@ body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
   background: #efefef;
+  min-width: 1000p;
 
   color: #000;
 }
 .footer {
   position: absolute;
   bottom: 0;
+  left: 0;
+  right: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 60px;
@@ -164,14 +167,39 @@ body > .container {
 }
 
 .footer > .container {
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 30px;
+  padding-left: 30px;
 }
 
 code {
   font-size: 80%;
 }
 
+
+/*************************************************************************************************************** GLOBAL_blocks : to_top */
+.to_top{
+	position: fixed;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	width:100px;
+    background:#ccc;
+    text-align:center;
+    padding:5px;
+    cursor:pointer;
+    display:none;
+    z-index: 2000;
+    opacity: 0.4;
+
+    color:#333;
+    font-size:52px;
+}
+
+	.to_top .arrow{
+		position: fixed;
+		top: 47%;
+		right: 22px;
+	}
 
 /*************************************************************************************************************** GLOBAL_blocks : comment_item */
 .comment_item{
