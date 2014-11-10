@@ -11887,3 +11887,4 @@ Traceback (most recent call last):
   File "/home/kalinins/.virtualenvs/kinopom_project/kinopom/app_menu/views.py", line 65, in tags
     'tag_entries_paginated': tag_entries_paginated,
 UnboundLocalError: local variable 'tag_entries_paginated' referenced before assignment
+Not Found: /menu/tags/2 data-href=

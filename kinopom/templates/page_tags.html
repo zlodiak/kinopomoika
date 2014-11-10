@@ -13,7 +13,7 @@
 			<ul class="tags_container" id="tagsContaiter">
 				{% for entry in all_tags_entries %}
 					<li>
-						<a href="{{ entry.id }}">{{ entry.title }}</a>
+						<a href="{{ entry.id }}" data-href="{{ entry.id }}">{{ entry.title }}</a>
 					</li>
 				{% endfor %}
 			</ul>

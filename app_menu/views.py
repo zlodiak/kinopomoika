@@ -55,13 +55,13 @@ def tags(request, id_tag):
 
 	if request.method == 'POST':	
 		count_page_tags = int(request.POST.get('countPageTags', ''))
-		all_tags_entries = Tag.get_all_tags_entries(cut_begin=count_page_tags, cut_end=count_page_tags + 6)	
+		all_tags_entries = Tag.get_all_tags_entries(cut_begin=count_page_tags, cut_end=count_page_tags + 12)	
 		result = serializers.serialize('json', all_tags_entries)
 
 		return HttpResponse(json.dumps(result), content_type='application/json')		
 
 	else:
-		all_tags_entries = Tag.get_all_tags_entries(cut_begin=0, cut_end=6)	
+		all_tags_entries = Tag.get_all_tags_entries(cut_begin=0, cut_end=12)	
         		
 	t = loader.get_template('page_tags.html')
 	c = RequestContext(request, {
