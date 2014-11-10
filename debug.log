@@ -11223,3 +11223,659 @@ Traceback (most recent call last):
   File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/contrib/admin/options.py", line 565, in get_form
     % (e, self.__class__.__name__))
 FieldError: Unknown field(s) (tags) specified for Tag. Check fields/fieldsets/exclude attributes of class TagAdmin.
+Internal Server Error: /admin/kinopom/tag/add/
+Traceback (most recent call last):
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/contrib/admin/options.py", line 466, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/utils/decorators.py", line 99, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/views/decorators/cache.py", line 52, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/contrib/admin/sites.py", line 198, in inner
+    return view(request, *args, **kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/utils/decorators.py", line 29, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/utils/decorators.py", line 99, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/utils/decorators.py", line 25, in bound_func
+    return func(self, *args2, **kwargs2)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/db/transaction.py", line 371, in inner
+    return func(*args, **kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/contrib/admin/options.py", line 1142, in add_view
+    ModelForm = self.get_form(request)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/contrib/admin/options.py", line 565, in get_form
+    % (e, self.__class__.__name__))
+FieldError: Unknown field(s) (tags) specified for Tag. Check fields/fieldsets/exclude attributes of class TagAdmin.
+Internal Server Error: /admin/kinopom/tag/add/
+Traceback (most recent call last):
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/contrib/admin/options.py", line 466, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/utils/decorators.py", line 99, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/views/decorators/cache.py", line 52, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/contrib/admin/sites.py", line 198, in inner
+    return view(request, *args, **kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/utils/decorators.py", line 29, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/utils/decorators.py", line 99, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/utils/decorators.py", line 25, in bound_func
+    return func(self, *args2, **kwargs2)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/db/transaction.py", line 371, in inner
+    return func(*args, **kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/contrib/admin/options.py", line 1142, in add_view
+    ModelForm = self.get_form(request)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/contrib/admin/options.py", line 565, in get_form
+    % (e, self.__class__.__name__))
+FieldError: Unknown field(s) (tags) specified for Tag. Check fields/fieldsets/exclude attributes of class TagAdmin.
+Internal Server Error: /admin/kinopom/tag/add/
+Traceback (most recent call last):
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/contrib/admin/options.py", line 466, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/utils/decorators.py", line 99, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/views/decorators/cache.py", line 52, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/contrib/admin/sites.py", line 198, in inner
+    return view(request, *args, **kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/utils/decorators.py", line 29, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/utils/decorators.py", line 99, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/utils/decorators.py", line 25, in bound_func
+    return func(self, *args2, **kwargs2)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/db/transaction.py", line 371, in inner
+    return func(*args, **kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/contrib/admin/options.py", line 1142, in add_view
+    ModelForm = self.get_form(request)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/contrib/admin/options.py", line 565, in get_form
+    % (e, self.__class__.__name__))
+FieldError: Unknown field(s) (tags) specified for Tag. Check fields/fieldsets/exclude attributes of class TagAdmin.
+Internal Server Error: /admin/kinopom/tag/add/
+Traceback (most recent call last):
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/contrib/admin/options.py", line 466, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/utils/decorators.py", line 99, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/views/decorators/cache.py", line 52, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/contrib/admin/sites.py", line 198, in inner
+    return view(request, *args, **kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/utils/decorators.py", line 29, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/utils/decorators.py", line 99, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/utils/decorators.py", line 25, in bound_func
+    return func(self, *args2, **kwargs2)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/db/transaction.py", line 371, in inner
+    return func(*args, **kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/contrib/admin/options.py", line 1142, in add_view
+    ModelForm = self.get_form(request)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/contrib/admin/options.py", line 565, in get_form
+    % (e, self.__class__.__name__))
+FieldError: Unknown field(s) (tags) specified for Tag. Check fields/fieldsets/exclude attributes of class TagAdmin.
+Internal Server Error: /1/
+Traceback (most recent call last):
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom/app_video/views.py", line 56, in video_detail
+    return HttpResponse(t.render(c))
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 140, in render
+    return self._render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 134, in _render
+    return self.nodelist.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/debug.py", line 78, in render_node
+    return node.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/loader_tags.py", line 123, in render
+    return compiled_parent._render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 134, in _render
+    return self.nodelist.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/debug.py", line 78, in render_node
+    return node.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/classytags/core.py", line 106, in render
+    return self.render_tag(context, **kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/sekizai/templatetags/sekizai_tags.py", line 76, in render_tag
+    rendered_contents = nodelist.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/debug.py", line 78, in render_node
+    return node.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/classytags/core.py", line 106, in render
+    return self.render_tag(context, **kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/cms/templatetags/cms_tags.py", line 682, in render_tag
+    rendered_contents = nodelist.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/debug.py", line 78, in render_node
+    return node.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/debug.py", line 78, in render_node
+    return node.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/defaulttags.py", line 196, in render
+    nodelist.append(node.render(context))
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/defaulttags.py", line 447, in render
+    six.reraise(*exc_info)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/defaulttags.py", line 433, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=context.current_app)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 536, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 456, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+NoReverseMatch: Reverse for 'tags' with arguments '()' and keyword arguments '{}' not found. 1 pattern(s) tried: ['menu/tags/(?P<id_tag>[0-9]*)$']
+Internal Server Error: /1/
+Traceback (most recent call last):
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom/app_video/views.py", line 56, in video_detail
+    return HttpResponse(t.render(c))
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 140, in render
+    return self._render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 134, in _render
+    return self.nodelist.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/debug.py", line 78, in render_node
+    return node.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/loader_tags.py", line 123, in render
+    return compiled_parent._render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 134, in _render
+    return self.nodelist.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/debug.py", line 78, in render_node
+    return node.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/classytags/core.py", line 106, in render
+    return self.render_tag(context, **kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/sekizai/templatetags/sekizai_tags.py", line 76, in render_tag
+    rendered_contents = nodelist.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/debug.py", line 78, in render_node
+    return node.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/classytags/core.py", line 106, in render
+    return self.render_tag(context, **kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/cms/templatetags/cms_tags.py", line 682, in render_tag
+    rendered_contents = nodelist.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/debug.py", line 78, in render_node
+    return node.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/debug.py", line 78, in render_node
+    return node.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/defaulttags.py", line 196, in render
+    nodelist.append(node.render(context))
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/defaulttags.py", line 447, in render
+    six.reraise(*exc_info)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/defaulttags.py", line 433, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=context.current_app)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 536, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 456, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+NoReverseMatch: Reverse for 'tags' with arguments '()' and keyword arguments '{}' not found. 1 pattern(s) tried: ['menu/tags/(?P<id_tag>[0-9]*)$']
+Internal Server Error: /1/
+Traceback (most recent call last):
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom/app_video/views.py", line 56, in video_detail
+    return HttpResponse(t.render(c))
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 140, in render
+    return self._render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 134, in _render
+    return self.nodelist.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/debug.py", line 78, in render_node
+    return node.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/loader_tags.py", line 123, in render
+    return compiled_parent._render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 134, in _render
+    return self.nodelist.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/debug.py", line 78, in render_node
+    return node.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/classytags/core.py", line 106, in render
+    return self.render_tag(context, **kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/sekizai/templatetags/sekizai_tags.py", line 76, in render_tag
+    rendered_contents = nodelist.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/debug.py", line 78, in render_node
+    return node.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/classytags/core.py", line 106, in render
+    return self.render_tag(context, **kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/cms/templatetags/cms_tags.py", line 682, in render_tag
+    rendered_contents = nodelist.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/debug.py", line 78, in render_node
+    return node.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/debug.py", line 78, in render_node
+    return node.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/defaulttags.py", line 196, in render
+    nodelist.append(node.render(context))
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/defaulttags.py", line 447, in render
+    six.reraise(*exc_info)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/defaulttags.py", line 433, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=context.current_app)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 536, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 456, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+NoReverseMatch: Reverse for 'tags' with arguments '()' and keyword arguments '{}' not found. 1 pattern(s) tried: ['menu/tags/(?P<id_tag>[0-9]*)$']
+Internal Server Error: /1/
+Traceback (most recent call last):
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom/app_video/views.py", line 56, in video_detail
+    return HttpResponse(t.render(c))
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 140, in render
+    return self._render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 134, in _render
+    return self.nodelist.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/debug.py", line 78, in render_node
+    return node.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/loader_tags.py", line 123, in render
+    return compiled_parent._render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 134, in _render
+    return self.nodelist.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/debug.py", line 78, in render_node
+    return node.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/classytags/core.py", line 106, in render
+    return self.render_tag(context, **kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/sekizai/templatetags/sekizai_tags.py", line 76, in render_tag
+    rendered_contents = nodelist.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/debug.py", line 78, in render_node
+    return node.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/classytags/core.py", line 106, in render
+    return self.render_tag(context, **kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/cms/templatetags/cms_tags.py", line 682, in render_tag
+    rendered_contents = nodelist.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/debug.py", line 78, in render_node
+    return node.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/debug.py", line 78, in render_node
+    return node.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/defaulttags.py", line 196, in render
+    nodelist.append(node.render(context))
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/defaulttags.py", line 447, in render
+    six.reraise(*exc_info)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/defaulttags.py", line 433, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=context.current_app)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 536, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 456, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+NoReverseMatch: Reverse for 'tags' with arguments '()' and keyword arguments '{}' not found. 1 pattern(s) tried: ['menu/tags/(?P<id_tag>[0-9]*)$']
+Internal Server Error: /1/
+Traceback (most recent call last):
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom/app_video/views.py", line 56, in video_detail
+    return HttpResponse(t.render(c))
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 140, in render
+    return self._render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 134, in _render
+    return self.nodelist.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/debug.py", line 78, in render_node
+    return node.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/loader_tags.py", line 123, in render
+    return compiled_parent._render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 134, in _render
+    return self.nodelist.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/debug.py", line 78, in render_node
+    return node.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/classytags/core.py", line 106, in render
+    return self.render_tag(context, **kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/sekizai/templatetags/sekizai_tags.py", line 76, in render_tag
+    rendered_contents = nodelist.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/debug.py", line 78, in render_node
+    return node.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/classytags/core.py", line 106, in render
+    return self.render_tag(context, **kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/cms/templatetags/cms_tags.py", line 682, in render_tag
+    rendered_contents = nodelist.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/debug.py", line 78, in render_node
+    return node.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/debug.py", line 78, in render_node
+    return node.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/defaulttags.py", line 196, in render
+    nodelist.append(node.render(context))
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/defaulttags.py", line 447, in render
+    six.reraise(*exc_info)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/defaulttags.py", line 433, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=context.current_app)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 536, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 456, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+NoReverseMatch: Reverse for 'tags' with arguments '()' and keyword arguments '{}' not found. 1 pattern(s) tried: ['menu/tags/(?P<id_tag>[0-9]*)$']
+Internal Server Error: /1/
+Traceback (most recent call last):
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom/app_video/views.py", line 56, in video_detail
+    return HttpResponse(t.render(c))
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 140, in render
+    return self._render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 134, in _render
+    return self.nodelist.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/debug.py", line 78, in render_node
+    return node.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/loader_tags.py", line 123, in render
+    return compiled_parent._render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 134, in _render
+    return self.nodelist.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/debug.py", line 78, in render_node
+    return node.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/classytags/core.py", line 106, in render
+    return self.render_tag(context, **kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/sekizai/templatetags/sekizai_tags.py", line 76, in render_tag
+    rendered_contents = nodelist.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/debug.py", line 78, in render_node
+    return node.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/classytags/core.py", line 106, in render
+    return self.render_tag(context, **kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/cms/templatetags/cms_tags.py", line 682, in render_tag
+    rendered_contents = nodelist.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/debug.py", line 78, in render_node
+    return node.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/debug.py", line 78, in render_node
+    return node.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/defaulttags.py", line 196, in render
+    nodelist.append(node.render(context))
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/defaulttags.py", line 447, in render
+    six.reraise(*exc_info)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/defaulttags.py", line 433, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=context.current_app)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 536, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 456, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+NoReverseMatch: Reverse for 'tags' with arguments '()' and keyword arguments '{}' not found. 1 pattern(s) tried: ['menu/tags/(?P<id_tag>[0-9]*)$']
+Internal Server Error: /1/
+Traceback (most recent call last):
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom/app_video/views.py", line 56, in video_detail
+    return HttpResponse(t.render(c))
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 140, in render
+    return self._render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 134, in _render
+    return self.nodelist.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/debug.py", line 78, in render_node
+    return node.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/loader_tags.py", line 123, in render
+    return compiled_parent._render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 134, in _render
+    return self.nodelist.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/debug.py", line 78, in render_node
+    return node.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/classytags/core.py", line 106, in render
+    return self.render_tag(context, **kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/sekizai/templatetags/sekizai_tags.py", line 76, in render_tag
+    rendered_contents = nodelist.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/debug.py", line 78, in render_node
+    return node.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/classytags/core.py", line 106, in render
+    return self.render_tag(context, **kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/cms/templatetags/cms_tags.py", line 682, in render_tag
+    rendered_contents = nodelist.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/debug.py", line 78, in render_node
+    return node.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/debug.py", line 78, in render_node
+    return node.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/defaulttags.py", line 196, in render
+    nodelist.append(node.render(context))
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/defaulttags.py", line 447, in render
+    six.reraise(*exc_info)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/defaulttags.py", line 433, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=context.current_app)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 536, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 456, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+NoReverseMatch: Reverse for 'tags' with arguments '()' and keyword arguments '{}' not found. 1 pattern(s) tried: ['menu/tags/(?P<id_tag>[0-9]*)$']
+Internal Server Error: /1/
+Traceback (most recent call last):
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom/app_video/views.py", line 56, in video_detail
+    return HttpResponse(t.render(c))
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 140, in render
+    return self._render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 134, in _render
+    return self.nodelist.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/debug.py", line 78, in render_node
+    return node.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/loader_tags.py", line 123, in render
+    return compiled_parent._render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 134, in _render
+    return self.nodelist.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/debug.py", line 78, in render_node
+    return node.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/classytags/core.py", line 106, in render
+    return self.render_tag(context, **kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/sekizai/templatetags/sekizai_tags.py", line 76, in render_tag
+    rendered_contents = nodelist.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/debug.py", line 78, in render_node
+    return node.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/classytags/core.py", line 106, in render
+    return self.render_tag(context, **kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/cms/templatetags/cms_tags.py", line 682, in render_tag
+    rendered_contents = nodelist.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/debug.py", line 78, in render_node
+    return node.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/debug.py", line 78, in render_node
+    return node.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/defaulttags.py", line 196, in render
+    nodelist.append(node.render(context))
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/defaulttags.py", line 424, in render
+    raise NoReverseMatch("'url' requires a non-empty first argument. "
+NoReverseMatch: 'url' requires a non-empty first argument. The syntax changed in Django 1.5, see the docs.
+Internal Server Error: /1/
+Traceback (most recent call last):
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom/app_video/views.py", line 56, in video_detail
+    return HttpResponse(t.render(c))
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 140, in render
+    return self._render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 134, in _render
+    return self.nodelist.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/debug.py", line 78, in render_node
+    return node.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/loader_tags.py", line 123, in render
+    return compiled_parent._render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 134, in _render
+    return self.nodelist.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/debug.py", line 78, in render_node
+    return node.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/classytags/core.py", line 106, in render
+    return self.render_tag(context, **kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/sekizai/templatetags/sekizai_tags.py", line 76, in render_tag
+    rendered_contents = nodelist.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/debug.py", line 78, in render_node
+    return node.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/classytags/core.py", line 106, in render
+    return self.render_tag(context, **kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/cms/templatetags/cms_tags.py", line 682, in render_tag
+    rendered_contents = nodelist.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/debug.py", line 78, in render_node
+    return node.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/debug.py", line 78, in render_node
+    return node.render(context)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/defaulttags.py", line 196, in render
+    nodelist.append(node.render(context))
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/defaulttags.py", line 424, in render
+    raise NoReverseMatch("'url' requires a non-empty first argument. "
+NoReverseMatch: 'url' requires a non-empty first argument. The syntax changed in Django 1.5, see the docs.
+Not Found: /1/tags/6/
+Not Found: /tags/6/
+Not Found: /tag/6/
+Internal Server Error: /menu/tags/1
+Traceback (most recent call last):
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom/app_menu/views.py", line 28, in tags
+    t = loader.get_template('page_tags.html')
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/loader.py", line 138, in get_template
+    template, origin = find_template(template_name)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/loader.py", line 127, in find_template
+    source, display_name = loader(name, dirs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/loader.py", line 43, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/loader.py", line 49, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/loader.py", line 149, in get_template_from_string
+    return Template(source, origin, name)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+    return parser.parse()
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 278, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/loader_tags.py", line 215, in do_extends
+    nodelist = parser.parse()
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 278, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/loader_tags.py", line 190, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 278, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/defaulttags.py", line 806, in do_for
+    nodelist_loop = parser.parse(('empty', 'endfor',))
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 278, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/defaulttags.py", line 941, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/defaulttags.py", line 874, in __init__
+    super(TemplateIfParser, self).__init__(*args, **kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/smartif.py", line 163, in __init__
+    mapped_tokens.append(self.translate_token(token))
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/smartif.py", line 174, in translate_token
+    return self.create_var(token)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/defaulttags.py", line 877, in create_var
+    return TemplateLiteral(self.template_parser.compile_filter(value), value)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 360, in compile_filter
+    return FilterExpression(token, self)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/template/base.py", line 577, in __init__
+    "from '%s'" % (token[upto:], token))
+TemplateSyntaxError: Could not parse the remainder: '-tag' from 'id-tag'
+Internal Server Error: /menu/tags/
+Traceback (most recent call last):
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom/app_menu/views.py", line 36, in tags
+    'id_tag': int(id_tag),
+TypeError: int() argument must be a string or a number, not 'NoneType'
+Internal Server Error: /menu/tags/
+Traceback (most recent call last):
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom/app_menu/views.py", line 36, in tags
+    'id_tag': int(id_tag),
+TypeError: int() argument must be a string or a number, not 'NoneType'
+Internal Server Error: /menu/tags/
+Traceback (most recent call last):
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom/app_menu/views.py", line 36, in tags
+    'id_tag': int(id_tag),
+TypeError: int() argument must be a string or a number, not 'NoneType'

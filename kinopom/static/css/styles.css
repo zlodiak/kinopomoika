@@ -220,9 +220,15 @@ code {
 	padding-bottom: 20px;
 }
 
+	.tags_list a.active{
+		font-weight: bold;
+		color: #428bca;
+		text-decoration: underline;
+	}
+
 	.tags_list .h2{
 		margin-top: 0;
-		
+
 	}
 
 

@@ -39,7 +39,7 @@
 
 						<div class="meta date_edit">Теги: 
 							{% for tag in video_obj.tags.all %}
-								<span class="link">{{ tag }}</span>{% if not forloop.last %}, {% endif %}
+								<a class="link" href="/menu/tags/{{ tag.id }}">{{ tag }}</a>{% if not forloop.last %}, {% endif %}
 							{% endfor %}
 						</div>
 					</div>

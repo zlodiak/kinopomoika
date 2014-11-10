@@ -11,7 +11,8 @@
 			<ul>
 				{% for entry in all_tags_entries %}
 					<li>
-						<a href="{{ entry.id }}">{{ entry.title }}</a>
+						<a href="{{ entry.id }}" {% if id_tag == entry.id %}class="active"{% endif %}>{{ entry.title }}</a>
+
 					</li>
 				{% endfor %}
 			</ul>
