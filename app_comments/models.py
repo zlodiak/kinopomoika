@@ -53,5 +53,5 @@ class Comment(models.Model):
 
 
 	@classmethod
-	def get_comments_entries_video(self, video_id, cut_begin, cut_end):
-		return self.objects.filter(video_id=video_id, is_active=True).order_by('-date')[cut_begin:cut_end]	
+	def get_comments_entries_video(self, video_id):
+		return self.objects.filter(video_id=video_id, is_active=True).order_by('-date')

@@ -40,30 +40,18 @@ def video_detail(request, id):
 	page detail for video
 	and increment views
 	'''
-	count_comments = Comment.objects.filter(video_id=id, is_active=True).count()
 
-	if request.method == 'POST':	
-		count_comments_on_page = int(request.POST.get('count_comments_on_page', ''))
-		count_comments_all = int(request.POST.get('count_comments_all', ''))
+	Entry.increment_views(id)
+	comment_form = CommentForm()
 
-		comments = Comment.get_comments_entries_video(video_id=id, cut_begin=count_comments_on_page, cut_end=count_comments_all + 5)
-
-		result = serializers.serialize('json', comments)
-
-		return HttpResponse(json.dumps(result), content_type='application/json')
-	else:	
-		Entry.increment_views(id)
-		comment_form = CommentForm()
-
-		video_obj = Entry.get_video(id=id)
-		comment_obj = Comment.get_comments_entries_video(video_id=id, cut_begin=0, cut_end=5)
-	        		
-		t = loader.get_template('video_detail.html')
-		c = RequestContext(request, {
-			'video_obj': video_obj,
-			'comment_obj': comment_obj,
-			'comment_form': comment_form,
-			'count_comments': count_comments,
-		}, [custom_proc])	
-		
-		return HttpResponse(t.render(c)) 	
+	video_obj = Entry.get_video(id=id)
+	comment_obj = Comment.get_comments_entries_video(video_id=id)
+        		
+	t = loader.get_template('video_detail.html')
+	c = RequestContext(request, {
+		'video_obj': video_obj,
+		'comment_obj': comment_obj,
+		'comment_form': comment_form,
+	}, [custom_proc])	
+	
+	return HttpResponse(t.render(c)) 	

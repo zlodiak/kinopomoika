@@ -1,6 +1,6 @@
 ﻿(function (){
     // -------------------------------------------------------------------------------------- more button for comment 
-    var nameForOutput,
+/*    var nameForOutput,
         count_comments_all = parseInt($('#countComments').text(), 10),
         video_id = parseInt($('#videoIdComment').attr('data-video-id'), 10),
         count_comments_on_page = $('.comments_block .comment_item').length,
@@ -65,7 +65,7 @@
                 };          
             }
         });         
-    }); 
+    }); */
 
     // -------------------------------------------------------------------------------------- comment form ajax
     $('#commentForm').on('submit', function(e){
@@ -78,86 +78,70 @@
                 username = $.trim($('.username_comment').val()),
                 comment = $.trim($('.comment_comment').val()),
                 csrfmiddlewaretokenVal = $('#commentForm input[name=csrfmiddlewaretoken]').val();
-        }
+        
 
-        if(comment.length > 0){
-            $.ajax({
-                url: "/comments/ajax_comment_add/",
-                type: 'POST',
-                dataType:"json",
-                data: {
-                    "video_id": video_id,
-                    "username": username,
-                    "comment": comment,
-                    "csrfmiddlewaretoken": csrfmiddlewaretokenVal
-                },
-                success: function(data) {
-                    var nameOutput;
+            console.log(comment + 'ccccc');
+            console.log(comment.length + 'llll');
 
-                    if(data.result){
+            if(comment.length > 0){
+                $.ajax({
+                    url: "/comments/ajax_comment_add/",
+                    type: 'POST',
+                    dataType:"json",
+                    data: {
+                        "video_id": video_id,
+                        "username": username,
+                        "comment": comment,
+                        "csrfmiddlewaretoken": csrfmiddlewaretokenVal
+                    },
+                    success: function(data) {
+                        if(data.result){
+                            // delete values from fields
+                            $('.username_comment, .comment_comment').val('');
 
-
-
-
-
-                        if(data.fields.user){
-                            // ajax
-                        }
-                        else if(data.fields.user_no_auth == "Некто неизвестный"){
-                            nameOutput = "Некто неизвестный"
-                        }
+                            // add comment to end of list comments
+                            $('#articlesComments').prepend('<article class="article comment_item"> \
+                                                            <h5 class="h5"> \
+                                                                <span class="name"> \
+                                                                    ' + data.output_username + ' \
+                                                                </span> \
+                                                                <span class="date">' + data.date + '</span> \
+                                                            </h5> \
+                                                            <div class="body"> \
+                                                                ' + comment + ' \
+                                                            </div> \
+                                                        </article>');
+                        }                
                         else{
-                            nameOutput = data.fields.user_no_auth;
+                            $('#commonModalLabel').text('Ошибка подключения');
+                            $('#modalDialog').addClass('modal-xs');
+                            $('#commonModal .modal-body').html('Попробуйте позже.');
+                            $('#butCancel').addClass('hide');
+                            $('#commonModal').modal('show');
+
+                            setTimeout(function(){
+                                $('#commonModal').modal('hide');
+                            }, 1000); 
                         };
+                    } 
+                 });   
+            }
+            else{
+                // delete values from fields
+                $('.username_comment, .comment_comment').val('');
 
+                // output error message
+                $('#commonModalLabel').text('Введите комментарий');
+                $('#modalDialog').addClass('modal-xs');
+                $('#commonModal .modal-body').html('');
+                $('#butCancel').addClass('hide');
+                $('#commonModal').modal('show');
 
-
-
-
-
-
-
-                        // delete values from fields
-                        $('.username_comment, .comment_comment').val('');
-
-                        // add comment to end of list comments
-                        $('#articlesComments').prepend('<article class="article comment_item"> \
-                                                        <h5 class="h5"> \
-                                                            <span class="name"> \
-                                                                ' + data.output_username + ' \
-                                                            </span> \
-                                                            <span class="date">' + data.date + '</span> \
-                                                        </h5> \
-                                                        <div class="body"> \
-                                                            ' + comment + ' \
-                                                        </div> \
-                                                    </article>');
-                    }                
-                    else{
-                        $('#commonModalLabel').text('Ошибка подключения');
-                        $('#modalDialog').addClass('modal-xs');
-                        $('#commonModal .modal-body').html('Попробуйте позже.');
-                        $('#butCancel').addClass('hide');
-                        $('#commonModal').modal('show');
-
-                        setTimeout(function(){
-                            $('#commonModal').modal('hide');
-                        }, 1000); 
-                    };
-                } 
-             });   
+                setTimeout(function(){
+                    $('#commonModal').modal('hide');
+                }, 1000); 
+            };
         }
-        else{
-            $('#commonModalLabel').text('Введите комментарий');
-            $('#modalDialog').addClass('modal-xs');
-            $('#commonModal .modal-body').html('');
-            $('#butCancel').addClass('hide');
-            $('#commonModal').modal('show');
-
-            setTimeout(function(){
-                $('#commonModal').modal('hide');
-            }, 1000); 
-        };
     });
 
     // -------------------------------------------------------------------------------------- link_share

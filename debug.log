@@ -10333,3 +10333,10 @@ Traceback (most recent call last):
   File "/home/kalinins/.virtualenvs/kinopom_project/kinopom/app_video/views.py", line 46, in video_detail
     count_comments_on_page = int(request.POST.get('count_comments_on_page', ''))
 ValueError: invalid literal for int() with base 10: ''
+Internal Server Error: /5/
+Traceback (most recent call last):
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom/app_video/views.py", line 46, in video_detail
+    count_comments_on_page = int(request.POST.get('count_comments_on_page', ''))
+ValueError: invalid literal for int() with base 10: ''

@@ -66,6 +66,7 @@ def ajax_comment_add(request):
 			)				
 
 		date = entry.date.strftime('%Y-%m-%d %H:%M:%S')
+		print(output_username)
 
 	data = {
 		'result': result,

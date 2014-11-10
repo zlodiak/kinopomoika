@@ -86,9 +86,7 @@
 
 							<div class="hide" id="videoIdComment" data-video-id="{{ video_obj.id }}"></div>
 						</div>		
-	            </form>		
-
-	            <div class="hide" id="countComments">{{ count_comments }}</div>		
+	            </form>			
 
 	            <div id="articlesComments">
 					{% for entry in comment_obj %}
@@ -110,12 +108,7 @@
 							</div>
 						</article>
 					{% endfor %}
-				</div>
-
-				<form class="more_button_outer" action="/{{ video_obj.id }}/" id="commentsMoreButton" method="POST">
-					{% csrf_token %}	
-					<input class="btn btn-default btn-xs more_button" type="submit" value="Показать ещё" />
-				</form>						
+				</div>					
 			</section>
 
 
