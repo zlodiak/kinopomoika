@@ -556,11 +556,11 @@ code {
 		font-size: 12px;
 	}
 
-		.video_meta .meta .link:hover{
+		.video_meta .meta a:hover{
 			text-decoration: none;
 		}
 
-		.video_meta .meta .link{
+		.video_meta .meta a{
 			text-decoration: underline;
 
 			cursor: pointer;

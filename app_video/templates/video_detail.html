@@ -31,7 +31,7 @@
 
 				<div class="video_info_mid row">
 					<div class="dates video_meta col-xs-6">
-						<div class="meta author">Автор: {{ video_obj.user.username }}</div>
+						<div class="meta author">Автор: <a href="mailto:{{ user_email }}">{{ video_obj.user.username }}</a></div>
 
 						<div class="meta date_create">Дата размещения: {{ video_obj.date }}</div>
 
