@@ -15,8 +15,6 @@
                 $(this).addClass('active');
             };
         });   
-
-        console.log(slug3);
     }
      
 

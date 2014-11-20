@@ -177,12 +177,21 @@ code {
 
 /*************************************************************************************************************** GLOBAL_blocks :  .feedback_form */
 .feedback_form{
-	width: 60%;
+	
 }
 
 	.common_form.feedback_form .cell .label{
-		width: 20%;
+		width: 120px;
 	}
+
+	.common_form.feedback_form .cell textarea,
+	.common_form.feedback_form .cell input{
+		width: 420px;
+	}
+
+	.common_form.feedback_form .submit_outer input{
+		margin-left: 120px;
+	}	
 
 /*************************************************************************************************************** GLOBAL_blocks :  .pager */
 .pager {
@@ -836,7 +845,21 @@ code {
 
 			.common_form .input_outer .shine{
 				border: 1px solid red;
-			}			
+			}		
+
+		.common_form .cell .errorlist{
+			color: red;
+			font: 12px arial, sans-serif;
+			
+			padding-top: 10px;
+			padding-left: 12px;
+			float: left;
+			width: 300px;
+		}
+		
+		.common_form  .textarea_message .errorlist{
+			padding-left: 177px;
+		}				
 
 /*************************************************************************************************************** GLOBAL_blocks :  .pager */
 

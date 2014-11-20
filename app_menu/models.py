@@ -10,25 +10,27 @@ class Feedback(models.Model):
 	username = models.CharField(
 		verbose_name=u"Имя", 
 		max_length=100,
-		blank=False,
+		blank=True,
 	)
 	subject = models.CharField(
 		verbose_name=u"Тема", 
 		max_length=100,
+		blank=False,
 	)	
 	email = models.EmailField(
 		verbose_name=u"Email", 
 		max_length=100,
+		blank=True,
 	)		
-	message = HTMLField(
+	message = models.TextField(
 		verbose_name=u'Сообщение',
 		max_length=50000, 
-		default=None,
 		blank=False,
 	)			
 	date = models.DateTimeField(
 		verbose_name=u'Дата создания',
 		default=datetime.now(),
+		auto_now=True,
 	)				
 
 	class Meta:

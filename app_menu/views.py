@@ -6,6 +6,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 import json
 from django.core import serializers
 
+from app_menu.models import Feedback
 from kinopom.models import Tag, Entry
 from app_menu.forms import FeedbackForm
 
@@ -84,6 +85,28 @@ def feedback(request):
 	page for tags output feedback form
 	'''
 	feedback_form =  FeedbackForm()	
+
+	if request.method == 'POST':	
+		feedback_form =  FeedbackForm(request.POST)	
+
+		if feedback_form.is_valid():	
+			username = request.POST.get('username', '')	
+			subject = request.POST.get('subject', '')	
+			email = request.POST.get('email', '')	
+			message = request.POST.get('message', '')	
+
+			try:
+				Feedback.objects.create(
+					username=username.strip(), 
+					subject=subject.strip(), 
+					email=email.strip(), 
+					message=message.strip(), 
+				)
+			except:
+				pass
+			else:
+				return HttpResponseRedirect('/') 
+
 	t = loader.get_template('page_feedback.html')
 	c = RequestContext(request, {		
 		'feedback_form': feedback_form,
