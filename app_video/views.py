@@ -48,6 +48,7 @@ def video_detail(request, id):
 	video_obj = Entry.get_video(id=id)
 	comment_obj = Comment.get_comments_entries_video(video_id=id)
 	user_email = User.objects.get(id=video_obj.user_id).email
+	related_video = Entry.objects.filter()
         		
 	t = loader.get_template('video_detail.html')
 	c = RequestContext(request, {

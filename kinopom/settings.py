@@ -178,7 +178,7 @@ CMS_TEMPLATES = (
     ## Customize this
     ('fullwidth.html', 'Fullwidth'),
     ('page_tags.html', 'Tags'),
-    ('sidebar_right.html', 'Sidebar Right')
+    ('sidebar_right.html', 'Sidebar Right'),
 )
 
 CMS_PERMISSION = True

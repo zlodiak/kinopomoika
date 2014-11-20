@@ -7,6 +7,7 @@ import json
 from django.core import serializers
 
 from kinopom.models import Tag, Entry
+from app_menu.forms import FeedbackForm
 
 
 def custom_proc(request):
@@ -72,6 +73,20 @@ def tags(request, id_tag):
 		'last_page': last_page,
 		'first_page': first_page,			
 		'count_all_tags': count_all_tags,			
+	}, [custom_proc])	
+	
+	return HttpResponse(t.render(c)) 	
+
+
+
+def feedback(request):	
+	'''
+	page for tags output feedback form
+	'''
+	feedback_form =  FeedbackForm()	
+	t = loader.get_template('page_feedback.html')
+	c = RequestContext(request, {		
+		'feedback_form': feedback_form,
 	}, [custom_proc])	
 	
 	return HttpResponse(t.render(c)) 	

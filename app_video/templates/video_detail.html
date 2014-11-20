@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load staticfiles %}
+{% load tags_video %}
 
 {% block title %}{{ video_obj.title }}{% endblock title %}
 
@@ -81,19 +82,19 @@
 				<h4 class="h4">Добавить комментарий:</h4>
 
 	        	<form class="comment_form common_form" action="{% url 'ajax_comment_add' %}" id="commentForm" method="POST" novalidate>
-						{% csrf_token %}	
+					{% csrf_token %}	
 
-						{% if not request.user.is_authenticated %}
-							<div class="cell input_outer">
-								{{ comment_form.username }}
-							</div>	
-						{% endif %}						
-						
-						<div class="cell textarea_outer">
-							{{ comment_form.comment }}
+					{% if not request.user.is_authenticated %}
+						<div class="cell input_outer">
+							{{ comment_form.username }}
+						</div>	
+					{% endif %}						
+					
+					<div class="cell textarea_outer">
+						{{ comment_form.comment }}
 
-							<div class="hide" id="videoIdComment" data-video-id="{{ video_obj.id }}"></div>
-						</div>		
+						<div class="hide" id="videoIdComment" data-video-id="{{ video_obj.id }}"></div>
+					</div>		
 	            </form>			
 
 	            <div id="articlesComments">
@@ -121,36 +122,7 @@
 
 
 			<div class="col-xs-3">
-				<article class="article">
-					dfgdgddfgdfg<br>
-					dfgdgddfgdfg<br>
-					dfgdgddfgdfg<br>
-					dfgdgddfgdfg<br>
-					dfgdgddfgdfg<br>
-					dfgdgddfgdfg<br>
-					dfgdgddfgdfg<br>
-					dfgdgddfgdfg<br>
-					dfgdgddfgdfg<br>
-					dfgdgddfgdfg<br>
-					dfgdgddfgdfg<br>
-					dfgdgddfgdfg<br>
-					dfgdgddfgdfg<br>
-					dfgdgddfgdfg<br>
-					dfgdgddfgdfg<br>
-					dfgdgddfgdfg<br>
-					dfgdgddfgdfg<br>
-					dfgdgddfgdfg<br>
-					dfgdgddfgdfg<br>
-					dfgdgddfgdfg<br>
-					dfgdgddfgdfg<br>
-					dfgdgddfgdfg<br>
-					dfgdgddfgdfg<br>
-					dfgdgddfgdfg<br>
-					dfgdgddfgdfg<br>
-					dfgdgddfgdfg<br>
-					dfgdgddfgdfg<br>
-					dfgdgddfgdfg<br>
-				</article >
+			{% part_related_video video_obj.tags.all %}
 			</div>			
 		</div>			
 	</section>
