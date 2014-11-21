@@ -11,21 +11,27 @@ class Feedback(models.Model):
 		verbose_name=u"Имя", 
 		max_length=100,
 		blank=True,
+		null=True,
+		default=None,
 	)
 	subject_f = models.CharField(
 		verbose_name=u"Тема", 
 		max_length=100,
 		blank=False,
+		default=None,
 	)	
 	email_f = models.EmailField(
 		verbose_name=u"Email", 
 		max_length=100,
 		blank=True,
+		null=True,
+		default=None,
 	)		
 	message_f = models.TextField(
 		verbose_name=u'Сообщение',
 		max_length=50000, 
 		blank=False,
+		default=None,
 	)			
 	date_f = models.DateTimeField(
 		verbose_name=u'Дата создания',

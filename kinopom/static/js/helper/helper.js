@@ -411,7 +411,7 @@
 
                     if(data.email){
                         // ret true - matched, no reg
-                        $('#id_email').after('<label class="error">Имя занято</label>');
+                        $('#id_email').after('<label class="error">Email занят</label>');
                         flag = true;
                     }
                     else{

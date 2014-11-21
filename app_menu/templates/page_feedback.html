@@ -9,38 +9,38 @@
 
 		{% if not request.user.is_authenticated %}
 			<div class="cell input_outer">
-				<label class="label">{{ feedback_form.username.label }}</label>
+				<label class="label">{{ feedback_form.username_f.label }}</label>
 
-				{{ feedback_form.username }}
+				{{ feedback_form.username_f }}
 
-				{{ feedback_form.username.errors }}
+				{{ feedback_form.username_f.errors }}
 			</div>	
 		{% endif %}
 
 		<div class="cell input_outer">
-			<label class="label">{{ feedback_form.subject.label }}*</label>
+			<label class="label">{{ feedback_form.subject_f.label }}*</label>
 
-			{{ feedback_form.subject }}
+			{{ feedback_form.subject_f }}
 
-			{{ feedback_form.subject.errors }}					
+			{{ feedback_form.subject_f.errors }}					
 		</div>	
 
 		{% if not request.user.is_authenticated %}
 			<div class="cell input_outer">
-				<label class="label">{{ feedback_form.email.label }}</label>
+				<label class="label">{{ feedback_form.email_f.label }}</label>
 
-				{{ feedback_form.email }}
+				{{ feedback_form.email_f }}
 
-				{{ feedback_form.email.errors }}					
+				{{ feedback_form.email_f.errors }}					
 			</div>	
 		{% endif %}										
 		
 		<div class="cell textarea_outer">
-			<label class="label">{{ feedback_form.message.label }}*</label>
+			<label class="label">{{ feedback_form.message_f.label }}*</label>
 
-			{{ feedback_form.message }}
+			{{ feedback_form.message_f }}
 
-			{{ feedback_form.message.errors }}					
+			{{ feedback_form.message_f.errors }}					
 		</div>	
 
 		<div class="cell submit_outer">

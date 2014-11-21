@@ -12,22 +12,22 @@ class FeedbackForm(forms.ModelForm):
 	class Meta:
 		model = Feedback
 		fields = (
-			'username', 
-			'subject', 
-			'email', 
-			'message', 
+			'username_f', 
+			'subject_f', 
+			'email_f', 
+			'message_f', 
 		)
 
-	def clean_subject(self):
-		subject = self.cleaned_data['subject'].strip()
-		if len(subject) == 0:
+	def clean_subject_f(self):
+		subject_f = self.cleaned_data['subject_f'].strip()
+		if len(subject_f) == 0:
 			raise forms.ValidationError(error_dict['spaces'])		
 
-		return subject		
+		return subject_f	
 
-	def clean_message(self):
-		message = self.cleaned_data['message'].strip()
-		if len(message) == 0:
+	def clean_message_f(self):
+		message_f = self.cleaned_data['message_f'].strip()
+		if len(message_f) == 0:
 			raise forms.ValidationError(error_dict['spaces'])		
 
-		return message			
+		return message_f			
