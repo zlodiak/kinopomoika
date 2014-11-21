@@ -4,8 +4,9 @@ from django.shortcuts import render, render_to_response
 from django.contrib import auth
 from django.contrib.auth.models import User
 import json
+from django.contrib.auth.decorators import login_required
 
-from app_accounts.forms import RegistrationForm, AuthenticationCustomForm
+from app_accounts.forms import RegistrationForm, AuthenticationCustomForm, ChangeEmailForm
 from kinopom.forms import SearchForm
 from kinopom.models import Like, Entry
 
@@ -62,6 +63,7 @@ def ajax_reg_form_check(request):
 	return HttpResponse(json.dumps(result), content_type='application/json')	
 
 
+@login_required	
 def logout(request):
 	"""
 	logout
@@ -116,6 +118,7 @@ def authentication(request):
 	return HttpResponse(json.dumps(data), content_type='application/json')	
 
 
+@login_required	
 def ajax_like(request):
 	"""
 	ajax check auth for like process and change procedure like data
@@ -148,6 +151,44 @@ def ajax_like(request):
 	}
 
 	return HttpResponse(json.dumps(data), content_type='application/json')	
+
+
+@login_required	
+def email_change(request):	
+	'''
+	page for change email
+	'''
+	now_email = request.user.email
+	new_email_form = ChangeEmailForm()
+
+	if request.method == 'POST':	
+		new_email_form =  ChangeEmailForm(request.POST)	
+
+		if new_email_form.is_valid():	
+			email_n = request.POST.get('email_n', '')	
+
+			try:
+				entry = User.objects.get(username=request.user.username)	
+				entry.email = email_n
+				entry.save()
+			except:
+				pass
+			else:	
+				t = loader.get_template('page_email_change_ok.html')
+				c = RequestContext(request, {
+					'now_email': now_email,
+					'new_email_form': new_email_form,
+				}, [custom_proc])	
+				
+				return HttpResponse(t.render(c)) 	
+
+	t = loader.get_template('page_email_change.html')
+	c = RequestContext(request, {
+		'now_email': now_email,
+		'new_email_form': new_email_form,
+	}, [custom_proc])	
+	
+	return HttpResponse(t.render(c)) 		
 
 
 

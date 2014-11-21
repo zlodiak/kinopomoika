@@ -53,4 +53,10 @@ class AuthenticationCustomForm(AuthenticationForm):
 	)
 
 
+class ChangeEmailForm(forms.Form):
+	email_n = forms.EmailField(
+		widget=forms.TextInput(),
+		label = 'Новый email',
+	)
+
 

@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load cms_tags %}
+
+{% block title %}{% page_attribute 'title' %}{% endblock title %}
+
+{% block content %}
+	<section class="section email_change_section">
+		<h2 class="h2">Изменение email</h2>
+
+		<form class="common_form email_change_form" action="{% url 'email_change' %}" id="email_n_Form" method="post" novalidate>
+			{% csrf_token %}	
+
+			<div class="now_email cell input_outer">
+				<span class="label">Сейчас email</span>
+
+				<span class="value now_email">{{ now_email }}</span>
+			</div>
+
+			<div class="new_email">
+				<div class="cell input_outer">
+					<span class="label">Изменить на</span>
+
+					<span class="value">{{ new_email_form.email_n }}</span>
+
+					{{ new_email_form.email_n.errors }}	
+				</div>
+
+				<div class="cell submit_outer">
+					<input class="btn btn-default" id="formEmailChangeSubmit" type="submit" value="Изменить" /> 
+				</div>					
+			</div>		
+		</form>
+    </section>
+{% endblock content %}

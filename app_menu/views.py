@@ -90,12 +90,10 @@ def feedback(request):
 		feedback_form =  FeedbackForm(request.POST)	
 
 		if feedback_form.is_valid():	
-			print('valid')
 			username_f = request.POST.get('username_f', '')	
 			subject_f = request.POST.get('subject_f', '')	
 			email_f = request.POST.get('email_f', '')	
 			message_f = request.POST.get('message_f', '')	
-			print(username_f)
 
 			try:
 				Feedback.objects.create(
