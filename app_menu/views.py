@@ -82,7 +82,7 @@ def tags(request, id_tag):
 
 def feedback(request):	
 	'''
-	page for tags output feedback form
+	page for output feedback form
 	'''
 	feedback_form =  FeedbackForm()	
 
@@ -107,7 +107,12 @@ def feedback(request):
 			except:
 				pass
 			else:
-				return HttpResponseRedirect('/') 
+				t = loader.get_template('page_feedback_ok.html')
+				c = RequestContext(request, {		
+					'feedback_form': feedback_form,
+				}, [custom_proc])	
+				
+				return HttpResponse(t.render(c)) 	
 
 	t = loader.get_template('page_feedback.html')
 	c = RequestContext(request, {		
@@ -115,3 +120,4 @@ def feedback(request):
 	}, [custom_proc])	
 	
 	return HttpResponse(t.render(c)) 	
+
