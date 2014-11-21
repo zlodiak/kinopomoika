@@ -37,4 +37,5 @@ class Feedback(models.Model):
 		verbose_name = u"""Отзыв"""
 		verbose_name_plural = u"""отзывы"""
 
-		
+
+
