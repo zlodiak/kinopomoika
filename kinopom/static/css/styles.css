@@ -175,6 +175,15 @@ code {
   font-size: 80%;
 }
 
+.navbar-collapse{
+	padding: 0;
+}
+
+/*************************************************************************************************************** GLOBAL_blocks :  .privacy_policy */
+.privacy_policy{
+	padding-bottom: 40px;
+}
+
 /*************************************************************************************************************** GLOBAL_blocks :  .statistic_section */
 .statistic_section{
 	padding-top: 55px;

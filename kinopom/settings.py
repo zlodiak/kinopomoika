@@ -180,6 +180,7 @@ CMS_TEMPLATES = (
     ('page_tags.html', 'Tags'),
     ('page_statistic.html', 'Statistic'),
     ('sidebar_right.html', 'Sidebar Right'),
+    ('page_privacy_policy.html', 'Privacy policy'),
 )
 
 CMS_PERMISSION = True
