@@ -12668,3 +12668,4 @@ Traceback (most recent call last):
   File "/home/kalinins/.virtualenvs/kinopom_project/kinopom/app_video/templatetags/tags_video.py", line 14, in part_related_video
     tags_list_false = tags_list.remove(id_basic_video)
 ValueError: list.remove(x): x not in list
+Forbidden (CSRF token missing or incorrect.): /menu/feedback/

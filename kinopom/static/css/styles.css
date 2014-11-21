@@ -332,6 +332,11 @@ code {
 		padding-bottom: 10px;
 	}
 
+	.tags_list .bold{
+		color: #428bca;
+		font-weight: bold;
+	}
+
 
 /*************************************************************************************************************** GLOBAL_blocks : nav_bar */
 .navbar-nav>li>a{

@@ -47,7 +47,7 @@
 
 										<div class="meta date_edit">Дата редактирования: {{ entry.last_edit_date }}</div>
 
-										<div class="meta date_edit">Теги: 
+										<div class="meta date_edit">Теги:: 
 											{% for tag in entry.tags.all %}
 												<span class="link">{{ tag }}</span>{% if not forloop.last %}, {% endif %}
 											{% endfor %}
