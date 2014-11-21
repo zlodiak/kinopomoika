@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load cms_tags %}
+{% load tags_kinopom %}
+
+{% block title %}{% page_attribute 'title' %}{% endblock title %}
+
+{% block content %}
+	<div class="row">
+		<section class="section col-xs-9">
+			<h2 class="h2">О проекте</h2>
+
+			{% placeholder "content" %}
+		</section>
+
+		<section class="section col-xs-3 statistic_section">
+			<h4 class="h4">Статистика</h4>
+
+			{% part_statistic %}
+		</section>		
+	</div>
+{% endblock content %}

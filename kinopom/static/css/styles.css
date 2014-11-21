@@ -175,6 +175,52 @@ code {
   font-size: 80%;
 }
 
+/*************************************************************************************************************** GLOBAL_blocks :  .statistic_section */
+.statistic_section{
+	padding-top: 55px;
+}
+
+	.statistic_section .cell{
+		overflow: hidden;
+		position: relative;
+	}
+	
+		.statistic_section .cell a{
+			margin-right: 130px;
+		}
+	
+		.statistic_section .cell .label:after{
+			content: ':';
+		}
+		
+		.statistic_section .textarea_outer .label:after{
+			content: ':';
+			
+			vertical-align: top;
+		}		
+		
+		.statistic_section .cell .label{
+			font: 12px arial, sans-serif;
+			color: #444;
+			text-align: left;
+			
+			width: 170px;
+			display: block;
+			float: left;
+			padding-right: 17px;	
+			padding-left: 0px;	
+			padding-top: 0px;	
+		}
+
+		
+		.statistic_section .input_outer .val{
+			padding: 0px 5px 0px;
+			overflow: hidden;
+			float: left;
+			
+			font: bold 12px arial, sans-serif;
+		}
+
 /*************************************************************************************************************** GLOBAL_blocks :  .email_change_section */
 .email_change_section{
 
@@ -297,7 +343,7 @@ code {
 
 /*************************************************************************************************************** GLOBAL_blocks : tags_video_list */
 .tags_video_list{
-	padding-top: 50px;
+	padding-top: 14px;
 }
 	.tags_video_list a{
 		overflow: hidden;
@@ -320,7 +366,7 @@ code {
 				}
 
 			.tags_video_list .article .right{
-				width: 410px;
+				width: 467px;
 				float: right;
 			}	
 

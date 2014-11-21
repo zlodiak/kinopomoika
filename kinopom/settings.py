@@ -176,8 +176,9 @@ CMS_LANGUAGES = {
 
 CMS_TEMPLATES = (
     ## Customize this
-    ('fullwidth.html', 'Fullwidth'),
+    ('about.html', 'About project'),
     ('page_tags.html', 'Tags'),
+    ('page_statistic.html', 'Statistic'),
     ('sidebar_right.html', 'Sidebar Right'),
 )
 
