@@ -7,27 +7,27 @@ from djangocms_text_ckeditor.fields import HTMLField
 
 
 class Feedback(models.Model):
-	username = models.CharField(
+	username_f = models.CharField(
 		verbose_name=u"Имя", 
 		max_length=100,
 		blank=True,
 	)
-	subject = models.CharField(
+	subject_f = models.CharField(
 		verbose_name=u"Тема", 
 		max_length=100,
 		blank=False,
 	)	
-	email = models.EmailField(
+	email_f = models.EmailField(
 		verbose_name=u"Email", 
 		max_length=100,
 		blank=True,
 	)		
-	message = models.TextField(
+	message_f = models.TextField(
 		verbose_name=u'Сообщение',
 		max_length=50000, 
 		blank=False,
 	)			
-	date = models.DateTimeField(
+	date_f = models.DateTimeField(
 		verbose_name=u'Дата создания',
 		default=datetime.now(),
 		auto_now=True,
