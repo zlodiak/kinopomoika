@@ -4,47 +4,51 @@
 {% block title %}{% page_attribute 'title' %}{% endblock title %}
 
 {% block content %}
-	<form class="feedback_form common_form" action="{% url 'feedback' %}" id="feedbackForm" method="POST" novalidate>
-		{% csrf_token %}	
+	<section class="section feedback_section">
+		<h2 class="h2">Сообщение для администратора</h2>
 
-		{% if not request.user.is_authenticated %}
+		<form class="feedback_form common_form" action="{% url 'feedback' %}" id="feedbackForm" method="POST" novalidate>
+			{% csrf_token %}	
+
+			{% if not request.user.is_authenticated %}
+				<div class="cell input_outer">
+					<label class="label">{{ feedback_form.username_f.label }}</label>
+
+					{{ feedback_form.username_f }}
+
+					{{ feedback_form.username_f.errors }}
+				</div>	
+			{% endif %}
+
 			<div class="cell input_outer">
-				<label class="label">{{ feedback_form.username_f.label }}</label>
+				<label class="label">{{ feedback_form.subject_f.label }}*</label>
 
-				{{ feedback_form.username_f }}
+				{{ feedback_form.subject_f }}
 
-				{{ feedback_form.username_f.errors }}
+				{{ feedback_form.subject_f.errors }}					
 			</div>	
-		{% endif %}
 
-		<div class="cell input_outer">
-			<label class="label">{{ feedback_form.subject_f.label }}*</label>
+			{% if not request.user.is_authenticated %}
+				<div class="cell input_outer">
+					<label class="label">{{ feedback_form.email_f.label }}</label>
 
-			{{ feedback_form.subject_f }}
+					{{ feedback_form.email_f }}
 
-			{{ feedback_form.subject_f.errors }}					
-		</div>	
+					{{ feedback_form.email_f.errors }}					
+				</div>	
+			{% endif %}										
+			
+			<div class="cell textarea_outer">
+				<label class="label">{{ feedback_form.message_f.label }}*</label>
 
-		{% if not request.user.is_authenticated %}
-			<div class="cell input_outer">
-				<label class="label">{{ feedback_form.email_f.label }}</label>
+				{{ feedback_form.message_f }}
 
-				{{ feedback_form.email_f }}
-
-				{{ feedback_form.email_f.errors }}					
+				{{ feedback_form.message_f.errors }}					
 			</div>	
-		{% endif %}										
-		
-		<div class="cell textarea_outer">
-			<label class="label">{{ feedback_form.message_f.label }}*</label>
 
-			{{ feedback_form.message_f }}
-
-			{{ feedback_form.message_f.errors }}					
-		</div>	
-
-		<div class="cell submit_outer">
-			<input class="btn btn-default" id="formFeedbackGuestSubmit" type="submit" value="Отправить" /> 
-		</div>													
-    </form>	
+			<div class="cell submit_outer">
+				<input class="btn btn-default" id="formFeedbackGuestSubmit" type="submit" value="Отправить" /> 
+			</div>													
+	    </form>	
+    </section>
 {% endblock content %}

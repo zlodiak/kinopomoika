@@ -1,4 +1,16 @@
-related video: 
-{{ tags_len }}
+<section class="section related_videos">
+	<h4 class="h4">Связанные видео:</h4>
 
+	{% for entry in entries_related_video %}
+		{% if entry.id != id_basic_video %}
+			<a class="link_to_details" href="{% url 'video_detail' entry.id %}">
+				<article class="article">
+					<iframe allowfullscreen="" src="//www.youtube.com/embed/{{ entry }}/?controls=0&showinfo=0&rel=0&modestbranding=0" frameborder="0" ></iframe>
+
+					<h4 class="h4">{{ entry.title|truncatechars:97 }}</h4>
+				</article >
+			</a>
+		{% endif %}
+	{% endfor %}	
+</section>
 

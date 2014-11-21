@@ -120,9 +120,8 @@
 				</div>					
 			</section>
 
-
 			<div class="col-xs-3">
-			{% part_related_video video_obj.tags.all %}
+				{% part_related_video video_obj.tags.all video_obj.id %}
 			</div>			
 		</div>			
 	</section>

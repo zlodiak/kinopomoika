@@ -175,6 +175,45 @@ code {
   font-size: 80%;
 }
 
+/*************************************************************************************************************** GLOBAL_blocks :  .related_videos */
+.related_videos{
+
+}
+
+	.related_videos > .h4{
+
+	}
+
+	.related_videos a{
+
+	}	
+
+		.related_videos a .article{
+
+		}	
+
+			.related_videos a .article iframe{
+				width: 212px;
+				z-index: -10;
+				position: relative;
+			}
+
+			.related_videos a .article .h4{
+				font-size: 14px;
+
+				margin-top: 0;
+			}			
+
+/*************************************************************************************************************** GLOBAL_blocks :  .feedback_section */
+.feedback_section{
+
+}
+
+	.feedback_section h2{
+		padding-bottom: 25px;
+	}
+
+
 /*************************************************************************************************************** GLOBAL_blocks :  .feedback_form */
 .feedback_form{
 	
