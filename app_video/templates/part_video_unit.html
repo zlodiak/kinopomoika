@@ -1,9 +1,22 @@
-{% for entry in entries %}
-	<a class="link_to_details" href="{% url 'video_detail' entry.id %}">
-		<article class="article col-xs-4">
-			<iframe allowfullscreen="" src="//www.youtube.com/embed/{{ entry }}/?controls=0&showinfo=0&rel=0&modestbranding=0" frameborder="0" ></iframe>
+<div class="owl_index_outer">
+	<div class="owl_index">
+		{% for entry in entries %}
+			<div class="item">
+				<a class="link_to_details" href="{% url 'video_detail' entry.id %}">
+					<article class="article">
+						<iframe allowfullscreen="" src="//www.youtube.com/embed/{{ entry }}/?controls=0&showinfo=0&rel=0&modestbranding=0" frameborder="0" ></iframe>
 
-			<h4 class="h4">{{ entry.title|truncatechars:97 }}</h4>
-		</article >
-	</a>
-{% endfor %}
+						<h4 class="h4">{{ entry.title|truncatechars:97 }}</h4>
+					</article >
+				</a>
+			</div>
+		{% endfor %}           
+	</div>
+
+	<div class="customNavigation customNavigationIndex">
+		<a class="btn prev">Previous</a>
+		<a class="btn next">Next</a>
+	</div>
+</div>
+
+

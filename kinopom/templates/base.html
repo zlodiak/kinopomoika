@@ -85,7 +85,27 @@
         <script src="{% static 'js/bootstrap/bootstrap.min.js' %}"></script>         
 
         <!-- validate -->
-        <script src="{% static 'js/jquery_validate/jquery.validate.min.js' %}"></script>                
+        <script src="{% static 'js/jquery_validate/jquery.validate.min.js' %}"></script>             
+
+        <!-- owl_carousel -->
+        <script src="{% static 'js/owl_carousel/owl.carousel.js' %}"></script>   
+        <script>
+            $(document).ready(function() {
+                var owl = $(".owl_index");
+                owl.owlCarousel({
+                    items : 3            
+                });
+
+                // Custom Navigation Events
+                $(".next").click(function(){
+                    owl.trigger('owl.next');
+                })
+                $(".prev").click(function(){
+                    owl.trigger('owl.prev');
+                })              
+            });
+        </script>
+
 
         <!-- helper -->  
         <script src="{% static "js/helper/helper.js" %}"></script>       
