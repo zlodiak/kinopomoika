@@ -55,3 +55,7 @@ class Comment(models.Model):
 	@classmethod
 	def get_comments_entries_video(self, video_id):
 		return self.objects.filter(video_id=video_id, is_active=True).order_by('-date')
+
+	# @classmethod
+	# def get_most_comments(self):
+	# 	return self.objects.filter(is_active=True).order_by('-date')		

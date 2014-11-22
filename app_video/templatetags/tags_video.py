@@ -20,3 +20,10 @@ def part_related_video(tags, id_basic_video):
 		'tags_len': len(tags),
 	}
 
+
+@register.inclusion_tag("part_video_unit.html")
+def part_video_unit(entry):
+	return {
+		'entry': entry,
+	}
+

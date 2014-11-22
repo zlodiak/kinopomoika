@@ -1,20 +1,39 @@
 {% extends "base.html" %}
 {% load staticfiles %}
+{% load tags_video %}
 
 {% block title %}Видео{% endblock title %}
 
 {% block content %}
-	<section class="section all_videos">
-		<h3 class="h3 hide">Все видео</h3>
+	<section class="section last_videos_on_main">
+		<h3 class="h3">Последние добавленные:</h3>
 		
-		{% for entry in get_all_entries_video %}
-			<a class="link_to_details" href="{% url 'video_detail' entry.id %}">
-				<article class="article col-xs-4">
-					<iframe allowfullscreen="" src="//www.youtube.com/embed/{{ entry }}/?controls=0&showinfo=0&rel=0&modestbranding=0" frameborder="0" ></iframe>
-
-					<h4 class="h4">{{ entry.title|truncatechars:97 }}</h4>
-				</article >
-			</a>
+		{% for entry in last_entries_video %}
+			{% part_video_unit entry %}
 		{% endfor %}
 	</section>
+
+	<section class="section most_comments_on_main">
+		<h3 class="h3">Самые комментируемые:</h3>
+		
+		{% for entry in most_comments_video %}
+			{% part_video_unit entry %}
+		{% endfor %}
+	</section>	
+
+	<section class="section most_likes_on_main">
+		<h3 class="h3">Самые популярные:</h3>
+		
+		{% for entry in most_likes %}
+			{% part_video_unit entry %}
+		{% endfor %}
+	</section>		
+
+	<section class="section most_views_on_main">
+		<h3 class="h3">Самые просматриваемые:</h3>
+		
+		{% for entry in most_views %}
+			{% part_video_unit entry %}
+		{% endfor %}
+	</section>		
 {% endblock content %}

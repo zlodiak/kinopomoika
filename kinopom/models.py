@@ -120,6 +120,18 @@ class Entry(models.Model):
 		return self.objects.filter(is_active=True, is_delete=False).order_by('-date')		
 
 	@classmethod
+	def get_last_entries_video(self):
+		return self.objects.filter(is_active=True, is_delete=False).order_by('-date')[:6]		
+
+	@classmethod
+	def get_most_likes(self):
+		return self.objects.filter(is_active=True, is_delete=False).order_by('-likes')[:6]	
+
+	@classmethod
+	def get_most_views(self):
+		return self.objects.filter(is_active=True, is_delete=False).order_by('-views')[:6]			
+
+	@classmethod
 	def get_video(self, id):
 		return self.objects.get(is_active=True, is_delete=False, id=id)					
 		
