@@ -5,35 +5,32 @@
 {% block title %}Видео{% endblock title %}
 
 {% block content %}
-	<section class="section last_videos_on_main">
-		<h3 class="h3">Последние добавленные:</h3>
-		
-		{% for entry in last_entries_video %}
-			{% part_video_unit entry %}
-		{% endfor %}
-	</section>
+	<div class="all_videos">
+		<section class="section last_videos_on_main">
+			<h3 class="h3">Последние добавленные:</h3>
+			
+			
+				{% part_video_unit last_entries_video %}
+			
+		</section>
 
-	<section class="section most_comments_on_main">
-		<h3 class="h3">Самые комментируемые:</h3>
-		
-		{% for entry in most_comments_video %}
-			{% part_video_unit entry %}
-		{% endfor %}
-	</section>	
+		<!--<section class="section most_comments_on_main">
+			<h3 class="h3">Самые комментируемые:</h3>
+			
+			{#% part_video_unit last_entries_video %#}
 
-	<section class="section most_likes_on_main">
-		<h3 class="h3">Самые популярные:</h3>
-		
-		{% for entry in most_likes %}
-			{% part_video_unit entry %}
-		{% endfor %}
-	</section>		
+		</section>	-->
 
-	<section class="section most_views_on_main">
-		<h3 class="h3">Самые просматриваемые:</h3>
-		
-		{% for entry in most_views %}
-			{% part_video_unit entry %}
-		{% endfor %}
-	</section>		
+		<section class="section most_likes_on_main">
+			<h3 class="h3">Самые популярные:</h3>
+			
+			{% part_video_unit most_likes %}
+		</section>		
+
+		<section class="section most_views">
+			<h3 class="h3">Самые просматриваемые:</h3>
+			
+			{% part_video_unit most_views %}
+		</section>	
+	</div>	
 {% endblock content %}

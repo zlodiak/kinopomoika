@@ -25,14 +25,12 @@ def video(request):
 	"""
 	handler for main video page
 	"""		
-	all_entries_video = Entry.get_all_entries_video()
 	last_entries_video = Entry.get_last_entries_video()
 	most_likes = Entry.get_most_likes()
 	most_views = Entry.get_most_views()
 
 	t = loader.get_template('video.html')
-	c = RequestContext(request, {
-		'all_entries_video': all_entries_video,		
+	c = RequestContext(request, {	
 		'last_entries_video': last_entries_video,		
 		'most_likes': most_likes,		
 		'most_views': most_views,		

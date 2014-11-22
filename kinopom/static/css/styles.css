@@ -827,6 +827,7 @@ code {
 	.all_videos .link_to_details{
 		overflow: hidden;
 		cursor: pointer;
+		min-height: 235px;
 	}
 
 		.all_videos .article{
