@@ -92,7 +92,8 @@
         <script>
             (function($) {
                 $(function() {
-                    var jcarousel = $('.jcarousel');
+                    // last_entries_video
+                    var jcarousel = $('#last_entries_video');
 
                     jcarousel
                         .on('jcarousel:reload jcarousel:create', function () {
@@ -110,32 +111,75 @@
                             wrap: 'circular'
                         });
 
-                    $('.jcarousel-control-prev')
+                    jcarousel.closest('.jcarousel_outer').find('.jcarousel-control-prev')
                         .jcarouselControl({
                             target: '-=1'
                         });
 
-                    $('.jcarousel-control-next')
+                    jcarousel.closest('.jcarousel_outer').find('.jcarousel-control-next')
                         .jcarouselControl({
                             target: '+=1'
                         });
 
-                    $('.jcarousel-pagination')
-                        .on('jcarouselpagination:active', 'a', function() {
-                            $(this).addClass('active');
-                        })
-                        .on('jcarouselpagination:inactive', 'a', function() {
-                            $(this).removeClass('active');
-                        })
-                        .on('click', function(e) {
-                            e.preventDefault();
-                        })
-                        .jcarouselPagination({
-                            perPage: 1,
-                            item: function(page) {
-                                return '<a href="#' + page + '">' + page + '</a>';
+
+                    // most_likes_on_main
+                    jcarousel = $('#most_likes_on_main');
+
+                    jcarousel
+                        .on('jcarousel:reload jcarousel:create', function () {
+                            var width = jcarousel.innerWidth();
+
+                            if (width >= 600) {
+                                width = width / 3;
+                            } else if (width >= 350) {
+                                width = width / 2;
                             }
+
+                            jcarousel.jcarousel('items').css('width', width + 'px');
+                        })
+                        .jcarousel({
+                            wrap: 'circular'
                         });
+
+                    jcarousel.closest('.jcarousel_outer').find('.jcarousel-control-prev')
+                        .jcarouselControl({
+                            target: '-=1'
+                        });
+
+                    jcarousel.closest('.jcarousel_outer').find('.jcarousel-control-next')
+                        .jcarouselControl({
+                            target: '+=1'
+                        });     
+
+
+                    // most_views_on_main
+                    jcarousel = $('#most_views_on_main');
+
+                    jcarousel
+                        .on('jcarousel:reload jcarousel:create', function () {
+                            var width = jcarousel.innerWidth();
+
+                            if (width >= 600) {
+                                width = width / 3;
+                            } else if (width >= 350) {
+                                width = width / 2;
+                            }
+
+                            jcarousel.jcarousel('items').css('width', width + 'px');
+                        })
+                        .jcarousel({
+                            wrap: 'circular'
+                        });
+
+                    jcarousel.closest('.jcarousel_outer').find('.jcarousel-control-prev')
+                        .jcarouselControl({
+                            target: '-=1'
+                        });
+
+                    jcarousel.closest('.jcarousel_outer').find('.jcarousel-control-next')
+                        .jcarouselControl({
+                            target: '+=1'
+                        });                                               
                 });
             })(jQuery);
         </script>

@@ -22,8 +22,9 @@ def part_related_video(tags, id_basic_video):
 
 
 @register.inclusion_tag("part_video_unit.html")
-def part_video_unit(entries):
+def part_video_unit(entries, id):
 	return {
 		'entries': entries,
+		'id': id,
 	}
 

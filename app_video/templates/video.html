@@ -8,7 +8,7 @@
 	<div class="all_videos">
 		<section class="section last_videos_on_main">
 			<h3 class="h3">Последние добавленные:</h3>
-				{% part_video_unit last_entries_video %}
+				{% part_video_unit last_entries_video 'last_entries_video' %}
 		</section>
 
 		<!--<section class="section most_comments_on_main">
@@ -21,13 +21,13 @@
 		<section class="section most_likes_on_main">
 			<h3 class="h3">Самые популярные:</h3>
 			
-			{% part_video_unit most_likes %}
+			{% part_video_unit most_likes 'most_likes_on_main' %}
 		</section>		
 
-		<section class="section most_views">
+		<section class="section most_views_on_main">
 			<h3 class="h3">Самые просматриваемые:</h3>
 			
-			{% part_video_unit most_views %}
+			{% part_video_unit most_views 'most_views_on_main' %}
 		</section>	
 	</div>	
 {% endblock content %}
