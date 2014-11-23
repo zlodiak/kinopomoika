@@ -12942,3 +12942,12 @@ Traceback (most recent call last):
   File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/db/backends/sqlite3/base.py", line 452, in execute
     return Database.Cursor.execute(self, query, params)
 OperationalError: no such table: django_summernote_attachment
+Internal Server Error: /menu/feedback/
+Traceback (most recent call last):
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom/app_menu/views.py", line 100, in feedback
+    email_f  = request.user.email_f
+  File "/home/kalinins/.virtualenvs/kinopom_project/kinopom_env/local/lib/python2.7/site-packages/django/utils/functional.py", line 214, in inner
+    return func(self._wrapped, *args)
+AttributeError: 'User' object has no attribute 'email_f'

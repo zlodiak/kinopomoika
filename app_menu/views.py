@@ -95,6 +95,10 @@ def feedback(request):
 			email_f = request.POST.get('email_f', '')	
 			message_f = request.POST.get('message_f', '')	
 
+			if request.user.is_authenticated():
+				username_f  = request.user.username
+				email_f  = request.user.email
+
 			try:
 				Feedback.objects.create(
 					username_f=username_f.strip(), 
