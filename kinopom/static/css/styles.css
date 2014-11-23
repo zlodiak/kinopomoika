@@ -304,9 +304,14 @@ code {
 		width: 120px;
 	}
 
+	.common_form.feedback_form .cell iframe,
 	.common_form.feedback_form .cell textarea,
 	.common_form.feedback_form .cell input{
 		width: 420px;
+	}
+
+	.common_form.feedback_form .submit_outer iframe{
+		float: left;
 	}
 
 	.common_form.feedback_form .submit_outer input{
@@ -976,9 +981,9 @@ code {
 			color: red;
 			font: 12px arial, sans-serif;
 			
-			padding-top: 10px;
 			padding-left: 12px;
-			float: left;
+			/*float: left;*/
+			padding-left: 120px;
 			width: 300px;
 		}
 		

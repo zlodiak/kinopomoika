@@ -15,6 +15,7 @@ urlpatterns = patterns('',
     url(r'^menu/', include('app_menu.urls')),
     url(r'^comments/', include('app_comments.urls')),
     url(r'^accounts/', include('app_accounts.urls')),
+    url(r'^summernote/', include('django_summernote.urls')),
     url(r'^', include('cms.urls')),
 )
 

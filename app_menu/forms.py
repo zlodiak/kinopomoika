@@ -2,6 +2,8 @@
 
 from app_menu.models import Feedback
 
+from django_summernote.widgets import SummernoteWidget, SummernoteInplaceWidget
+
 
 error_dict = {
 	'spaces': 'Поле не может состоять только из пробелов',
@@ -9,6 +11,14 @@ error_dict = {
 
 
 class FeedbackForm(forms.ModelForm):
+	message_f = forms.CharField(
+		label='Сообщение',
+		widget=SummernoteWidget({
+			'width': '420px',
+			#'height': '200px',     
+		}),
+	)  
+
 	class Meta:
 		model = Feedback
 		fields = (

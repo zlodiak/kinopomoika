@@ -143,6 +143,7 @@ INSTALLED_APPS = (
     'djangocms_teaser',
     'djangocms_video',
     'reversion',
+    'django_summernote',
 
     'kinopom',
     'app_accounts',
