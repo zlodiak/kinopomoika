@@ -83,7 +83,7 @@ def search(request):
 		search_result = Entry.objects.filter(is_active=True, is_delete=False)
 		search_result_full = search_result.filter(Q(title__icontains=phrase.strip()) | Q(description__icontains=phrase.strip()))  
 
-		paginator = Paginator(search_result_full, 4)
+		paginator = Paginator(search_result_full, 10)
 		list_pages = paginator.page_range
 		
 		page = request.GET.get('page')

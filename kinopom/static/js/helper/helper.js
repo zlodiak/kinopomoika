@@ -1,4 +1,12 @@
 ﻿(function (){
+    // -------------------------------------------------------------------------------------- related video on search page
+    $('#search_results_articles .result_unit').on('mouseenter', function(){
+        var num = $(this).attr('data-rel');
+
+        $('#related_for_search .rel_group').css('display', 'none');
+        $('#related_for_search .rel_group[data-rel="' + num + '"]').stop().fadeIn(1000);
+    });
+
     // -------------------------------------------------------------------------------------- tags menu active punkt
     tagsActivePunkt();
 

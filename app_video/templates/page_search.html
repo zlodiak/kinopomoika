@@ -9,10 +9,10 @@
 		<h3 class="h3">Результаты поиска по фразе "{{ phrase }}":</h3>
 		
 		<div class="row">
-			<div class="col-xs-10">
+			<div class="col-xs-9" id="search_results_articles">
 				{% if search_result_full_paginated %}
 					{% for entry in search_result_full_paginated %}
-						<article class="article result_unit">
+						<article class="article result_unit" data-rel="{{ entry.id }}">
 							<a class="link_to_details" href="{% url 'video_detail' entry.id %}">
 								<div class="left">
 									<iframe allowfullscreen="" src="//www.youtube.com/embed/{{ entry }}/?controls=0&showinfo=0&rel=0&modestbranding=0" frameborder="0" ></iframe>
@@ -91,8 +91,12 @@
 				{% endif %}				
 			</div>
 
-			<div class="col-xs-2">
-				lll
+			<div class="col-xs-3 related_for_search" id="related_for_search">
+				{% for entry in search_result_full_paginated %}
+					<div class="rel_group" data-rel="{{ entry.id }}">
+						{% part_related_video entry.tags.all entry.id %}
+					</div>
+				{% endfor %}
 			</div>			
 		</div>
 

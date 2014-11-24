@@ -179,6 +179,15 @@ code {
 	padding: 0;
 }
 
+/*************************************************************************************************************** GLOBAL_blocks :  .pager related_for_search */
+.related_for_search{
+
+}
+
+	.related_for_search .rel_group{
+		display: none;
+	}
+
 /*************************************************************************************************************** GLOBAL_blocks :  .pager */
 .pager {
 	padding-left: 0;
@@ -200,7 +209,7 @@ code {
 		padding: 3px 9px 8px;
 		color: red;
 	}
-	
+
 
 /*************************************************************************************************************** GLOBAL_blocks : search_results */
 .search_results{
@@ -232,7 +241,7 @@ code {
 				}
 
 			.search_results .article .right{
-				width: 487px;
+				width: 406px;
 				float: right;
 			}	
 
