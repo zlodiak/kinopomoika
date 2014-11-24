@@ -69,25 +69,55 @@ def video_detail(request, id):
 def search(request):
 	"""
 	handler for search results page
-	"""		
-	if request.method == 'POST':	
-		search_form =  SearchForm(request.POST)	
+	"""	
+	search_form =  SearchForm()	
+	phrase = None
+	phrase_list = None
 
-		if search_form.is_valid():
-			phrase = request.POST.get('phrase', '')	
-			phrase_list = phrase.split()
+	if request.method == 'GET':	
+		search_form =  SearchForm(request.GET)	
 
-			search_result = Entry.objects.filter(is_active=True, is_delete=False)
-			search_result_full = search_result.filter(Q(title__icontains=phrase.strip()) | Q(description__icontains=phrase.strip()))  
-		else:
-			return HttpResponseRedirect('/')
+		phrase = request.GET.get('phrase', '')	
+		phrase_list = phrase.split()
+
+		search_result = Entry.objects.filter(is_active=True, is_delete=False)
+		search_result_full = search_result.filter(Q(title__icontains=phrase.strip()) | Q(description__icontains=phrase.strip()))  
+
+		paginator = Paginator(search_result_full, 4)
+		list_pages = paginator.page_range
+		
+		page = request.GET.get('page')
+
+		try:
+			search_result_full_paginated = paginator.page(page)
+		except PageNotAnInteger:
+			search_result_full_paginated = paginator.page(1)
+		except EmptyPage:
+			search_result_full_paginated = paginator.page(paginator.num_pages)	
+			
+		last_page = list_pages[-1]	
+		first_page = list_pages[0]	
+
+		t = loader.get_template('page_search.html')
+		c = RequestContext(request, {	
+			'search_form': search_form,	
+			'phrase': phrase,	
+			'phrase_list': phrase_list,	
+			'search_result_full_paginated': search_result_full_paginated,		
+			'list_pages': list_pages,
+			'last_page': last_page,
+			'first_page': first_page,			
+		}, [custom_proc])	
+
+		return HttpResponse(t.render(c)) 							
+	else:
+		return HttpResponseRedirect('/')
 
 	t = loader.get_template('page_search.html')
 	c = RequestContext(request, {	
 		'search_form': search_form,	
 		'phrase': phrase,	
-		'phrase_list': phrase_list,	
-		'search_result_full': search_result_full,	
+		'phrase_list': phrase_list,		
 	}, [custom_proc])	
 	
 	return HttpResponse(t.render(c)) 			

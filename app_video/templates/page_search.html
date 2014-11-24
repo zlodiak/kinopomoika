@@ -10,8 +10,8 @@
 		
 		<div class="row">
 			<div class="col-xs-10">
-				{% if search_result_full %}
-					{% for entry in search_result_full %}
+				{% if search_result_full_paginated %}
+					{% for entry in search_result_full_paginated %}
 						<article class="article result_unit">
 							<a class="link_to_details" href="{% url 'video_detail' entry.id %}">
 								<div class="left">
@@ -42,8 +42,50 @@
 									</div>
 								</div>
 							</a>		
-						</article>
+						</article>						
 					{% endfor %}
+
+					{% if last_page > 1 %}
+						<div class="pager_outer">	
+							<div class="pager">	
+								{% if search_result_full_paginated.has_previous %}
+									<button type="button" class="btn btn-default">
+										<a class="a left2 glyphicon glyphicon-fast-backward" href="?page={{ first_page }}&phrase={{ phrase }}"></a>
+									</button>								
+
+									<button type="button" class="btn btn-default">
+										<a class="a left glyphicon glyphicon-backward" href="?page={{ search_result_full_paginated.previous_page_number }}&phrase={{ phrase }}"></a>
+									</button>								
+								{% endif %}
+								
+								<span>
+									{% for page in list_pages  %}
+										<div class="btn-group">
+											{% if search_result_full_paginated.number == page %}
+												<button type="button" class="btn btn-default">
+													<span class="a glyphicon">{{ page }}</span>
+												</button>
+											{% else %}
+												<button type="button" class="btn btn-default">
+													<a class="a num glyphicon" href="?page={{ page }}&phrase={{ phrase }}">{{ page }}</a>
+												</button>							
+											{% endif %}
+										</div>
+									{% endfor %}		
+								</span>
+								
+								{% if search_result_full_paginated.has_next %}
+									<button type="button" class="btn btn-default">
+										<a class="a right glyphicon glyphicon-forward" href="?page={{ search_result_full_paginated.next_page_number }}&phrase={{ phrase }}"></a>
+									</button>		
+
+									<button type="button" class="btn btn-default">
+										<a class="a right2 glyphicon glyphicon-fast-forward" href="?page={{ last_page }}&phrase={{ phrase }}"></a>
+									</button>														
+								{% endif %}
+							</div>				
+						</div>	
+					{% endif %}						
 				{% else %}
 					<p>Нет результатов</p>
 				{% endif %}				
