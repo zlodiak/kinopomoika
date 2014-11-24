@@ -179,6 +179,15 @@ code {
 	padding: 0;
 }
 
+.search_block{
+	padding-left: 0;
+}
+
+.auth_block{
+	padding-right: 0;
+}
+
+
 /*************************************************************************************************************** GLOBAL_blocks :  .pager related_for_search */
 .related_for_search{
 
