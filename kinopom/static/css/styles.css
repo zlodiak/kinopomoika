@@ -508,12 +508,39 @@ code {
 	}
 
 
-/*************************************************************************************************************** GLOBAL_blocks : nav_bar */
-.navbar-nav>li>a{
-	height: 60px;
-
-	line-height: 33px;
+/*************************************************************************************************************** GLOBAL_blocks : copyright */
+.copyright:hover{
+	color: #000;
+	transition: 2s;
 }
+
+.copyright{
+	float: right;
+	overflow: hidden;
+	max-width: 300px;
+	padding-top: 21px;
+	cursor: default;
+	transition: 2s;
+
+	color: #ccc;
+}
+
+
+/*************************************************************************************************************** GLOBAL_blocks : nav_bar */
+#navbar{
+	overflow: hidden;
+}
+
+	#navbar .navbar-nav{
+		max-width: 600px;
+		overflow: hidden;
+	}
+
+		.navbar-nav>li>a{
+			height: 60px;
+
+			line-height: 33px;
+		}
 
 /*************************************************************************************************************** GLOBAL_blocks : to_start */
 .to_start:hover{
@@ -1146,11 +1173,11 @@ code {
 }
 
 .jcarousel-control-prev {
-    left: -45px;
+    left: -48px;
 }
 
 .jcarousel-control-next {
-    right: -45px;
+    right: -48px;
 }
 
 /** Carousel Pagination **/
