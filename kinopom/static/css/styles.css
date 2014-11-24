@@ -179,8 +179,60 @@ code {
 	padding: 0;
 }
 
-/*************************************************************************************************************** GLOBAL_blocks :  .carousel_lite_outer */
+/*************************************************************************************************************** GLOBAL_blocks : search_results */
+.search_results{
+	
+}
+	.search_results .h3{
+		padding: 0 0 20px;
+	}
 
+	.search_results .article{
+		overflow: hidden;
+		padding-bottom: 20px;
+	}	
+
+		.search_results .article a{
+			overflow: hidden;
+			cursor: pointer;
+			display: block;
+		}
+
+			.search_results .article .left{
+				width: 300px;
+				float: left;
+			}
+
+				.search_results .article .left iframe{
+					z-index: -10;
+					position: relative;
+				}
+
+			.search_results .article .right{
+				width: 487px;
+				float: right;
+			}	
+
+				.search_results .article .right .link{
+					text-decoration: none;
+				}
+
+				.search_results .article .right .h4{
+					margin-top : 0;
+
+					font-weight: bold;
+				}	
+
+				.search_results .article .right .info{
+					display: inline-block;
+					margin-right: 20px;
+					padding-top: 5px;
+				}
+
+						.search_results .article .right .info .likes_sign,
+						.search_results .article .right .info .views span{
+							margin-right: 4px;
+						}
 
 
 /*************************************************************************************************************** GLOBAL_blocks :  .privacy_policy */

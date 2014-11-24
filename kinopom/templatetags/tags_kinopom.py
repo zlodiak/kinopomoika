@@ -20,7 +20,6 @@ def part_common_modal():
 def part_search_form():
 	return {
 		'search_form': SearchForm,
-		'qqq': 222,
 	}
 
 

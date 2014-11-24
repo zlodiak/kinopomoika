@@ -1,4 +1,4 @@
-<form class="search_form common_form" action="" method="POST">
+<form class="search_form common_form" action="{% url 'search' %}" method="POST">
     {% csrf_token %}
     
     <div class="cell input_outer">

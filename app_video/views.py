@@ -6,6 +6,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 import json
 from django.core import serializers
 from django.contrib.auth.models import User
+from django.db.models import Q
 
 from app_comments.models import Comment
 from app_comments.forms import CommentForm
@@ -63,3 +64,30 @@ def video_detail(request, id):
 	}, [custom_proc])	
 	
 	return HttpResponse(t.render(c)) 	
+
+
+def search(request):
+	"""
+	handler for search results page
+	"""		
+	if request.method == 'POST':	
+		search_form =  SearchForm(request.POST)	
+
+		if search_form.is_valid():
+			phrase = request.POST.get('phrase', '')	
+			phrase_list = phrase.split()
+
+			search_result = Entry.objects.filter(is_active=True, is_delete=False)
+			search_result_full = search_result.filter(Q(title__icontains=phrase.strip()) | Q(description__icontains=phrase.strip()))  
+		else:
+			return HttpResponseRedirect('/')
+
+	t = loader.get_template('page_search.html')
+	c = RequestContext(request, {	
+		'search_form': search_form,	
+		'phrase': phrase,	
+		'phrase_list': phrase_list,	
+		'search_result_full': search_result_full,	
+	}, [custom_proc])	
+	
+	return HttpResponse(t.render(c)) 			

@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load tags_video %}
+
+{% block title %}Результаты поиска{% endblock title %}
+
+{% block content %}
+	<section class="section search_results">
+		<h3 class="h3">Результаты поиска по фразе "{{ phrase }}":</h3>
+		
+		<div class="row">
+			<div class="col-xs-10">
+				{% if search_result_full %}
+					{% for entry in search_result_full %}
+						<article class="article result_unit">
+							<a class="link_to_details" href="{% url 'video_detail' entry.id %}">
+								<div class="left">
+									<iframe allowfullscreen="" src="//www.youtube.com/embed/{{ entry }}/?controls=0&showinfo=0&rel=0&modestbranding=0" frameborder="0" ></iframe>
+								</div>
+
+								<div class="right">
+									<h4 class="h4">{{ entry.title|truncatechars:97 }}</h4>
+
+									<div class="video_meta">
+										<div class="meta author">Автор: {{ entry.user.username }}</div>
+
+										<div class="meta date_create">Дата размещения: {{ entry.date }}</div>
+
+										<div class="meta date_edit">Дата редактирования: {{ entry.last_edit_date }}</div>
+
+										<div class="meta date_edit">Теги: 
+											{% for tag in entry.tags.all %}
+												<span class="link">{{ tag }}</span>{% if not forloop.last %}, {% endif %}
+											{% endfor %}
+										</div>
+
+										<div class="info">
+											<span class="info views"><span class="views_sign glyphicon glyphicon-eye-open"></span> {{ entry.views }}</span>
+
+											<span><span class="likes_sign glyphicon glyphicon-thumbs-up"></span>{{ entry.likes }}</span>
+										</div>
+									</div>
+								</div>
+							</a>		
+						</article>
+					{% endfor %}
+				{% else %}
+					<p>Нет результатов</p>
+				{% endif %}				
+			</div>
+
+			<div class="col-xs-2">
+				lll
+			</div>			
+		</div>
+
+
+	</section>
+	
+{% endblock content %}
